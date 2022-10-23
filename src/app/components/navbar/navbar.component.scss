@@ -1,0 +1,35 @@
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.ul-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.ul-header a{
+  font-family: 'Staatliches', cursive;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .titulo{
+  font-family: 'Staatliches', cursive;
+  font-size: 35px;
+  color: black;
+}
+
+nav{
+  -webkit-box-shadow: -2px 11px 5px -8px rgba(0,0,0,0.25);
+  -moz-box-shadow: -2px 11px 5px -8px rgba(0,0,0,0.25);
+  box-shadow: -2px 11px 5px -8px rgba(0,0,0,0.25);
+}
