@@ -1,35 +1,91 @@
-a{
+a {
   text-decoration: none;
   color: black;
 }
 
-.ul-header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
+.bg-gray-dark {
+  background-color: #2b3b45;
 }
 
-.ul-header a{
-  font-family: 'Staatliches', cursive;
-  font-size: 25px;
+.titulo-principal{
+  @media (max-width : 680px) {
+    text-align: center;
+  }
+}
+
+.titulo_principal__span {
+  position: absolute;
+  transform: rotate(-30deg);
+  font-size: 1rem;
+  top: .5rem;
+  left: .1rem;
+  color: white;
+  font-weight: 900;
+  z-index: 1;
+
+  animation-name: showandhide;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+}
+
+@keyframes showandhide {
+  from {
+    opacity: 1;
+    transform: rotate(-30deg);
+  }
+
+  to {
+    transform: rotate(10deg);
+    opacity: 0;
+  }
+}
+
+.enlace {
+  color: white;
   text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 900;
 }
 
-header{
+.titulo-principal__texto {
+  position: relative;
+  font-size: 1.5rem;
+  padding: .8rem 1rem;
+  border-radius: 1rem;
+  font-weight: 900;
+  color: #ff8e00;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 1.2rem;
+}
+
+.flex-header {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width : 680px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.navegacion {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+  margin: 0;
+
+  @media (max-width : 680px) {
+    margin-top: .5rem;
+    flex-direction: column;
+  }
 }
 
-header .titulo{
-  font-family: 'Staatliches', cursive;
-  font-size: 35px;
-  color: black;
-}
-
-nav{
-  -webkit-box-shadow: -2px 11px 5px -8px rgba(0,0,0,0.25);
-  -moz-box-shadow: -2px 11px 5px -8px rgba(0,0,0,0.25);
-  box-shadow: -2px 11px 5px -8px rgba(0,0,0,0.25);
+.activo {
+  color: #ff8e00;
 }

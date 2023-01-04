@@ -4,17 +4,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ViewMainComponent } from './components/view-main/view-main.component';
-import { ViewTwoComponent } from './components/view-two/view-two.component';
-import { ViewThreeComponent } from './components/view-three/view-three.component';
+import { HomeComponent } from './pages/home/home.component';
+import { MainLayoutComponent } from './layouts/app-layouts/main-layout/main-layout.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { WorkComponent } from './pages/work/work.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ViewMainComponent,
-    ViewTwoComponent,
-    ViewThreeComponent
+    HomeComponent,
+    MainLayoutComponent,
+    FooterComponent,
+    WorkComponent,
+    ServicesComponent,
+    AboutComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

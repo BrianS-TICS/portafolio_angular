@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  public currentPage = 'home';
+
+  constructor() {
+
+  }
 
   ngOnInit(): void {
+
+  }
+
+  public handleSelectedPage(e : any) : void {
+    const value = e.target.text
+    this.currentPage = value.toLowerCase()
   }
 
 }
