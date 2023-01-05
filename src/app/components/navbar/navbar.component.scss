@@ -59,8 +59,8 @@ a {
   padding: .8rem 1rem;
   border-radius: 1rem;
   font-weight: 900;
-  color: #ff8e00;
-  -webkit-text-stroke: .01rem white;
+  color: white;
+  -webkit-text-stroke: .05rem #2b3b45;
   transition: all .5s;
   &:hover{
     color : white;
