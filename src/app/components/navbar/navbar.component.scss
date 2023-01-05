@@ -24,7 +24,7 @@ a {
   z-index: 1;
 
   animation-name: showandhide;
-  animation-duration: 5s;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 
@@ -47,6 +47,10 @@ a {
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 900;
+  transition: all .5s;
+  &:hover{
+    color : #ff8e00;
+  }
 }
 
 .titulo-principal__texto {
@@ -56,10 +60,14 @@ a {
   border-radius: 1rem;
   font-weight: 900;
   color: #ff8e00;
+  -webkit-text-stroke: .01rem white;
+  transition: all .5s;
+  &:hover{
+    color : white;
+  }
 }
 
 .container {
-  max-width: 1200px;
   padding: 1.2rem;
 }
 
