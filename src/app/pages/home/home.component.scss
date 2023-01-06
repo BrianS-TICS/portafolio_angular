@@ -2,7 +2,7 @@ ul {
   list-style: none;
 }
 
-p{
+p {
   margin: 0;
 }
 
@@ -11,8 +11,22 @@ p{
 }
 
 .seccion-presentacion {
-  position: relative;
-  padding: 5rem 2rem;
+  padding: 2rem 2rem;
+
+  @media (min-width: 480px) {
+    padding: 5rem 2rem;
+  }
+
+  .seccion-presentacion-contenido {
+    gap: 5rem;
+
+    @media (min-width: 768px) {
+      display: flex;
+      gap: 0rem;
+
+    }
+  }
+
 }
 
 .seccion-presentacion__descripcion {
@@ -21,29 +35,50 @@ p{
 }
 
 .seccion-presentacion .titulo {
-  font-size: 6rem;
+  font-size: 4rem;
   color: white;
+
+  @media (min-width: 480px) {
+    font-size: 6rem;
+
+  }
 }
 
 .seccion-presentacion__nombre {
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: white;
   font-weight: 900;
+
+  @media (min-width: 480px) {
+    font-size: 4rem;
+
+  }
 }
 
 .seccion-presentacion__cargo {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 900;
-  color: white;
-
   color: #ff8e00;
-  -webkit-text-stroke: 2px white;
+  -webkit-text-stroke: 1px white;
+
+  @media (min-width: 480px) {
+    font-size: 3rem;
+    -webkit-text-stroke: 2px white;
+  }
+
 }
 
+
+
 .titulo {
-  font-size: 3.5rem;
+  font-size: 1.8rem;
   font-weight: 900;
   text-transform: uppercase;
+
+  @media (min-width : 480px) {
+    font-size: 3.5rem;
+
+  }
 }
 
 .bg-blue-low {
@@ -64,7 +99,12 @@ p{
 }
 
 .seccion-conocimientos {
-  padding: 5rem 2rem;
+  padding: 2rem 1.5rem;
+
+  @media (min-width : 480px) {
+    padding: 5rem 2rem;
+  }
+
   background-color: #f1f2f5;
 }
 
@@ -75,17 +115,33 @@ p{
 .seccion-conocimientos__lista {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+
+
+  @media (min-width : 480px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+  }
+
+  @media (min-width : 768px) {
+    grid-template-columns: repeat(4, 1fr);
+
+  }
 }
 
 .seccion-conocimiento__elemento-lista {
   color: #2b3b45;
   font-weight: 900;
-  font-size: 1.2rem;
+  font-size: 1rem;
   cursor: default;
+
+  @media (min-width : 480px) {
+    font-size: 1.2rem;
+  }
 
   padding: 1rem;
   text-align: center;
@@ -93,7 +149,7 @@ p{
   border-radius: 1rem;
   background: linear-gradient(145deg, #e6e6e6, #ffffff);
   box-shadow: 6px 6px 12px #d9d9d9,
-    -6px -6px 12px #ffffff;
+  -6px -6px 12px #ffffff;
 
   transition: all .5s;
 
@@ -111,8 +167,13 @@ p{
 }
 
 .subtitulo {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 900;
+
+  @media (min-with:480px) {
+    font-size: 2rem;
+
+  }
 }
 
 .bg-blue-strong {
@@ -131,39 +192,42 @@ p{
   color: white;
   font-weight: 500;
   font-size: 1.2rem;
+
 }
 
-img{
+img {
   width: 100%;
 }
 
 // ! Pendiente el uso de media querys para adaptar imagen
 
-.svg-pensamiento{
-  position: absolute;
-  top: 0;
-  right: 0;
-  max-width: 17rem;
+.cita-textual {
+  margin-top: 2rem;
+  max-width: 20rem;
+  font-family: 'Dancing Script', cursive;
 
-  transform: rotateZ(-10deg)
-}
+  @media (min-width : 768px) {
+    margin-top: 1rem;
+    transform: rotateZ(10deg);
+  }
 
-.svg-pensamiento__contenido{
-  display: relative;
-}
+  .cita-textual__texto {
+    color: #2b3b45;
+    font-size: 1.2rem;
+    font-weight: 900;
 
-.cita__descripcion{
-  font-weight: 400;
-}
+    @media (min-width : 480px) {
+      font-size: 2rem;
+    }
+  }
 
-.cita{
-  position: absolute;
-  top: 5rem;
-  left: 4rem;
-  font-size: .8rem;
-  margin: auto;
-  font-weight: 500;
-  font-style: italic;
+  .cita-textual_btn {
+    text-decoration: underline;
+    padding: 0;
 
-  transform: rotateZ(-14deg)
+    &:hover {
+      color: #ff8e00;
+    }
+  }
+
 }
