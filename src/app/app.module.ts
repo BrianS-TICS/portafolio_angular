@@ -11,6 +11,7 @@ import { WorkComponent } from './pages/work/work.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { FromContactoComponent } from './components/from-contacto/from-contacto.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     ServicesComponent,
     AboutComponent,
     ContactComponent,
+    FromContactoComponent,
   ],
   imports: [
     BrowserModule,

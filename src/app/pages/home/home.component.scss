@@ -22,11 +22,16 @@ p {
 
     @media (min-width: 768px) {
       display: flex;
-      gap: 0rem;
+      gap: 2rem;
 
     }
   }
 
+}
+
+.seccion-presentacion__saludo{
+  font-size: 2rem;
+  font-weight: 900;
 }
 
 .seccion-presentacion__descripcion {
@@ -81,9 +86,9 @@ p {
   }
 }
 
-.bg-blue-low {
+.bg-blue {
   display: block;
-  background-color: #2e85aa;
+  background-color: #005aa1;
 }
 
 .bg-gray-low {
