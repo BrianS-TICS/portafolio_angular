@@ -90,9 +90,9 @@ p {
   background-color: #f1f2f5;
 }
 
-.borde-inferior-gray {
-  border-bottom: #2b3b45 dashed .4rem;
-}
+// .borde-inferior-gray {
+//   border-bottom: #2b3b45 dashed .4rem;
+// }
 
 .borde-inferior-white {
   border-bottom: #ffffff solid .2rem;
@@ -172,8 +172,14 @@ p {
 
   @media (min-with:480px) {
     font-size: 2rem;
-
   }
+}
+
+.bg-image {
+  background-image: url('../../../assets/bg-compress.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .bg-blue-strong {
