@@ -1,11 +1,36 @@
 $colorSecundario : #ffffffc0;
 
-.view{
+.view {
   height: 100vh;
 }
 
-.bg-color-secundario{
+.bg-color-secundario {
   background-color: $colorSecundario;
 }
 
-// font-family: 'BIZ UDPGothic', sans-serif;
+.section {
+  padding: 5rem 2rem
+}
+
+
+.titulo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+
+  @media (min-width : 480px) {
+    font-size: 3.5rem;
+  }
+}
+
+.main {
+  min-height: 20rem;
+}
+
+.bg-orange{
+  background-color: #ff8e00;
+}
+
+.bg-blue{
+  background-color: #2e85aa;
+}
