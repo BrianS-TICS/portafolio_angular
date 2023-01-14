@@ -1,0 +1,38 @@
+.animation-up {
+  animation-name: upMove;
+  animation-duration: 2s;
+  animation-iteration-count: 1s;
+  animation-delay: .5s;
+  animation-direction: normal;
+}
+
+.animation-down {
+  animation-name: downMove;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+
+@keyframes upMove {
+  0% {
+    translate: 0rem 0rem;
+  }
+
+  100% {
+    translate: 0 -5rem;
+  }
+}
+
+@keyframes downMove {
+  0% {
+    translate: 0rem 0rem;
+  }
+
+  // 50%{
+  //   translate: 0 -5rem;
+  // }
+
+  100% {
+    translate: 0 -5rem;
+  }
+}
