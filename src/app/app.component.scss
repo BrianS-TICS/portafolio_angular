@@ -27,10 +27,19 @@ $colorSecundario : #ffffffc0;
   min-height: 20rem;
 }
 
-.bg-orange{
+.bg-orange {
   background-color: #ff8e00;
 }
 
-.bg-blue{
+.bg-blue {
   background-color: #2e85aa;
+}
+
+.bg-dark-blue {
+  background-color: #2b3b45;
+}
+
+.scroll-stop {
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
 }

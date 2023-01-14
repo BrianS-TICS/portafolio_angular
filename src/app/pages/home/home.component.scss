@@ -29,7 +29,7 @@ p {
 
 }
 
-.seccion-presentacion__saludo{
+.seccion-presentacion__saludo {
   font-size: 2rem;
   font-weight: 900;
 }
@@ -241,4 +241,15 @@ img {
     }
   }
 
+}
+
+.languajes-container {
+  display: none;
+
+  @media (min-with:680px) {
+    display: block;
+    position: fixed;
+    top: 10rem;
+    left: 1rem;
+  }
 }

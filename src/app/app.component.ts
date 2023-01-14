@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  public spinnerShow = true;
   title = 'portafolio';
+
+  ngOnInit(): void {
+
+    // TEMPORAL
+    setTimeout(() => {
+      this.spinnerShow = false;
+    }, 1000);
+
+  }
+
 }

@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,7 +13,8 @@ import { ServicesComponent } from './pages/services/services.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { FromContactoComponent } from './components/from-contacto/from-contacto.component';
-
+import { LanguagesComponent } from './components/languages/languages.component';
+import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +28,15 @@ import { FromContactoComponent } from './components/from-contacto/from-contacto.
     AboutComponent,
     ContactComponent,
     FromContactoComponent,
+    LanguagesComponent,
+    LoadingScreenComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

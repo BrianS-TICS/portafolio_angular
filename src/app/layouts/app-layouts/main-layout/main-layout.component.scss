@@ -1,3 +1,10 @@
 .section{
   padding: 0 2rem;
 }
+
+.relative{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
