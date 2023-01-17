@@ -9,7 +9,9 @@
       </a>
     </div>
     <div class="movil-nav">
-      <button class="btn text-white-50" (click)="handleMovilMenu($event)">Boton</button>
+      <button class="btn text-white-50" (click)="handleMovilMenu($event)">
+        <img class="movil-nav__icon-menu open" src="./assets/menu.svg" alt="icon menu">
+      </button>
     </div>
     <nav class="navegacion">
       <a (click)='handleSelectedPage($event)' [ngClass]="currentPage==='home' ? 'enlace activo': 'enlace'"
@@ -43,9 +45,15 @@
     <div class="container-languajes">
       <p class="text-center text-white languajes__titulo">Lenguages</p>
       <span class="d-flex justify-content-center gap-2">
-        <button class="btn languajes__btn text-white">English</button>
-        <button class="btn languajes__btn text-white">Spanish</button>
-        <button class="btn languajes__btn text-white">French</button>
+        <button class="btn languajes__btn text-white">
+          <img class="flag" src="./assets/flags/flag_usa.svg" alt="usa">
+        </button>
+        <button class="btn languajes__btn text-white">
+          <img class="flag" src="./assets/flags/flag_esp.svg" alt="spain">
+        </button>
+        <button class="btn languajes__btn text-white">
+          <img class="flag" src="./assets/flags/flag_fran.svg" alt="france">
+        </button>
       </span>
     </div>
   </div>

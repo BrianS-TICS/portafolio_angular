@@ -167,3 +167,18 @@ a {
 .activo {
   color: #ff8e00;
 }
+
+.flag {
+  border-radius: .4rem;
+  max-width: 4rem;
+}
+
+.movil-nav {
+  max-width: 3rem;
+
+  .movil-nav__icon-menu {
+    width: 100%;
+    color: white;
+  }
+
+}
