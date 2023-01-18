@@ -7,7 +7,7 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  public currentPage = 'home';
+  public currentPage = 'inicio';
   public movilMenuOpen: boolean = false
 
   public animations: string = 'movil-menu';

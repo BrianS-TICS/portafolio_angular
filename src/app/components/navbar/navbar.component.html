@@ -14,16 +14,16 @@
       </button>
     </div>
     <nav class="navegacion">
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage==='home' ? 'enlace activo': 'enlace'"
-        routerLink="/home">Home</a>
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage==='work' ? 'enlace activo': 'enlace'"
-        class="enlace" routerLink="/work">Work</a>
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage==='services' ? 'enlace activo': 'enlace'"
-        class="enlace" routerLink="/services">Services</a>
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage==='about' ? 'enlace activo': 'enlace'"
-        class="enlace" routerLink="/about">About</a>
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage==='contact' ? 'enlace activo': 'enlace'"
-        class="enlace" routerLink="/contact">Contact</a>
+      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='inicio' ? 'enlace activo': 'enlace'"
+        routerLink="/home">Inicio</a>
+      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='proyectos' ? 'enlace activo': 'enlace'"
+        class="enlace" routerLink="/work">Proyectos</a>
+      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='servicios' ? 'enlace activo': 'enlace'"
+        class="enlace" routerLink="/services">Servicios</a>
+      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='sobre mi' ? 'enlace activo': 'enlace'"
+        class="enlace" routerLink="/about">Sobre mi</a>
+      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='contacto' ? 'enlace activo': 'enlace'"
+        class="enlace" routerLink="/contact">Contacto</a>
     </nav>
   </div>
 </header>
@@ -31,16 +31,16 @@
 <div *ngIf="movilMenuOpen" (click)="handleCloseMovilNav($event)" class="movil-menu">
   <div class="p-5 d-flex gap-5 flex-column">
     <nav class="navegacion-movil">
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage==='home' ? 'enlace activo': 'enlace'"
-        routerLink="/home">Home</a>
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage==='work' ? 'enlace activo': 'enlace'"
-        class="enlace" routerLink="/work">Work</a>
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage==='services' ? 'enlace activo': 'enlace'"
-        class="enlace" routerLink="/services">Services</a>
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage==='about' ? 'enlace activo': 'enlace'"
-        class="enlace" routerLink="/about">About</a>
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage==='contact' ? 'enlace activo': 'enlace'"
-        class="enlace" routerLink="/contact">Contact</a>
+      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='inicio' ? 'enlace activo': 'enlace'"
+        routerLink="/home">Inicio</a>
+      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='proyectos' ? 'enlace activo': 'enlace'"
+        class="enlace" routerLink="/work">Proyectos</a>
+      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='servicios' ? 'enlace activo': 'enlace'"
+        class="enlace" routerLink="/services">Servicios</a>
+      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='sobre mi' ? 'enlace activo': 'enlace'"
+        class="enlace" routerLink="/about">Sobre mi</a>
+      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='contacto' ? 'enlace activo': 'enlace'"
+        class="enlace" routerLink="/contact">Contacto</a>
     </nav>
     <div class="container-languajes">
       <p class="text-center text-white languajes__titulo">Lenguages</p>
