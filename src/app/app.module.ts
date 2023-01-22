@@ -1,6 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { FromContactoComponent } from './components/from-contacto/from-contacto.component';
 import { LanguagesComponent } from './components/languages/languages.component';
 import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
+
 
 @NgModule({
   declarations: [
@@ -34,8 +36,10 @@ import { LoadingScreenComponent } from './components/loading-screen/loading-scre
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
+
   ],
   bootstrap: [AppComponent]
 })

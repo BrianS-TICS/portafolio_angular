@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CitasTextualesService } from 'src/app/services/citas-textuales.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private citasService: CitasTextualesService) { }
+
+  public citas: any = [];
 
   ngOnInit(): void {
+    this.obtieneCitas();
+  }
+
+  public obtieneCitas() {
+    this.citasService.obtenerCitas().subscribe(
+      (response: any) => {
+        this.citas = response;
+        console.log(response);
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    )
   }
 
 }
