@@ -30,18 +30,17 @@ p {
 
 }
 
-.seccion-presentacion__saludo {
-  font-size: 2rem;
-  font-weight: 900;
-}
-
 .seccion-presentacion__descripcion {
   font-size: 1rem;
   color: white;
   line-height: 1.5;
+  max-width: 33rem;
+  text-align: center;
 
   @media (min-width : 480px) {
     font-size: 1.2rem;
+    text-align: left;
+
   }
 }
 
@@ -59,10 +58,11 @@ p {
   font-size: 2.5rem;
   color: white;
   font-weight: 900;
+  text-align: center;
 
   @media (min-width: 480px) {
     font-size: 4rem;
-
+    text-align: left;
   }
 }
 
@@ -70,10 +70,12 @@ p {
   font-size: 2rem;
   font-weight: 900;
   color: #ff8e00;
+  text-align: center;
   -webkit-text-stroke: 1px white;
 
   @media (min-width: 480px) {
     font-size: 3rem;
+    text-align: left;
     -webkit-text-stroke: 2px white;
   }
 
@@ -218,10 +220,12 @@ img {
   margin-top: 2rem;
   max-width: 20rem;
   font-family: 'Dancing Script', cursive;
+  text-align: center;
 
   @media (min-width : 768px) {
     margin-top: 1rem;
     transform: rotateZ(10deg);
+    text-align: left;
   }
 
   .cita-textual__texto {
