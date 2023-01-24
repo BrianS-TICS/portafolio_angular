@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +6,9 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+
+  @ViewChild('munuMovil') munuMovil: any;
+
 
   public currentPage = 'inicio';
   public movilMenuOpen: boolean = false
@@ -19,9 +22,25 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.listenToAnimationEnd();
+    this.listenToAnimationStart();
   }
 
+  listenToAnimationEnd(): void {
+    this.munuMovil.nativeElement.addEventListener('animationend', () => {
+      console.log('animation ended');
+    })
+  }
+
+  listenToAnimationStart(): void {
+    this.munuMovil.nativeElement.addEventListener('animationstart', () => {
+      console.log('animation estart');
+    })
+  }
+
+  ngOnDestroy(): void {
+    this.munuMovil.nativeElement.removeEventListener('animationstart');
+  }
 
   public handleCloseMovilNav(e: any) {
     this.movilMenuOpen = false;

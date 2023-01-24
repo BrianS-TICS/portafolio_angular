@@ -23,8 +23,11 @@ p {
 
     @media (min-width: 768px) {
       display: flex;
-      gap: 2rem;
+    }
 
+    @media (min-width: 1028px) {
+      display: flex;
+      gap: 8rem;
     }
   }
 

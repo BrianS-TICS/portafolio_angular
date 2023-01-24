@@ -9,17 +9,17 @@
       </a>
     </div>
     <div class="movil-nav">
-      <button class="btn text-white-50" (click)="handleMovilMenu($event)">
-        <img class="movil-nav__icon-menu open" src="./assets/menu.svg" alt="icon menu">
-      </button>
+      <div [ngClass]="movilMenuOpen ? 'movil-nav__icon-menu open' : 'movil-nav__icon-menu' " (click)="handleMovilMenu($event)">
+        <div class="movil-nav__icon-menu__burger">
+
+        </div>
+      </div>
     </div>
     <nav class="navegacion">
       <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='inicio' ? 'enlace activo': 'enlace'"
         routerLink="/home">Inicio</a>
       <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='proyectos' ? 'enlace activo': 'enlace'"
         class="enlace" routerLink="/work">Proyectos</a>
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='servicios' ? 'enlace activo': 'enlace'"
-        class="enlace" routerLink="/services">Servicios</a>
       <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='sobre mi' ? 'enlace activo': 'enlace'"
         class="enlace" routerLink="/about">Sobre mi</a>
       <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='contacto' ? 'enlace activo': 'enlace'"
@@ -28,15 +28,13 @@
   </div>
 </header>
 
-<div *ngIf="movilMenuOpen" (click)="handleCloseMovilNav($event)" class="movil-menu">
+<div #munuMovil *ngIf="movilMenuOpen" (click)="handleCloseMovilNav($event)" class="movil-menu">
   <div class="p-5 d-flex gap-5 flex-column">
     <nav class="navegacion-movil">
       <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='inicio' ? 'enlace activo': 'enlace'"
         routerLink="/home">Inicio</a>
       <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='proyectos' ? 'enlace activo': 'enlace'"
         class="enlace" routerLink="/work">Proyectos</a>
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='servicios' ? 'enlace activo': 'enlace'"
-        class="enlace" routerLink="/services">Servicios</a>
       <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='sobre mi' ? 'enlace activo': 'enlace'"
         class="enlace" routerLink="/about">Sobre mi</a>
       <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='contacto' ? 'enlace activo': 'enlace'"

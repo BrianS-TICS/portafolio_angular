@@ -12,7 +12,7 @@ const routes: Routes = [
     path: '',
     component: MainLayoutComponent,
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: '', pathMatch: 'full', component : HomeComponent },
       { path: 'home', component: HomeComponent },
       { path: 'work', component: WorkComponent },
       { path: 'services', component: ServicesComponent },
