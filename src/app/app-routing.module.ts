@@ -12,9 +12,12 @@ const routes: Routes = [
     path: '',
     component: MainLayoutComponent,
     children: [
-      { path: '', pathMatch: 'full', component : HomeComponent },
+      { path: '', pathMatch: 'full', component: HomeComponent },
       { path: 'home', component: HomeComponent },
-      { path: 'work', component: WorkComponent },
+      {
+        path: 'work',
+        loadChildren: () => import('./pages/work/work.module').then(m => m.WorkModule)
+      },
       { path: 'services', component: ServicesComponent },
       { path: 'about', component: AboutComponent },
       { path: 'contact', component: ContactComponent },

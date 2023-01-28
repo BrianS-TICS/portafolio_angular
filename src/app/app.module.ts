@@ -16,6 +16,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { FromContactoComponent } from './components/from-contacto/from-contacto.component';
 import { LanguagesComponent } from './components/languages/languages.component';
 import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
+import { NgOptimizedImage } from '@angular/common';
 
 
 @NgModule({
@@ -31,12 +32,13 @@ import { LoadingScreenComponent } from './components/loading-screen/loading-scre
     ContactComponent,
     FromContactoComponent,
     LanguagesComponent,
-    LoadingScreenComponent,
+    LoadingScreenComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgOptimizedImage
   ],
   providers: [
 
