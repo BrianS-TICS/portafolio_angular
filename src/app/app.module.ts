@@ -17,7 +17,12 @@ import { FromContactoComponent } from './components/from-contacto/from-contacto.
 import { LanguagesComponent } from './components/languages/languages.component';
 import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
 import { NgOptimizedImage } from '@angular/common';
-
+import { LoginComponent } from './pages/administration/public/login/login.component';
+import { DashboardComponent } from './pages/administration/authenticated/dashboard/dashboard.component';
+import { LoginLayoutComponent } from './layouts/app-admin-layouts/login-layout/login-layout.component';
+import { DashbordLayoutComponent } from './layouts/app-admin-layouts/dashbord-layout/dashbord-layout.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,11 @@ import { NgOptimizedImage } from '@angular/common';
     ContactComponent,
     FromContactoComponent,
     LanguagesComponent,
-    LoadingScreenComponent
+    LoadingScreenComponent,
+    LoginComponent,
+    DashboardComponent,
+    LoginLayoutComponent,
+    DashbordLayoutComponent
   ],
   imports: [
     BrowserModule,

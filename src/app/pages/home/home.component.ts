@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CitasTextualesService } from 'src/app/services/citas-textuales.service';
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -13,17 +14,20 @@ export class HomeComponent implements OnInit {
   public citas: any = [];
 
   ngOnInit(): void {
-    this.obtieneCitas();
+    this.obtieneCita();
   }
 
-  public obtieneCitas() {
+  public obtieneCita() {
     this.citasService.obtenerCitas().subscribe(
-      (response: any) => {
-        this.citas = response;
-        console.log(response);
-      },
-      (error: any) => {
-        console.log(error);
+      {
+        next: (response) => {
+          this.citas = response;
+          console.log(response);
+        },
+        error: (e) => {
+          console.error(e)
+        },
+        complete: () => console.info('complete'),
       }
     )
   }

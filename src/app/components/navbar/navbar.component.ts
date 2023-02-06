@@ -22,24 +22,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.listenToAnimationEnd();
-    this.listenToAnimationStart();
-  }
 
-  listenToAnimationEnd(): void {
-    this.munuMovil.nativeElement.addEventListener('animationend', () => {
-      console.log('animation ended');
-    })
-  }
-
-  listenToAnimationStart(): void {
-    this.munuMovil.nativeElement.addEventListener('animationstart', () => {
-      console.log('animation estart');
-    })
-  }
-
-  ngOnDestroy(): void {
-    this.munuMovil.nativeElement.removeEventListener('animationstart');
   }
 
   public handleCloseMovilNav(e: any) {

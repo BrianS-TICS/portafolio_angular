@@ -1,7 +1,7 @@
 <header class="bg-gray-dark">
   <div class="container flex-header">
     <div class="titulo-principal">
-      <a routerLink="/home" class="titulo-principal__texto">
+      <a routerLink="/" class="titulo-principal__texto">
         <span>
           {{ "{ BSA }" }}
         </span>
@@ -9,7 +9,8 @@
       </a>
     </div>
     <div class="movil-nav">
-      <div [ngClass]="movilMenuOpen ? 'movil-nav__icon-menu open' : 'movil-nav__icon-menu' " (click)="handleMovilMenu($event)">
+      <div [ngClass]="movilMenuOpen ? 'movil-nav__icon-menu open' : 'movil-nav__icon-menu' "
+        (click)="handleMovilMenu($event)">
         <div class="movil-nav__icon-menu__burger">
 
         </div>
@@ -17,7 +18,7 @@
     </div>
     <nav class="navegacion">
       <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='inicio' ? 'enlace activo': 'enlace'"
-        routerLink="/home">Inicio</a>
+        routerLink="/">Inicio</a>
       <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='proyectos' ? 'enlace activo': 'enlace'"
         class="enlace" routerLink="/work">Proyectos</a>
       <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='sobre mi' ? 'enlace activo': 'enlace'"
@@ -32,7 +33,7 @@
   <div class="p-5 d-flex gap-5 flex-column">
     <nav class="navegacion-movil">
       <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='inicio' ? 'enlace activo': 'enlace'"
-        routerLink="/home">Inicio</a>
+        routerLink="/">Inicio</a>
       <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='proyectos' ? 'enlace activo': 'enlace'"
         class="enlace" routerLink="/work">Proyectos</a>
       <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='sobre mi' ? 'enlace activo': 'enlace'"

@@ -9,9 +9,21 @@ export class CitasTextualesService {
 
   constructor(private httpClient: HttpClient) { }
 
-  apiUrl = 'http://127.0.0.1:8000/api';
+  apiUrl = 'https://squid-app-g8xw5.ondigitalocean.app';
 
   public obtenerCitas(): Observable<any> {
-    return this.httpClient.get(this.apiUrl + '/frase');
+    return this.httpClient.get(this.apiUrl + '/api/frase');
+  }
+
+  public crearCita(data: any): Observable<any> {
+    return this.httpClient.post(this.apiUrl + '/api/frase', data);
+  }
+
+  public crearAutor(data: any): Observable<any> {
+    return this.httpClient.post(this.apiUrl + '/api/author', data);
+  }
+
+  public obtenerAutores(): Observable<any> {
+    return this.httpClient.get(this.apiUrl + '/api/author');
   }
 }

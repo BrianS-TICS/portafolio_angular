@@ -1,0 +1,50 @@
+<menu class="p-0 w-100">
+  <button (click)="changeSection('authors')" class="btn btn-dark fw-bold w-50">Autores</button>
+  <button (click)="changeSection('quotes')" class="btn btn-dark fw-bold w-50">Citas</button>
+</menu>
+
+<div *ngIf="sectionActive === 'authors'">
+  <div>
+    <form [formGroup]="autorForm" class="d-flex flex-column container mx-auto my-5">
+      <h2>Autores</h2>
+      <div class="my-2">
+        <label class="form-label" for="nombre">Escribe el nombre del autor</label>
+        <input class="form-control" for="text" formControlName="nombre" placeholder="Nombre del autor">
+      </div>
+
+      <div class="my-2">
+        <label class="form-label" for="apellidos">Escribe el apellido o apellidos</label>
+        <input class="form-control" for="text" formControlName="apellidos" placeholder="Apellidos del autor">
+      </div>
+
+      <div class="row w-100 justify-content-center justify-content-lg-end mx-auto">
+        <button type="button" class="btn btn-primary mt-3 fw-bold col-12 col-sm-8 col-md-5 col-lg-3"
+          (click)="crearAutor()">Crear</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="container">
+    <h2>Listado de autores</h2>
+
+    <div class="row gap-1 justify-content-center align-items-center my-4">
+      <div *ngFor="let item of autores; index as i;" class="col-12 col-sm-5 col-md-3 card my-2 p-0">
+        <p class="card-header fw-bold">
+          {{ item.nombre }}
+        </p>
+        <div class="card-body">
+          <p class="card-title">
+            {{ item.apellidos }}
+          </p>
+          <span class="fs-7 fst-italic float-end badge bg-secondary">{{ item.created_at | date: 'dd/MM/yyyy' }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<div *ngIf="sectionActive === 'quotes'">
+  <p>Citas</p>
+</div>
