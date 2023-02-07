@@ -4,11 +4,9 @@ import { DashbordLayoutComponent } from './layouts/app-admin-layouts/dashbord-la
 import { LoginLayoutComponent } from './layouts/app-admin-layouts/login-layout/login-layout.component';
 import { MainLayoutComponent } from './layouts/app-layouts/main-layout/main-layout.component';
 import { AboutComponent } from './pages/about/about.component';
-import { DashboardComponent } from './pages/administration/authenticated/dashboard/dashboard.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ServicesComponent } from './pages/services/services.component';
-import { WorkComponent } from './pages/work/work.component';
 
 const routes: Routes = [
   {
