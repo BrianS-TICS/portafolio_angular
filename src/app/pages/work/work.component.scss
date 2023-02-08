@@ -13,11 +13,55 @@ img {
 
 }
 
+.bg_grad {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  height: 15rem;
+  width: auto;
+  z-index: -1;
+  background-image: radial-gradient(circle at 87.5% 12.5%, #ffc73c 0, #ffb72f 16.67%, #ffa41e 33.33%, #ff8e00 50%, #f57700 66.67%, #ee6200 83.33%, #ea4e00 100%);
+
+  @media (min-width: 480px) {
+    height: 22rem;
+  }
+
+  @media (min-width: 1080px) {
+    height: 32rem;
+  }
+}
+
+
 .section-secundarios {
   .subtitulo {
     font-size: 1.5rem;
     font-weight: 900;
   }
+}
+
+.container {
+  --bs-gutter-x: 0rem;
+}
+
+.carousel-indicators button {
+
+  background-color: rgba(0, 0, 0, 0.123);
+
+}
+
+.carousel-caption {
+  padding: .5rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.418);
+}
+
+.carousel-inner button {
+  color: rgba(0, 0, 0, 0.849);
+  background-color: rgba(0, 0, 0, 0.123);
+
 }
 
 .proyectos {

@@ -13,23 +13,6 @@ a {
   }
 }
 
-.titulo_principal__span {
-  position: absolute;
-  transform: rotate(-30deg);
-  font-size: 1rem;
-  top: .5rem;
-  left: .1rem;
-  color: white;
-  font-weight: 900;
-  z-index: 1;
-
-  animation-name: showandhide;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-
-}
-
 @keyframes showandhide {
   from {
     opacity: 1;
@@ -51,21 +34,6 @@ a {
 
   &:hover {
     color: #ff8e00;
-  }
-}
-
-.titulo-principal__texto {
-  position: relative;
-  font-size: 1.5rem;
-  padding: .8rem 1rem;
-  border-radius: 1rem;
-  font-weight: 900;
-  color: white;
-  -webkit-text-stroke: .05rem #2b3b45;
-  transition: all .5s;
-
-  &:hover {
-    color: white;
   }
 }
 
