@@ -16,14 +16,11 @@
       </div>
     </div>
     <nav class="navegacion">
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='inicio' ? 'enlace activo': 'enlace'"
-        routerLink="/">Inicio</a>
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='proyectos' ? 'enlace activo': 'enlace'"
-        class="enlace" routerLink="/work">Proyectos</a>
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='sobre mi' ? 'enlace activo': 'enlace'"
-        class="enlace" routerLink="/about">Sobre mi</a>
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='contacto' ? 'enlace activo': 'enlace'"
-        class="enlace" routerLink="/contact">Contacto</a>
+      <a routerLink="/home" [routerLinkActive]="['activo']" class="enlace">Inicio</a>
+      <a routerLink="/work" [routerLinkActive]="['activo']" class="enlace">Proyectos</a>
+      <a routerLink="/about" [routerLinkActive]="['activo']" class="enlace">Sobre
+        mi</a>
+      <a routerLink="/contact" [routerLinkActive]="['activo']" class="enlace">Contacto</a>
     </nav>
   </div>
 </header>
@@ -31,14 +28,10 @@
 <div #munuMovil *ngIf="movilMenuOpen" (click)="handleCloseMovilNav($event)" class="movil-menu">
   <div class="p-5 d-flex gap-5 flex-column">
     <nav class="navegacion-movil">
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='inicio' ? 'enlace activo': 'enlace'"
-        routerLink="/">Inicio</a>
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='proyectos' ? 'enlace activo': 'enlace'"
-        class="enlace" routerLink="/work">Proyectos</a>
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='sobre mi' ? 'enlace activo': 'enlace'"
-        class="enlace" routerLink="/about">Sobre mi</a>
-      <a (click)='handleSelectedPage($event)' [ngClass]="currentPage =='contacto' ? 'enlace activo': 'enlace'"
-        class="enlace" routerLink="/contact">Contacto</a>
+      <a routerLink="/home">Inicio</a>
+      <a class="enlace" routerLink="/work">Proyectos</a>
+      <a class="enlace" routerLink="/about">Sobre mi</a>
+      <a class="enlace" routerLink="/contact">Contacto</a>
     </nav>
     <div class="container-languajes">
       <p class="text-center text-white languajes__titulo">Lenguages</p>

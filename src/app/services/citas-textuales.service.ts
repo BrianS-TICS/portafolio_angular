@@ -9,7 +9,7 @@ export class CitasTextualesService {
 
   constructor(private httpClient: HttpClient) { }
 
-  apiUrl = 'https://squid-app-g8xw5.ondigitalocean.app';
+  apiUrl = 'https://squid-app-g8xw5.ondigitalocean.app/portafolio-backend';
 
   public obtenerCitas(): Observable<any> {
     return this.httpClient.get(this.apiUrl + '/api/frase');
@@ -19,6 +19,10 @@ export class CitasTextualesService {
     return this.httpClient.post(this.apiUrl + '/api/frase', data);
   }
 
+  public eliminarCita(id: any): Observable<any> {
+    return this.httpClient.delete(this.apiUrl + '/api/frase/'+id);
+  }
+
   public crearAutor(data: any): Observable<any> {
     return this.httpClient.post(this.apiUrl + '/api/author', data);
   }
@@ -26,4 +30,5 @@ export class CitasTextualesService {
   public obtenerAutores(): Observable<any> {
     return this.httpClient.get(this.apiUrl + '/api/author');
   }
+
 }

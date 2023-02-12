@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CitasTextualesService } from 'src/app/services/citas-textuales.service';
 
@@ -15,7 +15,6 @@ export class QuotesComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private fb2: FormBuilder,
-
     private citasTextService: CitasTextualesService
   ) {
     this.autorForm = this.initAuthorForm();
@@ -56,6 +55,9 @@ export class QuotesComponent implements OnInit {
 
   }
 
+  public showModal() {
+
+  }
 
   public obtenerAutores() {
 
@@ -63,8 +65,6 @@ export class QuotesComponent implements OnInit {
       {
         next: (response) => {
           this.autores = response.data
-          console.log(this.autores);
-          console.log(response.data);
 
         },
         error: (e) => {
@@ -76,13 +76,24 @@ export class QuotesComponent implements OnInit {
   }
 
 
+  public deleteQuote(id: any) {
+    this.citasTextService.eliminarCita(id).subscribe({
+      next: (response) => {
+        // this.citas.filter()
+      },
+      error: (e) => {
+        console.log(e);
+      }
+    })
+  }
+
+
   public obtenerCitas() {
 
     this.citasTextService.obtenerCitas().subscribe(
       {
         next: (response) => {
           this.citas = response.data
-          console.log(this.citas);
         },
         error: (e) => {
           console.log(e);

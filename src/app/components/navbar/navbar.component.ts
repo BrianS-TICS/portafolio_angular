@@ -9,8 +9,6 @@ export class NavbarComponent implements OnInit {
 
   @ViewChild('munuMovil') munuMovil: any;
 
-
-  public currentPage = 'inicio';
   public movilMenuOpen: boolean = false
 
   public animations: string = 'movil-menu';
@@ -33,11 +31,6 @@ export class NavbarComponent implements OnInit {
   public handleMovilMenu(e: any) {
     this.body?.classList.toggle('scroll-stop');
     this.movilMenuOpen = !this.movilMenuOpen;
-  }
-
-  public handleSelectedPage(e: any): void {
-    const value = e.target.text
-    this.currentPage = value.toLowerCase()
   }
 
 }

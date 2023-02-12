@@ -38,7 +38,8 @@ const routes: Routes = [
     component: MainLayoutComponent,
 
     children: [
-      { path: '', pathMatch: 'full', component: HomeComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
       {
         path: 'work',
         loadChildren: () => import('./pages/work/work.module').then(m => m.WorkModule)

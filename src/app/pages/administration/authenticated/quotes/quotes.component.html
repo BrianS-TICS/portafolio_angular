@@ -81,16 +81,30 @@
   <div class="container">
     <h2>Listado de citas</h2>
 
+
+
     <div class="row gap-1 justify-content-center align-items-center my-4">
-      <div *ngFor="let item of citas; index as i;" class="col-12 col-sm-5 col-md-3 card my-2 p-0">
+      <div *ngFor="let item of citas; index as i;" class="col-12 col-sm-5 col-md-5 card my-2 p-0">
         <p class="card-header fw-bold">
-          {{ item.authors_id }}
+          {{ item.author.nombre + ' ' + item.author.apellidos }}
         </p>
         <div class="card-body">
-          <p class="card-title">
-            {{ item.contenido }}
-          </p>
-          <span class="fs-7 fst-italic float-end badge bg-secondary">{{ item.fecha_difusion | date: 'dd/MM/yyyy' }}</span>
+          <div class="row justify-content-center align-items-center flex-column">
+            <div class="col-7 d-flex flex-column justify-content-between">
+              <p class="card-title">
+                {{ item.contenido }}
+              </p>
+              <span class="fs-7 fst-italic badge bg-secondary d-inline-block">{{ item.fecha_difusion | date:
+                'dd/MM/yyyy'
+                }}</span>
+            </div>
+
+            <div class="text-end mt-3 d-md-flex gap-md-3 mt-md-3">
+              <button (click)="deleteQuote(item.id)" class="btn btn-danger w-100">Eliminar</button>
+              <button (click)="deleteQuote(item.id)" class="btn mt-2 mt-md-0 btn-primary w-100">Editar</button>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
