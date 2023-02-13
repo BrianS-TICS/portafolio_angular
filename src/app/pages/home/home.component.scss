@@ -6,6 +6,16 @@ p {
   margin: 0;
 }
 
+.font-title {
+
+  font-size: 3rem;
+
+  @media (min-width : 480px) {
+    font-size: 5rem;
+
+  }
+}
+
 .container {
   padding: 2rem;
 }
@@ -72,18 +82,30 @@ p {
 .seccion-presentacion__cargo {
   font-size: 2rem;
   font-weight: 900;
-  color: #ff8e00;
   text-align: center;
-  -webkit-text-stroke: 1px white;
+
+
+  background-image: linear-gradient(to left bottom, #ff6300, #ff8000, #ff9a00, #ffb400, #ffcc00);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  position: relative;
 
   @media (min-width: 480px) {
     font-size: 3rem;
     text-align: left;
-    -webkit-text-stroke: 2px white;
   }
 
 }
 
+.span-invisible {
+  position: absolute;
+  right: 0;
+  width: 0;
+}
 
 
 .titulo {
@@ -193,10 +215,10 @@ p {
 }
 
 .bg-image {
-  transition: all ease 1s;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.014), rgba(0, 0, 0, 0.301)), url('../../../assets/bg-compress.jpg');
-  background-position: center center;
+  background: center fixed linear-gradient(rgba(0, 0, 0, 0.014), rgba(0, 0, 0, 0.623)), url('../../../assets/bg-compress.jpg');
+  background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
 }
 

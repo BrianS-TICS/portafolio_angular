@@ -1,6 +1,11 @@
 <menu class="p-0 w-100">
-  <button (click)="changeSection('authors')" class="btn btn-dark fw-bold w-50 active">Autores</button>
-  <button (click)="changeSection('quotes')" class="btn btn-dark fw-bold w-50">Citas</button>
+  <button (click)="changeSection('authors')"
+    [ngClass]="sectionActive == 'authors' ? 'active btn btn-dark fw-bold w-50'  : 'btn btn-dark fw-bold w-50'  "
+    class="btn btn-dark fw-bold w-50">Autores</button>
+  <button (click)="changeSection('quotes')"
+    [ngClass]="sectionActive == 'quotes' ? 'active btn btn-dark fw-bold w-50'  : 'btn btn-dark fw-bold w-50'  ">
+    Citas
+  </button>
 </menu>
 
 <div *ngIf="sectionActive === 'authors'">
@@ -30,7 +35,7 @@
     <div class="row gap-1 justify-content-center align-items-center my-4">
       <div *ngFor="let item of autores; index as i;" class="col-12 col-sm-5 col-md-3 card my-2 p-0">
         <p class="card-header fw-bold">
-          {{ item.nombre + " " + item.apellidos   }}
+          {{ item.nombre + " " + item.apellidos }}
         </p>
 
         <div class="card-body">

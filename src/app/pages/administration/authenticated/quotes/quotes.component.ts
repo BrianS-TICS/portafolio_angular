@@ -21,7 +21,7 @@ export class QuotesComponent implements OnInit {
     this.citasForm = this.initCitasForm();
   }
 
-  public sectionActive = 'authors'
+  public sectionActive = 'authors';
   public autores = [];
   public citas = [];
 
@@ -32,6 +32,7 @@ export class QuotesComponent implements OnInit {
 
   public changeSection(section: any) {
     this.sectionActive = section;
+    console.log(this.sectionActive);
   }
 
   public crearAutor() {
