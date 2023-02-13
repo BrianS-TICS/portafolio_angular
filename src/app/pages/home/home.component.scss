@@ -193,7 +193,8 @@ p {
 }
 
 .bg-image {
-  background-image: url('../../../assets/bg-compress.jpg');
+  transition: all ease 1s;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.014), rgba(0, 0, 0, 0.301)), url('../../../assets/bg-compress.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

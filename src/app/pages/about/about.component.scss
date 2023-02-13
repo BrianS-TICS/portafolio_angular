@@ -1,8 +1,19 @@
-.bg-grad {
-
-  background-image: radial-gradient(circle at 87.5% 12.5%, #6789c6 0, #0059a1 50%, #002f7d 100%);
+img{
+  width: 100%;
 }
 
-.main{
+.main {
   height: calc(100vh - 143.97px);
+}
+
+.bg-gray-10 {
+  background-color: #f1f2f5;
+}
+
+.bg-gray {
+  color: #2b3b45;
+}
+
+.list-group-item {
+  cursor: default;
 }

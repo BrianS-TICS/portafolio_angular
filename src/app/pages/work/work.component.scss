@@ -23,7 +23,10 @@ img {
   height: 15rem;
   width: auto;
   z-index: -1;
-  background-image: radial-gradient(circle at 87.5% 12.5%, #ffc73c 0, #ffb72f 16.67%, #ffa41e 33.33%, #ff8e00 50%, #f57700 66.67%, #ee6200 83.33%, #ea4e00 100%);
+  background-image: linear-gradient(to bottom, rgba(255, 208, 0, 0.52), rgba(255, 142, 0)), url('../../../assets/proyectos/office-932926_960_720.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   @media (min-width: 480px) {
     height: 22rem;

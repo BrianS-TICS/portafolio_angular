@@ -23,6 +23,10 @@ export class CitasTextualesService {
     return this.httpClient.delete(this.apiUrl + '/api/frase/'+id);
   }
 
+  public eliminarAutor(id: any): Observable<any> {
+    return this.httpClient.delete(this.apiUrl + '/api/author/'+id);
+  }
+
   public crearAutor(data: any): Observable<any> {
     return this.httpClient.post(this.apiUrl + '/api/author', data);
   }

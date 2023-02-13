@@ -65,7 +65,7 @@ export class QuotesComponent implements OnInit {
       {
         next: (response) => {
           this.autores = response.data
-
+          console.log(response.data);
         },
         error: (e) => {
           console.log(e);
@@ -73,6 +73,18 @@ export class QuotesComponent implements OnInit {
       }
     )
 
+  }
+
+  public deleteAuthor(id: any) {
+    console.log(id);
+    this.citasTextService.eliminarAutor(id).subscribe({
+      next: (response) => {
+
+      },
+      error: (e) => {
+        console.log(e);
+      }
+    })
   }
 
 
@@ -94,6 +106,7 @@ export class QuotesComponent implements OnInit {
       {
         next: (response) => {
           this.citas = response.data
+          console.log(response);
         },
         error: (e) => {
           console.log(e);
@@ -106,6 +119,11 @@ export class QuotesComponent implements OnInit {
   public crearCita() {
 
     const cita = this.citasForm.getRawValue();
+    cita.author_id = Number(cita.author_id)
+
+    if (this.citasForm.invalid) {
+      return
+    }
 
     this.citasTextService.crearCita(cita).subscribe(
       {

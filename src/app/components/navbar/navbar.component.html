@@ -2,7 +2,7 @@
   <div class="container flex-header">
     <div class="titulo-principal">
       <a routerLink="/" class="">
-        <span class="text-white">
+        <span class="text-white fw-bolder fs-4">
           {{ "{ BSA }" }}
         </span>
       </a>
@@ -28,10 +28,10 @@
 <div #munuMovil *ngIf="movilMenuOpen" (click)="handleCloseMovilNav($event)" class="movil-menu">
   <div class="p-5 d-flex gap-5 flex-column">
     <nav class="navegacion-movil">
-      <a routerLink="/home">Inicio</a>
-      <a class="enlace" routerLink="/work">Proyectos</a>
-      <a class="enlace" routerLink="/about">Sobre mi</a>
-      <a class="enlace" routerLink="/contact">Contacto</a>
+      <a class="enlace" routerLink="/home" [routerLinkActive]="['activo']">Inicio</a>
+      <a class="enlace" routerLink="/work" [routerLinkActive]="['activo']" >Proyectos</a>
+      <a class="enlace" routerLink="/about" [routerLinkActive]="['activo']">Sobre mi</a>
+      <a class="enlace" routerLink="/contact" [routerLinkActive]="['activo']">Contacto</a>
     </nav>
     <div class="container-languajes">
       <p class="text-center text-white languajes__titulo">Lenguages</p>
