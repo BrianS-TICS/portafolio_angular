@@ -48,7 +48,7 @@ p {
   color: white;
   line-height: 1.5;
   max-width: 33rem;
-  text-align: center;
+  text-align: left;
 
   @media (min-width : 480px) {
     font-size: 1.2rem;
@@ -71,7 +71,7 @@ p {
   font-size: 2.5rem;
   color: white;
   font-weight: 900;
-  text-align: center;
+  text-align: left;
 
   @media (min-width: 480px) {
     font-size: 4rem;
@@ -82,7 +82,7 @@ p {
 .seccion-presentacion__cargo {
   font-size: 2rem;
   font-weight: 900;
-  text-align: center;
+  text-align: left;
 
 
   background-image: linear-gradient(to left bottom, #ff6300, #ff8000, #ff9a00, #ffb400, #ffcc00);
@@ -260,7 +260,7 @@ img {
   }
 
   .cita-textual__texto {
-    color: #2b3b45;
+    color: #f1f2f5;
     font-size: 1.2rem;
     font-weight: 900;
 
@@ -278,6 +278,11 @@ img {
     }
   }
 
+}
+
+.rounded-pill{
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
 }
 
 .languajes-container {

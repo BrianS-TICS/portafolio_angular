@@ -1,9 +1,5 @@
-img{
+img {
   width: 100%;
-}
-
-.main {
-  height: calc(100vh - 143.97px);
 }
 
 .bg-gray-10 {
@@ -12,6 +8,10 @@ img{
 
 .bg-gray {
   color: #2b3b45;
+}
+
+.main {
+  min-height: calc(100vh - 143.97px);
 }
 
 .list-group-item {
