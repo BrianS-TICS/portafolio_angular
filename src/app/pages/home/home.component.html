@@ -14,11 +14,10 @@
             la
             creación de una base de datos hasta la edición de estilos.</h4>
         </div>
-        <div class="cita-textual">
-          <p class="cita-textual__texto">"Elige un trabajo que ames, y no tendrás que trabajar un solo día de tu vida"
-          </p>
-          <p class="cita-textual__texto">Confucio.</p>
-          <button class="position-relative btn btn-outline-light mt-2">
+        <div class="cita-textual" *ngIf="currentCita" >
+          <p class="cita-textual__texto">{{  '" ' + currentCita.contenido + ' "'  }} </p>
+          <p class="cita-textual__texto">{{  currentCita.name_author  }}.</p>
+          <button class="position-relative btn btn-outline-light mt-2" (click)="obtieneNextCita()">
             Cambiar cita
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-orange">+</span>
           </button>

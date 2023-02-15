@@ -33,32 +33,26 @@
     <h2>Listado de autores</h2>
 
     <div class="row gap-1 justify-content-center align-items-center my-4">
-      <div *ngFor="let item of autores; index as i;" class="col-12 col-sm-5 col-md-3 card my-2 p-0">
-        <p class="card-header fw-bold">
-          {{ item.nombre + " " + item.apellidos }}
-        </p>
 
-        <div class="card-body">
-          <div class="row justify-content-center align-items-center flex-column">
-            <div class="col-12 d-flex flex-column justify-content-between">
-              <p class="card-title">
-                {{ item.contenido }}
-              </p>
-              <span class="my-2">Fecha de creación</span>
-              <span class="fs-7 fst-italic badge bg-secondary d-inline">{{ item.created_at | date:
-                'dd/MM/yyyy'
-                }}</span>
-            </div>
-
-            <div class="text-end mt-3 d-md-flex gap-md-3 mt-md-3">
-              <button (click)="deleteQuote(item.id)" class="btn btn-danger w-100">Eliminar</button>
-              <button (click)="deleteQuote(item.id)" class="btn mt-2 mt-md-0 btn-primary w-100">Editar</button>
-            </div>
-
-
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between" *ngFor="let item of autores;">
+          <div>
+            <p class="fs-4">
+              {{ item.nombre }}
+            </p>
+            <p class="fs-5">
+             Fecha de creacion  {{item.created_at | date:
+              'dd/MM/yyyy' }}
+            </p>
           </div>
-        </div>
-      </div>
+          <div>
+            <button (click)="deleteQuote(item.id)" class="btn btn-danger w-100">Eliminar</button>
+            <button (click)="deleteQuote(item.id)" class="btn mt-2 mt-md-2 btn-primary w-100">Editar</button>
+          </div>
+        </li>
+      </ul>
+
+
     </div>
   </div>
 
@@ -104,11 +98,11 @@
     <div class="row gap-1 justify-content-center align-items-center my-4">
       <div *ngFor="let item of citas; index as i;" class="col-12 col-sm-5 col-md-5 card my-2 p-0">
         <p class="card-header fw-bold">
-          {{ item.author.nombre + ' ' + item.author.apellidos }}
+          {{ item.name_author }}
         </p>
         <div class="card-body">
           <div class="row justify-content-center align-items-center flex-column">
-            <div class="col-7 d-flex flex-column justify-content-between">
+            <div class="col-12 d-flex flex-column justify-content-between">
               <p class="card-title">
                 {{ item.contenido }}
               </p>

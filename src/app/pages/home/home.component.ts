@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
   constructor(private citasService: CitasTextualesService) { }
 
   public citas: any = [];
+  public currentCita = null;
+  public citaNumber = 0;
 
   ngOnInit(): void {
     this.obtieneCita();
@@ -21,8 +23,9 @@ export class HomeComponent implements OnInit {
     this.citasService.obtenerCitas().subscribe(
       {
         next: (response) => {
-          this.citas = response;
-          console.log(response);
+          this.citas = response.data;
+          this.currentCita = this.citas[this.citaNumber]
+          console.log(this.currentCita)
         },
         error: (e) => {
           console.error(e)
@@ -30,6 +33,17 @@ export class HomeComponent implements OnInit {
         complete: () => console.info('complete'),
       }
     )
+  }
+
+  public obtieneNextCita() {
+    this.citaNumber = this.citaNumber + 1;
+
+    if (this.citaNumber < this.citas.length) {
+      this.currentCita = this.citas[this.citaNumber]
+    }else{
+      this.citaNumber = 0;
+      this.currentCita = this.citas[this.citaNumber]
+    }
   }
 
 }
