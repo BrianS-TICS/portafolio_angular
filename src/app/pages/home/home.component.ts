@@ -25,12 +25,10 @@ export class HomeComponent implements OnInit {
         next: (response) => {
           this.citas = response.data;
           this.currentCita = this.citas[this.citaNumber]
-          console.log(this.currentCita)
         },
         error: (e) => {
           console.error(e)
-        },
-        complete: () => console.info('complete'),
+        }
       }
     )
   }

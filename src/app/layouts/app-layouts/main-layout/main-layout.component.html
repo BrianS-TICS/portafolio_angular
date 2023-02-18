@@ -1,3 +1,4 @@
 <app-navbar></app-navbar>
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+<app-loading-screen *ngIf="loading$ | async" ></app-loading-screen>
+<app-footer class="animate__animated animate__fadeIn"></app-footer>
