@@ -17,7 +17,7 @@
         <div class="cita-textual" *ngIf="currentCita" >
           <p class="cita-textual__texto">{{  '" ' + currentCita.contenido + ' "'  }} </p>
           <p class="cita-textual__texto">{{  currentCita.name_author  }}.</p>
-          <button class="position-relative btn btn-outline-light mt-2" (click)="obtieneNextCita()">
+          <button class="position-relative btn btn-outline-light mt-2" (click)="getNextCita()">
             Cambiar cita
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-orange">+</span>
           </button>

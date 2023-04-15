@@ -24,6 +24,11 @@ import { LoginLayoutComponent } from './layouts/app-admin-layouts/login-layout/l
 import { DashbordLayoutComponent } from './layouts/app-admin-layouts/dashbord-layout/dashbord-layout.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { DialogModule } from '@angular/cdk/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -42,13 +47,19 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
     LoginComponent,
     DashboardComponent,
     LoginLayoutComponent,
-    DashbordLayoutComponent
+    DashbordLayoutComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     NgOptimizedImage,
+    DialogModule,
+    FormsModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
   ],
   providers: [
 

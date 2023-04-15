@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { WorkRoutingModule } from './work-routing.module';
 
 
@@ -8,7 +8,8 @@ import { WorkRoutingModule } from './work-routing.module';
   declarations: [],
   imports: [
     CommonModule,
-    WorkRoutingModule
+    WorkRoutingModule,
+    NgOptimizedImage
   ]
 })
 export class WorkModule { }

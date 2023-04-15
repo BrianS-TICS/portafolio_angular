@@ -215,11 +215,22 @@ p {
 }
 
 .bg-image {
-  background: center fixed linear-gradient(rgba(0, 0, 0, 0.014), rgba(0, 0, 0, 0.623)), url('../../../assets/bg-compress.jpg');
+  background: center fixed linear-gradient(rgba(0, 0, 0, 0.014), rgba(0, 0, 0, 0.76)), url('../../../assets/bg-compress.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  animation: fade-in 3s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .bg-blue-strong {
@@ -280,7 +291,7 @@ img {
 
 }
 
-.rounded-pill{
+.rounded-pill {
   font-family: 'Courier New', Courier, monospace;
   font-weight: 900;
 }

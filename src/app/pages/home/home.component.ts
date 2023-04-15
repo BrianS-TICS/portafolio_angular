@@ -11,12 +11,30 @@ export class HomeComponent implements OnInit {
 
   constructor(private citasService: CitasTextualesService) { }
 
-  public citas: any = [];
+  public citas: any = [
+    {
+      name_author: "Dean Kamen",
+      contenido: "De vez en cuando, una nueva tecnología, un antiguo problema y una gran idea se convierten en una innovación"
+    },
+    {
+      name_author: "Bill Gates",
+      contenido: "Las grandes oportunidades nacen de haber sabido aprovechar las pequeñas"
+    },
+    {
+      name_author: "Jack Dorsey",
+      contenido: "El mundo se puede cambiar en 140 caracteres"
+    },
+    {
+      name_author: "Sydney J. Harris",
+      contenido: "El verdadero peligro no es que las computadoras comenzaran a pensar como los hombres, sino que los hombres comenzaran a pensar como las computadoras"
+    }
+  ];
+
   public currentCita = null;
   public citaNumber = 0;
 
   ngOnInit(): void {
-    this.obtieneCita();
+    this.currentCita = this.citas[0]
   }
 
   public obtieneCita() {
@@ -33,12 +51,12 @@ export class HomeComponent implements OnInit {
     )
   }
 
-  public obtieneNextCita() {
+  public getNextCita() {
     this.citaNumber = this.citaNumber + 1;
 
     if (this.citaNumber < this.citas.length) {
       this.currentCita = this.citas[this.citaNumber]
-    }else{
+    } else {
       this.citaNumber = 0;
       this.currentCita = this.citas[this.citaNumber]
     }

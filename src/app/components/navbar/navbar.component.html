@@ -1,27 +1,35 @@
 <header class="bg-gray-dark">
   <div class="container flex-header">
-    <div class="titulo-principal">
+    <div class="d-flex gap-5">
       <a routerLink="/" class="">
-        <span class="text-white fw-bolder fs-4">
-          {{ "{ BSA }" }}
-        </span>
+        <img height="45" width="45" src="assets/bs.svg" alt="logo de la pagina">
       </a>
+      <nav class="navegacion">
+        <a routerLink="/home" [routerLinkActive]="['activo']" class="enlace">Inicio</a>
+        <a routerLink="/work" [routerLinkActive]="['activo']" class="enlace">Proyectos</a>
+        <a routerLink="/about" [routerLinkActive]="['activo']" class="enlace">Sobre
+          mi</a>
+      </nav>
+    </div>
+    <div class="d-flex gap-5">
+      <span class="d-flex gap-3">
+        <a target="_blank" href="https://github.com/BrianS-TICS?tab=repositories">
+          <img height="25" width="25" src="assets/github.svg" alt="logo de github">
+        </a>
+        <a target="_blank" href="https://www.linkedin.com/in/briansanchezaguilar/">
+          <img height="25" width="25" src="assets/icons8-linkedin.svg" alt="logo de linkedin">
+        </a>
+        <a target="_blank" href="mailto:briansanchezaguilar@correo.com">
+          <img height="25" width="25" src="assets/gmail.svg" alt="logo de gmail">
+        </a>
+      </span>
     </div>
     <div class="movil-nav">
       <div [ngClass]="movilMenuOpen ? 'movil-nav__icon-menu open' : 'movil-nav__icon-menu' "
         (click)="handleMovilMenu($event)">
-        <div class="movil-nav__icon-menu__burger">
-
-        </div>
+        <div class="movil-nav__icon-menu__burger"></div>
       </div>
     </div>
-    <nav class="navegacion">
-      <a routerLink="/home" [routerLinkActive]="['activo']" class="enlace">Inicio</a>
-      <a routerLink="/work" [routerLinkActive]="['activo']" class="enlace">Proyectos</a>
-      <a routerLink="/about" [routerLinkActive]="['activo']" class="enlace">Sobre
-        mi</a>
-      <a routerLink="/contact" [routerLinkActive]="['activo']" class="enlace">Contacto</a>
-    </nav>
   </div>
 </header>
 
@@ -29,9 +37,8 @@
   <div class="p-5 d-flex gap-5 flex-column">
     <nav class="navegacion-movil">
       <a class="enlace" routerLink="/home" [routerLinkActive]="['activo']">Inicio</a>
-      <a class="enlace" routerLink="/work" [routerLinkActive]="['activo']" >Proyectos</a>
+      <a class="enlace" routerLink="/work" [routerLinkActive]="['activo']">Proyectos</a>
       <a class="enlace" routerLink="/about" [routerLinkActive]="['activo']">Sobre mi</a>
-      <a class="enlace" routerLink="/contact" [routerLinkActive]="['activo']">Contacto</a>
     </nav>
     <div class="container-languajes">
       <p class="text-center text-white languajes__titulo">Lenguages</p>

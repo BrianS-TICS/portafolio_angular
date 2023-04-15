@@ -9,8 +9,7 @@ import { filter, map, Observable, of } from 'rxjs';
 })
 export class AppComponent {
   public spinnerShow = true;
-  title = 'portafolio';
-
+  
   loading$: Observable<boolean> = of(false);
 
   constructor(private router: Router) { }

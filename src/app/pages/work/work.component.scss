@@ -13,6 +13,26 @@ img {
 
 }
 
+.min-height {
+
+  min-height: 20vh;
+
+  @media (min-width : 480px) {
+    min-height: 30vh;
+    
+  }
+
+  @media (min-width : 780px) {
+    min-height: 30vh;
+    
+  }
+  
+  @media (min-width : 1280px) {
+    min-height: 60vh;
+    
+  }
+}
+
 .bg_grad {
   display: block;
   position: absolute;
@@ -43,6 +63,11 @@ img {
     font-size: 1.5rem;
     font-weight: 900;
   }
+}
+
+.main {
+  position: relative;
+  min-height: calc(100vh - 143.97px);
 }
 
 .container {

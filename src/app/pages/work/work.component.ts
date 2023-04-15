@@ -10,6 +10,13 @@ export class WorkComponent implements OnInit {
 
   constructor() { }
 
+  data = [
+    {
+      imageUrl : "./assets/proyectos/devjobsimg.webp",
+      alterText : "imagen de Blog de cafe",
+    }
+  ]
+
   ngOnInit(): void {
 
   }
