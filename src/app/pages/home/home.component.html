@@ -1,5 +1,5 @@
 <div class="height-page-calc">
-  <main class="bg-blue bg-image animate__animated animate__fadeIn">
+  <main id='start' class="bg-blue background-image animate__animated animate__fadeIn">
     <section class="seccion-presentacion container">
       <div class="seccion-presentacion-contenido">
         <div>
@@ -14,9 +14,9 @@
             la
             creación de una base de datos hasta la edición de estilos.</h4>
         </div>
-        <div class="cita-textual" *ngIf="currentCita" >
-          <p class="cita-textual__texto">{{  '" ' + currentCita.contenido + ' "'  }} </p>
-          <p class="cita-textual__texto">{{  currentCita.name_author  }}.</p>
+        <div class="cita-textual" *ngIf="currentCita">
+          <p class="cita-textual__texto">{{ '" ' + currentCita.contenido + ' "' }} </p>
+          <p class="cita-textual__texto">{{ currentCita.name_author }}.</p>
           <button class="position-relative btn btn-outline-light mt-2" (click)="getNextCita()">
             Cambiar cita
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-orange">+</span>
@@ -26,107 +26,236 @@
     </section>
   </main>
 
-  <div class="bg-gray-low">
-    <section class="container seccion-conocimientos animate__animated animate__fadeIn">
-      <h2 class="seccion-conocimientos__titulo titulo">Conocimientos</h2>
-      <h3 class="seccion-conocimientos__subtitulo subtitulo mt-0">Frontend</h3>
-      <ul class="seccion-conocimientos__lista">
-        <a href="https://angular.io/" target="_blank">
-          <li class="seccion-conocimiento__elemento-lista">Angular</li>
-        </a>
-        <a href="https://material.angular.io/" target="_blank">
-          <li class="seccion-conocimiento__elemento-lista">Angular material</li>
-        </a>
-        <a href="https://es.reactjs.org/" target="_blank">
-          <li class="seccion-conocimiento__elemento-lista">React</li>
-        </a>
-        <a href="https://nextjs.org/" target="_blank">
-          <li class="seccion-conocimiento__elemento-lista">Next.Js</li>
-        </a>
-        <a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank">
-          <li class="seccion-conocimiento__elemento-lista">JavaScript</li>
-        </a>
-        <a href="https://www.typescriptlang.org/" target="_blank">
-          <li class="seccion-conocimiento__elemento-lista">TypeScript</li>
-        </a>
-        <a href="https://getbootstrap.com/" target="_blank">
-          <li class="seccion-conocimiento__elemento-lista">Bootstrap</li>
-        </a>
-        <a href="https://tailwindcss.com/" target="_blank">
-          <li class="seccion-conocimiento__elemento-lista">Tailwind CSS</li>
-        </a>
-        <a href="https://sass-lang.com/" target="_blank">
-          <li class="seccion-conocimiento__elemento-lista">SASS</li>
-        </a>
-        <a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank">
-          <li class="seccion-conocimiento__elemento-lista">CSS</li>
-        </a>
+  <div class="bg-low-gray">
+    <section id='knowage' class="container knowage-section  animate__animated animate__fadeIn">
+      <h2 class="knowage-section__title title">{{KNOWLEDSECTIONTEXT[selectedLenguagueOfPage]}}</h2>
+      <h3 class="knowage-section__subtitle subtitle mt-0">Frontend</h3>
+      <ul class="knowage-section__list">
+
+        <app-knowledge-card technologyName="Angular" backGroundcolor="warning"
+          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+        </app-knowledge-card>
+
+        <app-knowledge-card technologyName="Angular material" backGroundcolor="success"
+          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+        </app-knowledge-card>
+
+        <app-knowledge-card technologyName="TypeScript" backGroundcolor="success"
+          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+        </app-knowledge-card>
+
+        <app-knowledge-card technologyName="JavaScript" backGroundcolor="warning"
+          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+        </app-knowledge-card>
+
+        <app-knowledge-card technologyName="Next.Js" backGroundcolor="success"
+          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+        </app-knowledge-card>
+
+        <app-knowledge-card technologyName="React" backGroundcolor="success"
+          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+        </app-knowledge-card>
+
+        <app-knowledge-card technologyName="SCSS" backGroundcolor="warning" technologyUrl="https://material.angular.io/"
+          [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+        </app-knowledge-card>
+
+        <app-knowledge-card technologyName="CSS" backGroundcolor="warning" technologyUrl="https://material.angular.io/"
+          [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+        </app-knowledge-card>
+
+        <app-knowledge-card technologyName="Bootstrap" backGroundcolor="warning"
+          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+        </app-knowledge-card>
+
+        <app-knowledge-card technologyName="Tailwind CSS" backGroundcolor="success"
+          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+        </app-knowledge-card>
       </ul>
 
-      <h3 class="seccion-conocimientos__subtitulo subtitulo">Backend</h3>
-      <ul class="seccion-conocimientos__lista">
-        <a href="https://nodejs.org/es/about/" target="_blank">
-          <li class="seccion-conocimiento__elemento-lista">Node.Js</li>
+      <h3 class="knowage-section__subtitle subtitle">Backend</h3>
+      <ul class="knowage-section__list">
 
-        </a>
-        <a href="https://expressjs.com/" target="_blank">
+        <app-knowledge-card technologyName="Node.Js" backGroundcolor="success"
+          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+        </app-knowledge-card>
 
-          <li class="seccion-conocimiento__elemento-lista">Express</li>
-        </a>
-        <a href="https://www.mongodb.com/cloud/atlas/lp/try4?utm_content=rlsavisitor&utm_source=google&utm_campaign=search_gs_pl_evergreen_atlas_core_retarget-brand_gic-null_amers-all_ps-all_desktop_eng_lead&utm_term=mongodb&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=14412646314&adgroup=131761122172&cq_cmp=14412646314&gclid=CjwKCAiAuaKfBhBtEiwAht6H70Bear8ebpDKa40B-mwU5Vatzm8NXLrvzWaZH8twVNSkAHs8JyfaNxoCdQIQAvD_BwE"
-          target="_blank">
+        <app-knowledge-card technologyName="Express" backGroundcolor="success"
+          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+        </app-knowledge-card>
 
-          <li class="seccion-conocimiento__elemento-lista">MongoDB</li>
-        </a>
-        <a href="https://www.mysql.com/" target="_blank">
-          <li class="seccion-conocimiento__elemento-lista">Mysql</li>
+        <app-knowledge-card technologyName="MongoDB" backGroundcolor="success"
+          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+        </app-knowledge-card>
 
-        </a>
-        <a href="https://aws.amazon.com/es/what-is/sql/#:~:text=El%20lenguaje%20de%20consulta%20estructurada%20(SQL)%20es%20un%20lenguaje%20est%C3%A1ndar,relacional%20que%20utiliza%20consultas%20SQL."
-          target="_blank">
+        <app-knowledge-card technologyName="Mysql" backGroundcolor="warning"
+          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+        </app-knowledge-card>
 
-          <li class="seccion-conocimiento__elemento-lista">SQL</li>
-        </a>
-        <a href="https://www.php.net/manual/es/intro-whatis.php" target="_blank">
+        <app-knowledge-card technologyName="SQL" backGroundcolor="warning" technologyUrl="https://material.angular.io/"
+          [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+        </app-knowledge-card>
 
-          <li class="seccion-conocimiento__elemento-lista">Php</li>
-        </a>
-        <a href="https://laravel.com/" target="_blank">
-          <li class="seccion-conocimiento__elemento-lista">Laravel</li>
+        <app-knowledge-card technologyName="Php" backGroundcolor="success" technologyUrl="https://material.angular.io/"
+          [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+        </app-knowledge-card>
 
-        </a>
+        <app-knowledge-card technologyName="Laravel" backGroundcolor="warning"
+          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+        </app-knowledge-card>
+
       </ul>
 
-      <h3 class="seccion-conocimientos__subtitulo subtitulo">Extras</h3>
-      <ul class="seccion-conocimientos__lista">
-        <a href="https://git-scm.com/" target="_blank">
-          <li class="seccion-conocimiento__elemento-lista">Git</li>
-        </a>
-        <a href="https://github.com/" target="_blank">
-          <li class="seccion-conocimiento__elemento-lista">GitHub</li>
-        </a>
-        <a href="https://www.scrum.org/resources/what-is-scrum" target="_blank">
-          <li class="seccion-conocimiento__elemento-lista">Scrum</li>
-        </a>
-        <a href="https://www.atlassian.com/es/software/jira?&aceid=&adposition=&adgroup=143040524765&campaign=19324540226&creative=642190148804&device=c&keyword=jira&matchtype=e&network=g&placement=&ds_kids=p74609443754&ds_e=GOOGLE&ds_eid=700000001558501&ds_e1=GOOGLE&gclid=CjwKCAiAuaKfBhBtEiwAht6H776xo8Bp-6Ekd2-Yzwhlalbtsm7s4hEV-nGufF_RqYw6YxOKd6EWsxoCPmYQAvD_BwE&gclsrc=aw.ds"
-          target="_blank">
-          <li class="seccion-conocimiento__elemento-lista">Jira</li>
-        </a>
+      <h3 class="knowage-section__title subtitle mt-4">Extras</h3>
+      <ul class="knowage-section__list">
+
+        <app-knowledge-card technologyName="Git" backGroundcolor="warning" technologyUrl="https://material.angular.io/"
+          [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+        </app-knowledge-card>
+
+        <app-knowledge-card technologyName="GitHub" backGroundcolor="warning"
+          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+        </app-knowledge-card>
+
+        <app-knowledge-card technologyName="Scrum" backGroundcolor="success"
+          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+        </app-knowledge-card>
+
+        <app-knowledge-card technologyName="Jira" backGroundcolor="success" technologyUrl="https://material.angular.io/"
+          [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+        </app-knowledge-card>
+
       </ul>
     </section>
   </div>
 
+  <div id='work' class="bg-dark-blue">
 
-  <div class="bg-blue-strong borde-inferior-white">
-    <section class="seccion-aprendiendo container">
-      <h2 class="seccion-aprendiendo__titulo titulo">Aprendiendo</h2>
-      <h3 class="seccion-aprendiendo__subtitulo subtitulo mt-0">Tecnologías</h3>
-      <ul class="seccion-aprendiendo__lista">
-        <li class="seccion-aprendiendo__elemento-lista">React-Native</li>
-        <li class="seccion-aprendiendo__elemento-lista">Kotlin</li>
+    <section class="container py-5">
+      <h1 class="title text-second-color mb-5 ">{{PROYECTSECTIONTEXT[selectedLenguagueOfPage]}}</h1>
+
+      <div id="carouselExampleCaptions" class="carousel carousel-dark slide mb-5 shadow-lg">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img heigth="1200" src="./assets/proyectos/devstagram.webp" fetchpriority="high" class="d-block w-100"
+              alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Devtagram</h5>
+              <p>Red social para programadores.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/proyectos/devjobsimg.webp" fetchpriority="high" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>DevJobs</h5>
+              <p>Aplicación web para postulaciones a empleos.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/proyectos/apvimagen.webp" fetchpriority="high" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>APV</h5>
+              <p>Aplicación web para administrar pacientes de veterinaria.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/proyectos/agenciadeviajes.webp" fetchpriority="high" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Agenia de viajes</h5>
+              <p>Aplicación web para mostrar agencia de viajes</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon opacity-25" aria-hidden="true"></span>
+          <span loading="lazy" class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next">
+          <span loading="lazy" class="carousel-control-next-icon opacity-25" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+      <div>
+        <h2 class="title text-light  my-5">Proyectos secundarios</h2>
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="./assets/proyectos/devjobsimg.webp" loading="lazy" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="./assets/proyectos/devjobsimg.webp" loading="lazy" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="./assets/proyectos/devjobsimg.webp" loading="lazy" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <div id='about' class="bg-low-gray">
+    <section class="section container">
+      <div class="row flex-column flex-sm-row">
+        <div class="col-12 col-lg-8 p-5 pb-0 pt-0 pb-md-5">
+          <h1 class="title mt-3 bg-gray">¿Quién soy?</h1>
+          <p class="text-blue fw-bolder fs-5 mt-3">Mi nombre es Brian Sanchez Aguilar y soy un ingeniero en tecnologías
+            de
+            la
+            información y las comunicaciones.</p>
+          <p class="text-blue fw-bolder fs-5 ">Me enfoco en el área del desarrollo de software. He estado trabajando
+            como
+            desarrollador
+            desde hace más de un año.</p>
+          <p class="text-blue fw-bolder fs-5">Dentro de mis intereses esta el aprender diferentes idiomas y viajar a
+            diferentes países.</p>
+          <h2 class="title bg-gray mt-5 fs-1 p-0">¿Como podría ayudarte?</h2>
+          <p class="text-blue fw-bolder fs-5">Puedo ayerdarte a diseñar los sitios y a desarrollar sus funciones, esto
+            mediante lenguajes de programación y softwares especializados.</p>
+        </div>
+        <div class=" col-12 col-lg-4 p-5">
+          <img src="assets/imagen_brian.jpg" alt="">
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <div class="bg-dark-blue borde-inferior-white">
+    <section class="section-learning container">
+      <h2 class="section-learning__title title">Aprendiendo</h2>
+      <h3 class="section-learning__subtitle subtitle mt-0">Tecnologías</h3>
+      <ul class="section-learning____list">
+        <li class="section-learning___element-list">React-Native</li>
+        <li class="section-learning___element-list">Kotlin</li>
       </ul>
     </section>
   </div>
 
-  <app-languages class="languajes-container"></app-languages>
 </div>

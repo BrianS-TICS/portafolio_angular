@@ -1,2 +1,7 @@
-<!-- <app-loading-screen *ngIf="loading$ | async"></app-loading-screen> -->
-<router-outlet></router-outlet>
+<app-navbar></app-navbar>
+<app-home></app-home>
+<app-footer></app-footer>
+<span class="fixed-span">
+    <button (click)="changePageToSpanish()" class="btn btn-info">Spanish</button>
+    <button (click)="changePageToEnglish()" class="btn btn-dark">English</button>
+</span>

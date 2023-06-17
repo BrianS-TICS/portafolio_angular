@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './work.component.html',
   styleUrls: ['./work.component.scss', './../../app.component.scss']
 })
-export class WorkComponent implements OnInit {
+export class WorkComponent {
 
   constructor() { }
 
@@ -16,9 +16,5 @@ export class WorkComponent implements OnInit {
       alterText : "imagen de Blog de cafe",
     }
   ]
-
-  ngOnInit(): void {
-
-  }
 
 }

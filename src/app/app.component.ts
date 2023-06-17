@@ -8,22 +8,42 @@ import { filter, map, Observable, of } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public spinnerShow = true;
-  
-  loading$: Observable<boolean> = of(false);
 
-  constructor(private router: Router) { }
+  constructor() { }
+  public selectedLenguagueOfPage: number = 0;
+
 
   ngOnInit(): void {
-    this.loading$ = this.router.events.pipe(
-      filter(
-        (e) =>
-          e instanceof NavigationStart ||
-          e instanceof NavigationEnd ||
-          e instanceof NavigationCancel ||
-          e instanceof NavigationError
-      ), map((e) => e instanceof NavigationStart)
-    );
+
+  }
+
+  public LENGUAGUESOFPAGE = [
+    { 'number': 0, "languague": 'es' },
+    { 'number': 1, "languague": 'en' }
+  ];
+
+  public changePageToEnglish() {
+    const languageObj = this.LENGUAGUESOFPAGE.find(obj => obj.languague === 'en');
+    if (languageObj) {
+      const key = languageObj.number;
+      this.selectedLenguagueOfPage = this.LENGUAGUESOFPAGE[key].number;
+      localStorage.setItem('LanguagueSelected', 'en');
+    }
+
+    // TEMPORAL 
+    location.reload()
+  }
+
+  public changePageToSpanish() {
+    const languageObj = this.LENGUAGUESOFPAGE.find(obj => obj.languague === 'es');
+    if (languageObj) {
+      const key = languageObj.number;
+      this.selectedLenguagueOfPage = this.LENGUAGUESOFPAGE[key].number;
+      localStorage.setItem('LanguagueSelected', 'es');
+    }
+
+    // TEMPORAL 
+    location.reload()
   }
 
 }

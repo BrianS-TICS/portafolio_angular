@@ -1,0 +1,63 @@
+@import '../../app.component.scss';
+
+.knowage-section__list-element {
+    color: #2b3b45;
+    font-weight: 900;
+    font-size: 1rem;
+    cursor: default;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    column-gap: .2rem;
+
+    @media (min-width : 480px) {
+        font-size: 1.2rem;
+    }
+
+    padding: 1rem;
+    text-align: center;
+
+    border-radius: 1rem;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow: 6px 6px 12px #d9d9d9,
+    -6px -6px 12px #ffffff;
+
+    transition: all .5s;
+
+    &:hover {
+        transform: scale(110%) translateY(-.5rem);
+        background: linear-gradient(145deg, #ff8e00, #ff8e00);
+        color: white;
+        cursor: pointer;
+    }
+}
+
+.knowage-section__list-level {
+    background: $warningColor;
+    padding: .3rem .2rem;
+    border-radius: .4rem;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: .5rem;
+    color: $extraColor;
+}
+
+.knowage-section__list-text {
+    margin: 0;
+}
+
+.success {
+    background-color: $successColor;
+}
+
+.warning {
+    background-color: $warningColor;
+}
+
+.danger {
+    background-color: $dangerColor;
+}

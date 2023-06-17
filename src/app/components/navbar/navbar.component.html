@@ -1,13 +1,14 @@
-<header class="bg-gray-dark">
+<header class="bg-dark-blue">
   <div class="container flex-header">
     <div class="d-flex gap-5">
-      <a routerLink="/" class="">
+      <a href="/">
         <img height="45" width="45" src="assets/bs.svg" alt="logo de la pagina">
       </a>
-      <nav class="navegacion">
-        <a routerLink="/home" [routerLinkActive]="['activo']" class="enlace">Inicio</a>
-        <a routerLink="/work" [routerLinkActive]="['activo']" class="enlace">Proyectos</a>
-        <a routerLink="/about" [routerLinkActive]="['activo']" class="enlace">Sobre
+      <nav class="navegation">
+        <a href="#start" class="enlace">Inicio</a>
+        <a href="#work" class="enlace">Proyectos</a>
+        <a href="#knowage" class="enlace">Conocimientos</a>
+        <a href="#about" class="enlace">Sobre
           mi</a>
       </nav>
     </div>
@@ -36,9 +37,9 @@
 <div #munuMovil *ngIf="movilMenuOpen" (click)="handleCloseMovilNav($event)" class="movil-menu">
   <div class="p-5 d-flex gap-5 flex-column">
     <nav class="navegacion-movil">
-      <a class="enlace" routerLink="/home" [routerLinkActive]="['activo']">Inicio</a>
-      <a class="enlace" routerLink="/work" [routerLinkActive]="['activo']">Proyectos</a>
-      <a class="enlace" routerLink="/about" [routerLinkActive]="['activo']">Sobre mi</a>
+      <a class="enlace" href="#home">Inicio</a>
+      <a class="enlace" href="#work">Proyectos</a>
+      <a class="enlace" href="#about">Sobre mi</a>
     </nav>
     <div class="container-languajes">
       <p class="text-center text-white languajes__titulo">Lenguages</p>

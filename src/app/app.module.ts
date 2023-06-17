@@ -1,10 +1,9 @@
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -14,21 +13,9 @@ import { WorkComponent } from './pages/work/work.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { FromContactoComponent } from './components/from-contacto/from-contacto.component';
 import { LanguagesComponent } from './components/languages/languages.component';
-import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
-import { NgOptimizedImage } from '@angular/common';
-import { LoginComponent } from './pages/administration/public/login/login.component';
-import { DashboardComponent } from './pages/administration/authenticated/dashboard/dashboard.component';
-import { LoginLayoutComponent } from './layouts/app-admin-layouts/login-layout/login-layout.component';
-import { DashbordLayoutComponent } from './layouts/app-admin-layouts/dashbord-layout/dashbord-layout.component';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { DialogModule } from '@angular/cdk/dialog';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from "@angular/material/form-field";
+import { KnowledgeCardComponent } from './components/knowledge-card/knowledge-card.component';
+
 
 @NgModule({
   declarations: [
@@ -41,25 +28,13 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     ServicesComponent,
     AboutComponent,
     ContactComponent,
-    FromContactoComponent,
     LanguagesComponent,
-    LoadingScreenComponent,
-    LoginComponent,
-    DashboardComponent,
-    LoginLayoutComponent,
-    DashbordLayoutComponent,
+    KnowledgeCardComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     HttpClientModule,
-    NgOptimizedImage,
-    DialogModule,
-    FormsModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
   ],
   providers: [
 

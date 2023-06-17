@@ -1,3 +1,5 @@
+@import '../../app.component.scss';
+
 ul {
   list-style: none;
 }
@@ -57,7 +59,7 @@ p {
   }
 }
 
-.seccion-presentacion .titulo {
+.seccion-presentacion .title {
   font-size: 4rem;
   color: white;
 
@@ -108,7 +110,7 @@ p {
 }
 
 
-.titulo {
+.title {
   font-size: 1.8rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -119,34 +121,24 @@ p {
   }
 }
 
-.bg-blue {
-  display: block;
-  background-color: #005aa1;
-}
-
-.bg-gray-low {
-  background-color: #f1f2f5;
-}
-
 .borde-inferior-white {
   border-bottom: #ffffff solid .2rem;
 }
 
-.seccion-conocimientos {
+.knowage-section {
   padding: 2rem 1.5rem;
 
   @media (min-width : 480px) {
     padding: 5rem 2rem;
   }
 
-  background-color: #f1f2f5;
 }
 
-.seccion-conocimientos__titulo {
+.knowage-section__title {
   color: #2b3b45;
 }
 
-.seccion-conocimientos__lista {
+.knowage-section__list {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -167,7 +159,18 @@ p {
   }
 }
 
-.seccion-conocimiento__elemento-lista {
+
+.knowage-section__list-level {
+  background: $warningColor;
+  padding: .3rem .2rem;
+  border-radius: .4rem;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: .5rem;
+  color: $extraColor;
+}
+
+.knowage-section__list-element {
   color: #2b3b45;
   font-weight: 900;
   font-size: 1rem;
@@ -177,6 +180,9 @@ p {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  display: flex;
+  flex-direction: column;
+  column-gap: .2rem;
 
   @media (min-width : 480px) {
     font-size: 1.2rem;
@@ -200,12 +206,12 @@ p {
   }
 }
 
-.seccion-conocimientos__subtitulo {
+.knowage-section__subtitle {
   color: #2e85aa;
   margin: 2rem 0;
 }
 
-.subtitulo {
+.subtitle {
   font-size: 1.6rem;
   font-weight: 900;
 
@@ -214,7 +220,7 @@ p {
   }
 }
 
-.bg-image {
+.background-image {
   background: center fixed linear-gradient(rgba(0, 0, 0, 0.014), rgba(0, 0, 0, 0.76)), url('../../../assets/bg-compress.jpg');
   background-position: center;
   background-repeat: no-repeat;
@@ -233,19 +239,15 @@ p {
   }
 }
 
-.bg-blue-strong {
-  background-color: #2b3b45;
-}
-
-.seccion-aprendiendo__titulo {
+.section-learning__title {
   color: white;
 }
 
-.seccion-aprendiendo__subtitulo {
+.section-learning__subtitle {
   color: #ff8e00;
 }
 
-.seccion-aprendiendo__elemento-lista {
+.section-learning___element-list {
   color: white;
   font-weight: 500;
   font-size: 1.2rem;

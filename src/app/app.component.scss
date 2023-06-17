@@ -1,12 +1,46 @@
-$colorSecundario : #ffffffc0;
+$primaryColor : #005aa1;
+$secondColor : #c97207;
+$thirdColor : #2b3b45;
+$extraColor : #f1f2f5;
+
+$successColor : #00c9a7;
+$warningColor : #2e85aa;
+$dangerColor : #ff4000b8;
+
+$black : #000000;
+
+.text-gray {
+  color: #2b3b45;
+}
+
+.text-blue {
+  color: $primaryColor;
+}
+
+
+.text-second-color {
+  color: $secondColor;
+}
+
+.bg-low-gray {
+  background-color: $extraColor;
+}
+
+.bg-orange {
+  background-color: $secondColor;
+}
+
+.bg-blue {
+  background-color: $primaryColor;
+}
+
+.bg-dark-blue {
+  background-color: $thirdColor;
+}
 
 a {
   text-decoration: none;
-  color: black;
-}
-
-.bg-color-secundario {
-  background-color: $colorSecundario;
+  color: $black;
 }
 
 .section {
@@ -19,7 +53,7 @@ a {
 }
 
 
-.titulo {
+.title {
   font-size: 1.8rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -29,33 +63,23 @@ a {
   }
 }
 
-
 .main {
   position: relative;
   min-height: calc(100vh - 143.97px);
 }
 
-.text-gray {
-  color: #2b3b45;
-}
-
-.text-blue {
-  color: #005aa1;
-}
-
-.bg-orange {
-  background-color: #ff8e00;
-}
-
-.bg-blue {
-  background-color: #005aa1;
-}
-
-.bg-dark-blue {
-  background-color: #2b3b45;
-}
 
 .scroll-stop {
   overflow-x: hidden !important;
   overflow-y: hidden !important;
+}
+
+
+.fixed-span {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 10vw;
+  color: black;
+  z-index: 9999;
 }

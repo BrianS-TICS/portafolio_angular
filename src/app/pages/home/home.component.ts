@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CitasTextualesService } from 'src/app/services/citas-textuales.service';
-import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +9,36 @@ import { throwError } from 'rxjs';
 export class HomeComponent implements OnInit {
 
   constructor(private citasService: CitasTextualesService) { }
+
+  public selectedLenguagueOfPage: number = 0;
+
+  public LENGUAGUESOFPAGE = [
+    { 'number': 0, "languague": 'es ' },
+    { 'number': 1, "languague": 'en' }
+  ];
+
+  public LEVELSOFKNOWLEDGE = [
+    {
+      1: 'Básico',
+      2: 'Intermedio',
+      3: 'Avanzado',
+    },
+    {
+      1: 'Basic',
+      2: 'Intermediate',
+      3: 'Advanced',
+    }
+  ]
+
+  public PROYECTSECTIONTEXT = [
+    'Proyectos',
+    'Proyects'
+  ]
+
+  public KNOWLEDSECTIONTEXT = [
+    'Conocimientos',
+    'knowledge'
+  ]
 
   public citas: any = [
     {
@@ -34,7 +63,28 @@ export class HomeComponent implements OnInit {
   public citaNumber = 0;
 
   ngOnInit(): void {
+
     this.currentCita = this.citas[0]
+    this.getCurrentLanguague()
+  }
+
+  public getCurrentLanguague() {
+    const languagueFinded = localStorage.getItem('LanguagueSelected');
+
+    if (languagueFinded) {
+      const languageObj = this.LENGUAGUESOFPAGE.find(obj => obj.languague === languagueFinded);
+      if (languageObj) {
+        const key = languageObj.number;
+        this.selectedLenguagueOfPage = this.LENGUAGUESOFPAGE[key].number;
+      }
+    } else {
+      localStorage.setItem('LanguagueSelected', this.LENGUAGUESOFPAGE[0].languague); // Guardar el valor de la propiedad "languague"
+      const defaultLanguageObj = this.LENGUAGUESOFPAGE.find(obj => obj.number === 0);
+      if (defaultLanguageObj) {
+        this.selectedLenguagueOfPage = defaultLanguageObj.number;
+      }
+    }
+
   }
 
   public obtieneCita() {
