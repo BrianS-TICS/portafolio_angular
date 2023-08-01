@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
-import { filter, map, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +12,26 @@ export class AppComponent {
 
 
   ngOnInit(): void {
+    this.getCurrentLanguague()
+
+  }
+
+  public getCurrentLanguague() {
+    const languagueFinded = localStorage.getItem('LanguagueSelected');
+
+    if (languagueFinded) {
+      const languageObj = this.LENGUAGUESOFPAGE.find(obj => obj.languague === languagueFinded);
+      if (languageObj) {
+        const key = languageObj.number;
+        this.selectedLenguagueOfPage = this.LENGUAGUESOFPAGE[key].number;
+      }
+    } else {
+      localStorage.setItem('LanguagueSelected', this.LENGUAGUESOFPAGE[0].languague); // Guardar el valor de la propiedad "languague"
+      const defaultLanguageObj = this.LENGUAGUESOFPAGE.find(obj => obj.number === 0);
+      if (defaultLanguageObj) {
+        this.selectedLenguagueOfPage = defaultLanguageObj.number;
+      }
+    }
 
   }
 
@@ -30,8 +48,7 @@ export class AppComponent {
       localStorage.setItem('LanguagueSelected', 'en');
     }
 
-    // TEMPORAL 
-    location.reload()
+    location.reload();
   }
 
   public changePageToSpanish() {
@@ -41,9 +58,8 @@ export class AppComponent {
       this.selectedLenguagueOfPage = this.LENGUAGUESOFPAGE[key].number;
       localStorage.setItem('LanguagueSelected', 'es');
     }
+    location.reload();
 
-    // TEMPORAL 
-    location.reload()
   }
 
 }

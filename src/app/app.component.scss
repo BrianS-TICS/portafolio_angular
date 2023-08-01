@@ -76,10 +76,31 @@ a {
 
 
 .fixed-span {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 10vw;
-  color: black;
-  z-index: 9999;
+  
+  display: none;
+
+  @media (min-width : 680px) {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 15rem;
+    display: flex;
+    justify-content: center;
+    background-color: $thirdColor;
+    color: black;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    z-index: 9999;
+
+    border: 1px solid $extraColor;
+  }
+
+  .btn{
+    color: $extraColor;
+  }
+
+
+  .activeOption{
+    color : #ff8e04
+  }
 }

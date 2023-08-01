@@ -2,6 +2,6 @@
 <app-home></app-home>
 <app-footer></app-footer>
 <span class="fixed-span">
-    <button (click)="changePageToSpanish()" class="btn btn-info">Spanish</button>
-    <button (click)="changePageToEnglish()" class="btn btn-dark">English</button>
+    <button (click)="changePageToSpanish()" [ngClass]="selectedLenguagueOfPage == 0 ? 'activeOption' : '' " class="btn fw-bold w-50">Spanish</button>
+    <button (click)="changePageToEnglish()" [ngClass]="selectedLenguagueOfPage == 1 ? 'activeOption' : '' " class="btn fw-bold w-50">English</button>
 </span>

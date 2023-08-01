@@ -35,10 +35,56 @@ export class HomeComponent implements OnInit {
     'Proyects'
   ]
 
+
+  public PROYECTSECTIONSUBTITLE = [
+    'Proyectos secundarios',
+    'Secondary Projects'
+  ]
+
+
   public KNOWLEDSECTIONTEXT = [
     'Conocimientos',
     'knowledge'
   ]
+
+  public ABOUTMETITLE = [
+    'Acerca de mi',
+    'About me'
+  ]
+
+  public ABOUTMEDESCRIPTION = [
+    "Mi nombre es Brian Sanchez Aguilar y soy un ingeniero en tecnologías de la información y las comunicaciones. " +
+    "Me enfoco en el área del desarrollo de software. He estado trabajando como desarrollador desde hace más de un año. " +
+    "Dentro de mis intereses está el aprender diferentes idiomas y viajar a diferentes países.",
+    "My name is Brian Sanchez Aguilar, and I am an engineer in information and communication technologies. I specialize in software development. I have been working as a developer for over a year. Among my interests is learning different languages and traveling to different countries."
+  ]
+
+  public ABOUTMESUBTITLE = [
+    '¿CÓMO podria AYUDARTE?',
+    "How could I help you?"
+  ]
+  public ABOUTMESUBTEXT = [
+    'Puedo ayerdarte a diseñar los sitios y a desarrollar sus funciones, esto mediante lenguajes de programación y softwares especializados.',
+    "I can help you design websites and develop their functionalities using programming languages and specialized software."
+  ]
+
+
+  public ABOUTSUBDESCRIPTION = [
+    'Aprendiendo',
+    'Learning'
+  ]
+
+  public LEARNINGTITLE = [
+    'Aprendiendo',
+    'Learning'
+  ]
+
+  public LEARNINGSUBTITLE = [
+    'Tecnologías',
+    'Technologies'
+  ]
+
+
 
   public citas: any = [
     {
