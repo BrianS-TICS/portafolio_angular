@@ -2,18 +2,17 @@
   <main id='start' class="bg-blue background-image animate__animated animate__fadeIn">
     <section class="seccion-presentacion container">
       <div class="seccion-presentacion-contenido">
-        <div>
+
+        <div *ngIf="!loadingContent">
           <h1 class="seccion-presentacion__nombre">
-            <p class="d-block font-title">Brian</p>
-            <p class="d-block">Sánchez</p>
+            <p class="d-block font-title">{{ pageContent.name }}</p>
           </h1>
-          <h3 class="seccion-presentacion__cargo">Desarrollador <span class="span-cargo">Fullstack</span><span
-              class="span-invisible">&#160;</span></h3>
-          <h4 class="seccion-presentacion__descripcion">Me encargo de crear, mantener y modificar aplicaciones web,
-            desde
-            la
-            creación de una base de datos hasta la edición de estilos.</h4>
+          <h3 class="seccion-presentacion__cargo"> {{ pageContent.job }} </h3>
+          <h4 class="seccion-presentacion__descripcion">{{ pageContent.job_description }}</h4>
         </div>
+
+        <div *ngIf="loadingContent" class="loadingContent"></div>
+
         <div class="cita-textual" *ngIf="currentCita">
           <p class="cita-textual__texto">{{ '" ' + currentCita.contenido + ' "' }} </p>
           <p class="cita-textual__texto">{{ currentCita.name_author }}.</p>
@@ -22,54 +21,55 @@
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-orange">+</span>
           </button>
         </div>
+
       </div>
     </section>
   </main>
 
   <div class="bg-low-gray">
-    <section id='knowage' class="container knowage-section  animate__animated animate__fadeIn">
-      <h2 class="knowage-section__title title">{{KNOWLEDSECTIONTEXT[selectedLenguagueOfPage]}}</h2>
+    <section *ngIf="!loadingContent" id='knowage' class="container knowage-section  animate__animated animate__fadeIn">
+      <h2 class="knowage-section__title title">{{ pageContent.knowledge }}</h2>
       <h3 class="knowage-section__subtitle subtitle mt-0">Frontend</h3>
       <ul class="knowage-section__list">
 
         <app-knowledge-card technologyName="Angular" backGroundcolor="warning"
-          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+          technologyUrl="https://material.angular.io/" [namelevel]=" pageContent.knowledge_levels[0] ">
         </app-knowledge-card>
 
         <app-knowledge-card technologyName="Angular material" backGroundcolor="success"
-          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+          technologyUrl="https://material.angular.io/" [namelevel]=" pageContent.knowledge_levels[0] ">
         </app-knowledge-card>
 
         <app-knowledge-card technologyName="TypeScript" backGroundcolor="success"
-          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+          technologyUrl="https://material.angular.io/" [namelevel]=" pageContent.knowledge_levels[0] ">
         </app-knowledge-card>
 
         <app-knowledge-card technologyName="JavaScript" backGroundcolor="warning"
-          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+          technologyUrl="https://material.angular.io/" [namelevel]=" pageContent.knowledge_levels[0] ">
         </app-knowledge-card>
 
         <app-knowledge-card technologyName="Next.Js" backGroundcolor="success"
-          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+          technologyUrl="https://material.angular.io/" [namelevel]=" pageContent.knowledge_levels[0] ">
         </app-knowledge-card>
 
         <app-knowledge-card technologyName="React" backGroundcolor="success"
-          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+          technologyUrl="https://material.angular.io/" [namelevel]=" pageContent.knowledge_levels[0] ">
         </app-knowledge-card>
 
         <app-knowledge-card technologyName="SCSS" backGroundcolor="warning" technologyUrl="https://material.angular.io/"
-          [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+          [namelevel]=" pageContent.knowledge_levels[0] ">
         </app-knowledge-card>
 
         <app-knowledge-card technologyName="CSS" backGroundcolor="warning" technologyUrl="https://material.angular.io/"
-          [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+          [namelevel]=" pageContent.knowledge_levels[0] ">
         </app-knowledge-card>
 
         <app-knowledge-card technologyName="Bootstrap" backGroundcolor="warning"
-          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+          technologyUrl="https://material.angular.io/" [namelevel]=" pageContent.knowledge_levels[0] ">
         </app-knowledge-card>
 
         <app-knowledge-card technologyName="Tailwind CSS" backGroundcolor="success"
-          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+          technologyUrl="https://material.angular.io/" [namelevel]=" pageContent.knowledge_levels[0] ">
         </app-knowledge-card>
       </ul>
 
@@ -77,31 +77,31 @@
       <ul class="knowage-section__list">
 
         <app-knowledge-card technologyName="Node.Js" backGroundcolor="success"
-          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+          technologyUrl="https://material.angular.io/" [namelevel]=" pageContent.knowledge_levels[0] ">
         </app-knowledge-card>
 
         <app-knowledge-card technologyName="Express" backGroundcolor="success"
-          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+          technologyUrl="https://material.angular.io/" [namelevel]=" pageContent.knowledge_levels[0] ">
         </app-knowledge-card>
 
         <app-knowledge-card technologyName="MongoDB" backGroundcolor="success"
-          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+          technologyUrl="https://material.angular.io/" [namelevel]=" pageContent.knowledge_levels[0] ">
         </app-knowledge-card>
 
         <app-knowledge-card technologyName="Mysql" backGroundcolor="warning"
-          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+          technologyUrl="https://material.angular.io/" [namelevel]=" pageContent.knowledge_levels[0] ">
         </app-knowledge-card>
 
         <app-knowledge-card technologyName="SQL" backGroundcolor="warning" technologyUrl="https://material.angular.io/"
-          [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+          [namelevel]=" pageContent.knowledge_levels[0] ">
         </app-knowledge-card>
 
         <app-knowledge-card technologyName="Php" backGroundcolor="success" technologyUrl="https://material.angular.io/"
-          [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+          [namelevel]=" pageContent.knowledge_levels[0] ">
         </app-knowledge-card>
 
         <app-knowledge-card technologyName="Laravel" backGroundcolor="warning"
-          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+          technologyUrl="https://material.angular.io/" [namelevel]=" pageContent.knowledge_levels[0] ">
         </app-knowledge-card>
 
       </ul>
@@ -110,19 +110,19 @@
       <ul class="knowage-section__list">
 
         <app-knowledge-card technologyName="Git" backGroundcolor="warning" technologyUrl="https://material.angular.io/"
-          [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+          [namelevel]=" pageContent.knowledge_levels[0]">
         </app-knowledge-card>
 
         <app-knowledge-card technologyName="GitHub" backGroundcolor="warning"
-          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][2]">
+          technologyUrl="https://material.angular.io/" [namelevel]=" pageContent.knowledge_levels[0]">
         </app-knowledge-card>
 
         <app-knowledge-card technologyName="Scrum" backGroundcolor="success"
-          technologyUrl="https://material.angular.io/" [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+          technologyUrl="https://material.angular.io/" [namelevel]=" pageContent.knowledge_levels[0] ">
         </app-knowledge-card>
 
         <app-knowledge-card technologyName="Jira" backGroundcolor="success" technologyUrl="https://material.angular.io/"
-          [namelevel]="LEVELSOFKNOWLEDGE[selectedLenguagueOfPage][1]">
+          [namelevel]=" pageContent.knowledge_levels[0]">
         </app-knowledge-card>
 
       </ul>
@@ -131,8 +131,8 @@
 
   <div id='work' class="bg-dark-blue">
 
-    <section class="container py-5">
-      <h1 class="title text-second-color mb-5 ">{{PROYECTSECTIONTEXT[selectedLenguagueOfPage]}}</h1>
+    <section *ngIf="!loadingContent" class="container py-5">
+      <h1 class="title text-second-color mb-5 ">{{ pageContent.proyects }}</h1>
 
       <div id="carouselExampleCaptions" class="carousel carousel-dark slide mb-5 shadow-lg">
         <div class="carousel-indicators">
@@ -191,7 +191,7 @@
 
 
       <div>
-        <h2 class="title text-light  my-5">{{PROYECTSECTIONSUBTITLE[selectedLenguagueOfPage]}}</h2>
+        <h2 class="title text-light  my-5">{{ pageContent.secundaty_proyects }}</h2>
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="10000">
@@ -221,14 +221,16 @@
 
 
   <div id='about' class="bg-low-gray">
-    <section class="section container">
+    <section *ngIf="!loadingContent" class="section container">
       <div class="row flex-column flex-sm-row">
         <div class="col-12 col-lg-8 p-5 pb-0 pt-0 pb-md-5">
-          <h1 class="title mt-3 bg-gray">{{ABOUTMETITLE[selectedLenguagueOfPage]}}</h1>
-          <p class="text-blue fw-bolder fs-5 mt-3">{{ ABOUTMEDESCRIPTION[selectedLenguagueOfPage ]}}</p>
+          <h1 class="title my-3 bg-gray">{{ pageContent.about_me }}</h1>
+          <p class="text-blue fw-bolder fs-5 " *ngFor="let paragraf of pageContent.about_me_paragraphs">
+            {{paragraf}}
+          </p>
 
-          <h2 class="title bg-gray mt-5 fs-1 p-0">{{ABOUTMESUBTITLE[selectedLenguagueOfPage]}}</h2>
-          <p class="text-blue fw-bolder fs-5">{{ABOUTMESUBTEXT[selectedLenguagueOfPage]}}</p>
+          <h2 class="title bg-gray mt-5 fs-1 p-0">{{ pageContent.how_to_help }}</h2>
+          <p class="text-blue fw-bolder fs-5">{{ pageContent.how_to_help_paragraph }}</p>
         </div>
         <div class=" col-12 col-lg-4 p-5">
           <img src="assets/imagen_brian.jpg" alt="">
@@ -239,12 +241,11 @@
 
 
   <div class="bg-dark-blue borde-inferior-white">
-    <section class="section-learning container">
-      <h2 class="section-learning__title title">{{LEARNINGTITLE[selectedLenguagueOfPage]}}</h2>
-      <h3 class="section-learning__subtitle subtitle mt-0">{{LEARNINGSUBTITLE[selectedLenguagueOfPage]}}</h3>
+    <section *ngIf="!loadingContent" class="section-learning container">
+      <h2 class="section-learning__title title">{{ pageContent.learning }}</h2>
+      <h3 class="section-learning__subtitle subtitle mt-0">{{ pageContent.learning_technologies }}</h3>
       <ul class="section-learning____list">
-        <li class="section-learning___element-list">React-Native</li>
-        <li class="section-learning___element-list">Kotlin</li>
+        <li class="section-learning___element-list" *ngFor="let paragraf of pageContent.learning_paragraphs" > {{ paragraf }}</li>
       </ul>
     </section>
   </div>

@@ -1,0 +1,39 @@
+{
+    "navegation" : [
+        "home",
+        "proyects",
+        "knowledge",
+        "about me"
+    ],
+    "languages" : [
+        "english",
+        "spanish"
+    ],
+    "name" : "Brian Sánchez",
+    "job" : "Web developer",
+    "job_description" : "I am responsible for creating, maintaining, and modifying web applications, from database creation to style editing.",
+    "knowledge" : "knowledge",
+    "knowledge_levels" : [
+        "basic",
+        "intermediate",
+        "advanced"
+    ],
+    "proyects" : "proyects",
+    "secundaty_proyects" : "secondary proyects",
+    "about_me" : "About me",
+    "about_me_paragraphs" : [
+        "My name is Brian Sanchez Aguilar, and I am an engineer in information and communication technologies.",
+        "I specialize in software development.",
+        "I have been working as a developer for over a year. ",
+        "learning different languages and traveling to different countries."
+    ],
+    "how_to_help" : "how could i help you?",
+    "how_to_help_paragraph" : "I can help you design websites and develop their functionalities using programming languages and specialized software.",
+    "learning" : "learning",
+    "learning_technologies" : "technologies",
+    "learning_paragraphs" : [
+        "React-Native",
+        "Kotlin"
+    ],
+    "footer_text" : "By Brian Sanchez"
+}

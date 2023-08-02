@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguageService } from 'src/app/services/languages/language.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
 
-  
+  public pageContent : any;
+  public loadingContent: boolean = true;
+
+  constructor( private languageService : LanguageService) { }
+
+
   ngOnInit(): void {
+
+    this.languageService.pageContent.subscribe((content: any) => {
+      this.pageContent = content;
+      if (Object.keys(content).length) {
+        this.loadingContent = false;
+      }
+    });
+    
   }
 
 }

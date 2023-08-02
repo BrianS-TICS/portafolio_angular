@@ -1,5 +1,5 @@
 <footer class="bg-gray-dark">
-  <div class="container padding-footer">
-    <p class="footer__texto-derechos"> By Brian Sanchez </p>
+  <div *ngIf="!loadingContent" class="container padding-footer">
+    <p class="footer__texto-derechos">{{pageContent.footer_text}}</p>
   </div>
 </footer>

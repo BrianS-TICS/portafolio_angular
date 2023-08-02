@@ -245,13 +245,14 @@ p {
 
 .section-learning__subtitle {
   color: #ff8e00;
+  text-transform: capitalize;
 }
 
 .section-learning___element-list {
   color: white;
   font-weight: 500;
   font-size: 1.2rem;
-
+  text-transform: capitalize;
 }
 
 img {
@@ -307,4 +308,9 @@ img {
     top: 10rem;
     left: 1rem;
   }
+}
+
+.loadingContent {
+  background-color: red;
+  width: 100%;
 }

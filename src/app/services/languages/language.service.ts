@@ -1,18 +1,32 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import * as defaultPageContent from '../../../assets/languages/en.json';
+import { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LanguageService {
 
-  constructor() { }
+  public currentLanguague: string = 'en';
+  public pageContent: BehaviorSubject<any> = new BehaviorSubject({});
 
-  public selectedLenguagueOfPage: number = 0;
+  constructor(
+    private http: HttpClient
+  ) {}
 
-  public LENGUAGUESOFPAGE = [
-    { 'number': 0, "languague": 'es ' },
-    { 'number': 1, "languague": 'en' }
-  ];
+  public changeLanguage(newLanguage: string) {
+    this.currentLanguague = newLanguage;
+  }
 
+  public loadLanguageFile(language: string): Observable<any> {
+    const url = `/assets/languages/${language}.json`;
+    return this.http.get(url);
+  }
+
+  public loadDefaultLanguage() : any {
+    return defaultPageContent;
+  }
 
 }

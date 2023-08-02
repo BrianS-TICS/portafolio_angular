@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { LanguageService } from 'src/app/services/languages/language.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,12 +15,23 @@ export class NavbarComponent implements OnInit {
   public animations: string = 'movil-menu';
 
   private body: any;
+  public pageContent;
+  public loadingContent: boolean = true;
 
-  constructor() {
+  constructor(
+    private languageService: LanguageService
+  ) {
     this.body = document.querySelector('body');
   }
 
   ngOnInit(): void {
+
+    this.languageService.pageContent.subscribe((content: any) => {
+      this.pageContent = content;
+      if (Object.keys(content).length) {
+        this.loadingContent = false;
+      }
+    });
 
   }
 

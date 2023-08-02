@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CitasTextualesService } from 'src/app/services/citas-textuales.service';
+import { LanguageService } from 'src/app/services/languages/language.service';
 
 @Component({
   selector: 'app-home',
@@ -8,82 +9,25 @@ import { CitasTextualesService } from 'src/app/services/citas-textuales.service'
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private citasService: CitasTextualesService) { }
+  public pageContent: any;
+  public loadingContent: boolean = true;
 
-  public selectedLenguagueOfPage: number = 0;
+  constructor(
+    private citasService: CitasTextualesService,
+    private languageService: LanguageService
+  ) {}
 
-  public LENGUAGUESOFPAGE = [
-    { 'number': 0, "languague": 'es ' },
-    { 'number': 1, "languague": 'en' }
-  ];
-
-  public LEVELSOFKNOWLEDGE = [
-    {
-      1: 'Básico',
-      2: 'Intermedio',
-      3: 'Avanzado',
-    },
-    {
-      1: 'Basic',
-      2: 'Intermediate',
-      3: 'Advanced',
-    }
-  ]
-
-  public PROYECTSECTIONTEXT = [
-    'Proyectos',
-    'Proyects'
-  ]
-
-
-  public PROYECTSECTIONSUBTITLE = [
-    'Proyectos secundarios',
-    'Secondary Projects'
-  ]
-
-
-  public KNOWLEDSECTIONTEXT = [
-    'Conocimientos',
-    'knowledge'
-  ]
-
-  public ABOUTMETITLE = [
-    'Acerca de mi',
-    'About me'
-  ]
-
-  public ABOUTMEDESCRIPTION = [
-    "Mi nombre es Brian Sanchez Aguilar y soy un ingeniero en tecnologías de la información y las comunicaciones. " +
-    "Me enfoco en el área del desarrollo de software. He estado trabajando como desarrollador desde hace más de un año. " +
-    "Dentro de mis intereses está el aprender diferentes idiomas y viajar a diferentes países.",
-    "My name is Brian Sanchez Aguilar, and I am an engineer in information and communication technologies. I specialize in software development. I have been working as a developer for over a year. Among my interests is learning different languages and traveling to different countries."
-  ]
-
-  public ABOUTMESUBTITLE = [
-    '¿CÓMO podria AYUDARTE?',
-    "How could I help you?"
-  ]
-  public ABOUTMESUBTEXT = [
-    'Puedo ayerdarte a diseñar los sitios y a desarrollar sus funciones, esto mediante lenguajes de programación y softwares especializados.',
-    "I can help you design websites and develop their functionalities using programming languages and specialized software."
-  ]
-
-
-  public ABOUTSUBDESCRIPTION = [
-    'Aprendiendo',
-    'Learning'
-  ]
-
-  public LEARNINGTITLE = [
-    'Aprendiendo',
-    'Learning'
-  ]
-
-  public LEARNINGSUBTITLE = [
-    'Tecnologías',
-    'Technologies'
-  ]
-
+  ngOnInit(): void {
+    
+    this.languageService.pageContent.subscribe((content: any) => {
+      this.pageContent = content;
+      if (Object.keys(content).length) {
+        this.loadingContent = false;
+      }
+    });
+    
+    this.currentCita = this.citas[0];
+  }
 
 
   public citas: any = [
@@ -108,30 +52,24 @@ export class HomeComponent implements OnInit {
   public currentCita = null;
   public citaNumber = 0;
 
-  ngOnInit(): void {
+  // public getCurrentLanguague() {
+  //   const languagueFinded = localStorage.getItem('LanguagueSelected');
 
-    this.currentCita = this.citas[0]
-    this.getCurrentLanguague()
-  }
+  //   if (languagueFinded) {
+  //     const languageObj = this.LENGUAGUESOFPAGE.find(obj => obj.languague === languagueFinded);
+  //     if (languageObj) {
+  //       const key = languageObj.number;
+  //       this.selectedLenguagueOfPage = this.LENGUAGUESOFPAGE[key].number;
+  //     }
+  //   } else {
+  //     localStorage.setItem('LanguagueSelected', this.LENGUAGUESOFPAGE[0].languague); // Guardar el valor de la propiedad "languague"
+  //     const defaultLanguageObj = this.LENGUAGUESOFPAGE.find(obj => obj.number === 0);
+  //     if (defaultLanguageObj) {
+  //       this.selectedLenguagueOfPage = defaultLanguageObj.number;
+  //     }
+  //   }
 
-  public getCurrentLanguague() {
-    const languagueFinded = localStorage.getItem('LanguagueSelected');
-
-    if (languagueFinded) {
-      const languageObj = this.LENGUAGUESOFPAGE.find(obj => obj.languague === languagueFinded);
-      if (languageObj) {
-        const key = languageObj.number;
-        this.selectedLenguagueOfPage = this.LENGUAGUESOFPAGE[key].number;
-      }
-    } else {
-      localStorage.setItem('LanguagueSelected', this.LENGUAGUESOFPAGE[0].languague); // Guardar el valor de la propiedad "languague"
-      const defaultLanguageObj = this.LENGUAGUESOFPAGE.find(obj => obj.number === 0);
-      if (defaultLanguageObj) {
-        this.selectedLenguagueOfPage = defaultLanguageObj.number;
-      }
-    }
-
-  }
+  // }
 
   public obtieneCita() {
     this.citasService.obtenerCitas().subscribe(

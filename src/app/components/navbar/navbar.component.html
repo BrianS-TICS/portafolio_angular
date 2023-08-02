@@ -4,12 +4,11 @@
       <a href="/">
         <img height="45" width="45" src="assets/bs.svg" alt="logo de la pagina">
       </a>
-      <nav class="navegation">
-        <a href="#start" class="enlace">Inicio</a>
-        <a href="#work" class="enlace">Proyectos</a>
-        <a href="#knowage" class="enlace">Conocimientos</a>
-        <a href="#about" class="enlace">Sobre
-          mi</a>
+      <nav class="navegation" *ngIf="!loadingContent">
+        <a href="#start" class="enlace">{{ pageContent.navegation[0] }}</a>
+        <a href="#work" class="enlace">{{ pageContent.navegation[1] }}</a>
+        <a href="#knowage" class="enlace">{{ pageContent.navegation[2] }}</a>
+        <a href="#about" class="enlace">{{ pageContent.navegation[3] }} </a>
       </nav>
     </div>
     <div class="d-flex gap-5">

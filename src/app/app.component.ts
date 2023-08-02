@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguageService } from './services/languages/language.service';
 
 @Component({
   selector: 'app-root',
@@ -7,59 +8,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
 
-  constructor() { }
-  public selectedLenguagueOfPage: number = 0;
+  public pageContent : any;
+  public loadingContent : boolean = true ;
+  public currentLanguague : string;
 
+  constructor(
+    private languageService: LanguageService
+  ) { }
+  
 
   ngOnInit(): void {
-    this.getCurrentLanguague()
-
+    this.currentLanguague = this.languageService.currentLanguague;
+    this.loadPageLanguage();
   }
 
-  public getCurrentLanguague() {
-    const languagueFinded = localStorage.getItem('LanguagueSelected');
-
-    if (languagueFinded) {
-      const languageObj = this.LENGUAGUESOFPAGE.find(obj => obj.languague === languagueFinded);
-      if (languageObj) {
-        const key = languageObj.number;
-        this.selectedLenguagueOfPage = this.LENGUAGUESOFPAGE[key].number;
+  public loadPageLanguage() {
+    this.currentLanguague = this.languageService.currentLanguague;
+    this.languageService.loadLanguageFile(this.currentLanguague).subscribe(
+      {
+        next: (response: Object) => {
+          this.pageContent = response;
+          this.languageService.pageContent.next(response);
+        },
+        error: error => {
+          this.pageContent = this.languageService.loadDefaultLanguage();
+        },
+        complete: () => {
+          this.loadingContent = false;
+        }
       }
-    } else {
-      localStorage.setItem('LanguagueSelected', this.LENGUAGUESOFPAGE[0].languague); // Guardar el valor de la propiedad "languague"
-      const defaultLanguageObj = this.LENGUAGUESOFPAGE.find(obj => obj.number === 0);
-      if (defaultLanguageObj) {
-        this.selectedLenguagueOfPage = defaultLanguageObj.number;
-      }
-    }
-
+    );
   }
 
-  public LENGUAGUESOFPAGE = [
-    { 'number': 0, "languague": 'es' },
-    { 'number': 1, "languague": 'en' }
-  ];
-
-  public changePageToEnglish() {
-    const languageObj = this.LENGUAGUESOFPAGE.find(obj => obj.languague === 'en');
-    if (languageObj) {
-      const key = languageObj.number;
-      this.selectedLenguagueOfPage = this.LENGUAGUESOFPAGE[key].number;
-      localStorage.setItem('LanguagueSelected', 'en');
-    }
-
-    location.reload();
-  }
-
-  public changePageToSpanish() {
-    const languageObj = this.LENGUAGUESOFPAGE.find(obj => obj.languague === 'es');
-    if (languageObj) {
-      const key = languageObj.number;
-      this.selectedLenguagueOfPage = this.LENGUAGUESOFPAGE[key].number;
-      localStorage.setItem('LanguagueSelected', 'es');
-    }
-    location.reload();
-
+  public changeLanguage(newLanguage : string) {
+    this.languageService.changeLanguage(newLanguage);
+    this.loadPageLanguage();
   }
 
 }
