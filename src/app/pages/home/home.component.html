@@ -1,6 +1,6 @@
-<div class="height-page-calc">
-  <main id='start' class="bg-blue background-image animate__animated animate__fadeIn">
-    <section class="seccion-presentacion container">
+<div>
+  <section id='start' class="bg-blue background-image animate__animated animate__fadeIn hidden_header_area">
+    <main class="seccion-presentacion container">
       <div class="seccion-presentacion-contenido">
 
         <div *ngIf="!loadingContent">
@@ -23,8 +23,8 @@
         </div>
 
       </div>
-    </section>
-  </main>
+    </main>
+  </section>
 
   <div class="bg-low-gray">
     <section *ngIf="!loadingContent" id='knowage' class="container knowage-section  animate__animated animate__fadeIn">
@@ -129,9 +129,9 @@
     </section>
   </div>
 
-  <div id='work' class="bg-dark-blue">
+  <section id='work' class="bg-dark-blue">
 
-    <section *ngIf="!loadingContent" class="container py-5">
+    <div *ngIf="!loadingContent" class="container py-5">
       <h1 class="title text-second-color mb-5 ">{{ pageContent.proyects }}</h1>
 
       <div id="carouselExampleCaptions" class="carousel carousel-dark slide mb-5 shadow-lg">
@@ -216,12 +216,12 @@
           </button>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 
 
-  <div id='about' class="bg-low-gray">
-    <section *ngIf="!loadingContent" class="section container">
+  <section id='about' class="bg-low-gray">
+    <div *ngIf="!loadingContent" class="section container">
       <div class="row flex-column flex-sm-row">
         <div class="col-12 col-lg-8 p-5 pb-0 pt-0 pb-md-5">
           <h1 class="title my-3 bg-gray">{{ pageContent.about_me }}</h1>
@@ -236,8 +236,8 @@
           <img src="assets/imagen_brian.jpg" alt="">
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 
 
   <div class="bg-dark-blue borde-inferior-white">

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { CitasTextualesService } from 'src/app/services/citas-textuales.service';
 import { LanguageService } from 'src/app/services/languages/language.service';
+import { SectionServiceService } from 'src/app/services/navbar/section-service.service';
 
 @Component({
   selector: 'app-home',
@@ -14,18 +15,38 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private citasService: CitasTextualesService,
-    private languageService: LanguageService
-  ) {}
+    private languageService: LanguageService,
+    private sectionService: SectionServiceService,
+    private elementRef: ElementRef
+  ) { }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event): void {
+    const currentSection = this.detectCurrentSection();
+    this.sectionService.emitSectionChange(currentSection);
+  }
+  
+  public detectCurrentSection(): any {
+    const sections = this.elementRef.nativeElement.querySelectorAll('section');
+
+    for (const section of sections) {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+        return `#${section.id}`;
+      }
+    }
+
+  }
 
   ngOnInit(): void {
-    
+
     this.languageService.pageContent.subscribe((content: any) => {
       this.pageContent = content;
       if (Object.keys(content).length) {
         this.loadingContent = false;
       }
     });
-    
+
     this.currentCita = this.citas[0];
   }
 
@@ -51,25 +72,6 @@ export class HomeComponent implements OnInit {
 
   public currentCita = null;
   public citaNumber = 0;
-
-  // public getCurrentLanguague() {
-  //   const languagueFinded = localStorage.getItem('LanguagueSelected');
-
-  //   if (languagueFinded) {
-  //     const languageObj = this.LENGUAGUESOFPAGE.find(obj => obj.languague === languagueFinded);
-  //     if (languageObj) {
-  //       const key = languageObj.number;
-  //       this.selectedLenguagueOfPage = this.LENGUAGUESOFPAGE[key].number;
-  //     }
-  //   } else {
-  //     localStorage.setItem('LanguagueSelected', this.LENGUAGUESOFPAGE[0].languague); // Guardar el valor de la propiedad "languague"
-  //     const defaultLanguageObj = this.LENGUAGUESOFPAGE.find(obj => obj.number === 0);
-  //     if (defaultLanguageObj) {
-  //       this.selectedLenguagueOfPage = defaultLanguageObj.number;
-  //     }
-  //   }
-
-  // }
 
   public obtieneCita() {
     this.citasService.obtenerCitas().subscribe(

@@ -1,14 +1,21 @@
-<header class="bg-dark-blue">
+<header class="bg-dark-blue header_fixed">
   <div class="container flex-header">
     <div class="d-flex gap-5">
       <a href="/">
         <img height="45" width="45" src="assets/bs.svg" alt="logo de la pagina">
       </a>
       <nav class="navegation" *ngIf="!loadingContent">
-        <a href="#start" class="enlace">{{ pageContent.navegation[0] }}</a>
-        <a href="#work" class="enlace">{{ pageContent.navegation[1] }}</a>
-        <a href="#knowage" class="enlace">{{ pageContent.navegation[2] }}</a>
-        <a href="#about" class="enlace">{{ pageContent.navegation[3] }} </a>
+        <a class="enlace" [ngClass]=" currentSection == '#start' ? 'active' : '' "
+          (click)="scrollToSection('#start')">{{
+          pageContent.navegation[0] }}</a>
+        <a class="enlace" [ngClass]=" currentSection == '#work' ? 'active' : '' " (click)="scrollToSection('#work')">{{
+          pageContent.navegation[1] }}</a>
+        <a class="enlace" [ngClass]=" currentSection == '#knowage' ? 'active' : '' "
+          (click)="scrollToSection('#knowage')">{{
+          pageContent.navegation[2] }}</a>
+        <a class="enlace" [ngClass]=" currentSection == '#about' ? 'active' : '' "
+          (click)="scrollToSection('#about')">{{
+          pageContent.navegation[3] }} </a>
       </nav>
     </div>
     <div class="d-flex gap-5">
@@ -36,21 +43,23 @@
 <div #munuMovil *ngIf="movilMenuOpen" (click)="handleCloseMovilNav($event)" class="movil-menu">
   <div class="p-5 d-flex gap-5 flex-column">
     <nav class="navegacion-movil">
-      <a class="enlace" href="#home">Inicio</a>
-      <a class="enlace" href="#work">Proyectos</a>
-      <a class="enlace" href="#about">Sobre mi</a>
+      <a class="enlace" [ngClass]=" currentSection == '#start' ? 'active' : '' " (click)="scrollToSection('#start')">{{
+        pageContent.navegation[0] }}</a>
+      <a class="enlace" [ngClass]=" currentSection == '#work' ? 'active' : '' " (click)="scrollToSection('#work')">{{
+        pageContent.navegation[1] }}</a>
+      <a class="enlace" [ngClass]=" currentSection == '#knowage' ? 'active' : '' " (click)="scrollToSection('#knowage')">{{
+        pageContent.navegation[2] }} </a>
+      <a class="enlace" [ngClass]=" currentSection == '#about' ? 'active' : '' " (click)="scrollToSection('#about')">{{
+        pageContent.navegation[3] }} </a>
     </nav>
     <div class="container-languajes">
-      <p class="text-center text-white languajes__titulo">Lenguages</p>
+      <p class="text-center text-white languajes__titulo">{{ pageContent.language }}</p>
       <span class="d-flex justify-content-center gap-2">
-        <button class="btn languajes__btn text-white">
+        <button (click)="changeLanguage('en')" class="btn languajes__btn text-white">
           <img class="flag" loading="lazy" src="./assets/flags/flag_usa.svg" alt="usa">
         </button>
-        <button class="btn languajes__btn text-white">
+        <button (click)="changeLanguage('es')" class="btn languajes__btn text-white">
           <img class="flag" loading="lazy" src="./assets/flags/flag_esp.svg" alt="spain">
-        </button>
-        <button class="btn languajes__btn text-white">
-          <img class="flag" loading="lazy" src="./assets/flags/flag_fran.svg" alt="france">
         </button>
       </span>
     </div>

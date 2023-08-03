@@ -96,7 +96,7 @@ a {
     border-top-right-radius: 1rem;
     z-index: 9999;
 
-    border: 1px solid $extraColor;
+    border: 1px solid rgba(255, 255, 255, 0.233);
   }
 
   .btn{
@@ -105,6 +105,10 @@ a {
 
 
   .activeOption{
-    color : #ff8e04
+    color : #ff8c00
   }
+
+}
+.carousel-indicators {
+  z-index: 1;
 }

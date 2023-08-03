@@ -31,7 +31,7 @@ a {
   font-size: 1rem;
   font-weight: 900;
   transition: all .5s;
-
+  cursor: pointer;
   &:hover {
     color: #ff8e00;
   }
@@ -90,10 +90,12 @@ a {
 
 .movil-menu {
   display: block;
-  position: absolute;
-  height: 100vh;
+  position: fixed;
+  margin-top: 92px;
+  top: 0;
+  height: 100%;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   background-color: #2b3b45ec;
 
   overflow-x: hidden;
@@ -133,7 +135,7 @@ a {
   }
 }
 
-.activo {
+.active {
   color: #ff8e00;
 }
 
@@ -203,4 +205,12 @@ a {
     }
   }
 
+}
+
+.header_fixed {
+  position: fixed;
+  top: 0;
+  z-index: 3 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.233);
+  width: 100%;
 }
