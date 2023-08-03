@@ -32,6 +32,7 @@ a {
   font-weight: 900;
   transition: all .5s;
   cursor: pointer;
+
   &:hover {
     color: #ff8e00;
   }
@@ -213,4 +214,53 @@ a {
   z-index: 3 !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.233);
   width: 100%;
+}
+
+.animation_icon {
+
+  animation-name: rotateAndMove;
+  animation-duration: 60s;
+  animation-delay: 2s;
+  animation-iteration-count: 5;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+
+
+}
+
+@keyframes rotateAndMove {
+  1% {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1);
+  }
+
+  2% {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.2);
+    rotate: (360deg);
+  }
+
+
+  35% {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1);
+  }
+
+  35% {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1);
+    transform: translateX(-10px);
+  }
+
+  40% {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1);
+    transform: translateX(10px);
+
+  }
+
+  50% {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1);
+    transform: translateX(0px);
+  }
+
+
+  100% {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1);
+  }
 }
