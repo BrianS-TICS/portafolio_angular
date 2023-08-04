@@ -1,3 +1,4 @@
+@import '../../app.component.scss';
 .footer__texto-derechos{
   text-align: center;
   text-decoration: dotted;
@@ -11,5 +12,5 @@
 }
 
 .bg-gray-dark{
-  background-color: #2b3b45;
+  background-color: $thirdColor;
 }

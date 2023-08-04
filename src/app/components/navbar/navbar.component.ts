@@ -43,7 +43,7 @@ export class NavbarComponent implements OnInit {
   }
 
   public scrollToSection(sectionId: string): void {
-    const yOffset = -93;
+    const yOffset = -80;
     const section = document.querySelector(sectionId);
     if (section) {
       const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;

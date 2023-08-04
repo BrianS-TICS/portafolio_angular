@@ -1,40 +1,72 @@
 {
-    "navegation" : [
-        "home",
-        "proyects",
-        "knowledge",
-        "about me"
-    ],
-    "language" : "languages",
-    "languages" : [
-        "english",
-        "spanish"
-    ],
-    "name" : "Brian Sánchez",
-    "job" : "Web developer",
-    "job_description" : "I am responsible for creating, maintaining, and modifying web applications, from database creation to style editing.",
-    "knowledge" : "knowledge",
-    "knowledge_levels" : [
-        "basic",
-        "intermediate",
-        "advanced"
-    ],
-    "proyects" : "proyects",
-    "secundaty_proyects" : "secondary proyects",
-    "about_me" : "About me",
-    "about_me_paragraphs" : [
-        "My name is Brian Sanchez Aguilar, and I am an engineer in information and communication technologies.",
-        "I specialize in software development.",
-        "I have been working as a developer for over a year. ",
-        "learning different languages and traveling to different countries."
-    ],
-    "how_to_help" : "how could i help you?",
-    "how_to_help_paragraph" : "I can help you design websites and develop their functionalities using programming languages and specialized software.",
-    "learning" : "learning",
-    "learning_technologies" : "technologies",
-    "learning_paragraphs" : [
-        "React-Native",
-        "Kotlin"
-    ],
-    "footer_text" : "By Brian Sanchez"
+  "navegation": ["home", "proyects", "knowledge", "about me"],
+  "language": "languages",
+  "languages": ["english", "spanish"],
+  "name": "Brian Sánchez",
+  "job": "Web developer",
+  "job_description": "I am responsible for creating, maintaining, and modifying web applications, from database creation to style editing.",
+  "knowledge": "knowledge",
+  "knowledge_levels": ["basic", "intermediate", "advanced"],
+  "proyect": "proyects",
+  "proyects": [
+    {
+      "title": "Devstagram",
+      "description": "Social network to devolopers",
+      "image": "./assets/proyectos/devstagram.webp",
+      "link_fronend_github": ""
+    },
+     {
+      "title": "APV",
+      "description": "Web application for the administration of veterinary patients",
+      "image": "https://i.postimg.cc/fbjQfMqr/Login.png",
+      "link_fronend_github": ""
+    },
+      {
+      "title": "Travel agency",
+      "description": "Web application for travel agency",
+      "image": "./assets/proyectos/agenciadeviajes.webp",
+      "link_fronend_github": ""
+      },
+       {
+      "title": "DevJobs",
+      "description": "Web application for job search",
+      "image": "./assets/proyectos/devjobsimg.webp",
+      "link_fronend_github": ""
+    }
+  ],
+  "secundaty_proyects" : [
+    {
+      "title": "Coffee Blog",
+      "description": "Landing page for a coffee blog",
+      "image": "./assets/proyectos/cafe.webp",
+      "link_fronend_github": ""
+    },
+    {
+      "title": "Tip calculator",
+      "description": "Web application for calculating tips",
+      "image": "./assets/proyectos/tip_cal.webp",
+      "link_fronend_github": ""
+    },
+      {
+      "title": "Interactive card",
+      "description": "Website for simulating interactive card capture",
+      "image": "./assets/proyectos/interactive_card.webp",
+      "link_fronend_github": ""
+    }
+  ],
+  "proyects_see_more" : "See more",
+  "secundaty_proyect": "secondary proyects",
+  "about_me": "About me",
+  "about_me_paragraphs": [
+    "My name is Brian Sanchez Aguilar, and I am an engineer in information and communication technologies.",
+    "I specialize in software development.",
+    "I have been working as a developer for over a year. ",
+    "learning different languages and traveling to different countries."
+  ],
+  "how_to_help": "how could i help you?",
+  "how_to_help_paragraph": "I can help you design websites and develop their functionalities using programming languages and specialized software.",
+  "learning": "learning",
+  "learning_technologies": "technologies",
+  "learning_paragraphs": ["React-Native", "Kotlin"],
+  "footer_text": "By Brian Sanchez"
 }

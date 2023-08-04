@@ -103,6 +103,50 @@ p {
 
 }
 
+.proyect-card {
+  position: relative;
+  overflow: hidden;
+
+  .proyect-card__description {
+    transition: opacity 0.5s, transform 0.5s;
+    transform: translateY(100%);
+
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.623);
+
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    color: white;
+    padding: 20px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+  }
+
+  &:hover {
+    .proyect-card__description {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+}
+
+.proyect-card__description__icons {
+  margin: 0 auto;
+  background-color: #00000013;
+  padding: .8rem 2rem;
+  border-radius: .5rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .span-invisible {
   position: absolute;
   right: 0;
@@ -221,12 +265,13 @@ p {
 }
 
 .background-image {
-  background: center fixed linear-gradient(rgba(0, 0, 0, 0.014), rgba(0, 0, 0, 0.76)), url('../../../assets/bg-compress.jpg');
+  background: center fixed linear-gradient(rgba(0, 0, 0, 0.014), rgba(0, 0, 0, 0.911)), url('../../../assets/fodo.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: cover;
-  animation: fade-in 3s ease-out;
+  // background-attachment: fixed;
+
+  // background-image: linear-gradient(to right top, #004881, #00599f, #006bbe, #007dde, #008fff);
 }
 
 @keyframes fade-in {
@@ -316,5 +361,5 @@ img {
 }
 
 .hidden_header_area {
-  margin-top: 93px;
+  margin-top: 80px;
 }

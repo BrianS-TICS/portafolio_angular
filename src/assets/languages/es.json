@@ -1,40 +1,72 @@
 {
-    "navegation" : [
-        "inicio",
-        "proyectos",
-        "conocimientos",
-        "sobre mi"
-    ],
-    "language" : "idiomas",
-    "languages" : [
-        "Ingles",
-        "Español"
-    ],
-    "name" : "Brian Sánchez",
-    "job" : "Desarrollador Fullstack",
-    "job_description" : "Me encargo de crear, mantener y modificar aplicaciones web, desde la creación de una base de datos hasta la edición de estilos.",
-    "knowledge" : "Conocimientos",
-    "knowledge_levels" : [
-        "básico",
-        "intermedio",
-        "avanzado"
-    ],
-    "proyects" : "proyectos",
-    "secundaty_proyects" : "proyectos secundarios",
-    "about_me" : "acerca de mi",
-    "about_me_paragraphs" : [
-        "Mi nombre es Brian Sanchez Aguilar y soy un ingeniero en tecnologías de la información y las comunicaciones.",
-        "Me enfoco en el área del desarrollo de software.",
-        "He estado trabajando como desarrollador desde hace más de un año.",
-        "Dentro de mis intereses está el aprender diferentes idiomas y viajar a diferentes países."
-    ],
-    "how_to_help" : "¿Cómo podria ayudarte?",
-    "how_to_help_paragraph" : "Puedo ayerdarte a diseñar los sitios y a desarrollar sus funciones, esto mediante lenguajes de programación y softwares especializados.",
-    "learning" : "aprendiendo",
-    "learning_technologies" : "tecnologías",
-    "learning_paragraphs" : [
-        "React-Native",
-        "Kotlin"
-    ],
-    "footer_text" : "Hecho por Brian Sanchez"
+  "navegation": ["inicio", "proyectos", "conocimientos", "sobre mi"],
+  "language": "idiomas",
+  "languages": ["Ingles", "Español"],
+  "name": "Brian Sánchez",
+  "job": "Desarrollador Web",
+  "job_description": "Me encargo de crear, mantener y modificar aplicaciones web, desde la creación de una base de datos hasta la edición de estilos.",
+  "knowledge": "Conocimientos",
+  "knowledge_levels": ["básico", "intermedio", "avanzado"],
+  "proyect": "proyectos",
+  "proyects": [
+    {
+      "title": "Devstagram",
+      "description": "Red social para orientada a programadores",
+      "image": "./assets/proyectos/devstagram.webp",
+      "link_fronend_github": ""
+    },
+    {
+      "title": "APV",
+      "description": "Aplicación web para la administración de pacientes de veterinaria",
+      "image": "https://i.postimg.cc/fbjQfMqr/Login.png",
+      "link_fronend_github": ""
+    },
+      {
+      "title": "Agencia de viajes",
+      "description": "Aplicación web para agencia de viajes",
+      "image": "./assets/proyectos/agenciadeviajes.webp",
+      "link_fronend_github": ""
+    },
+     {
+      "title": "DevJobs",
+      "description": "Aplicación web para búsqueda laboral",
+      "image": "./assets/proyectos/devjobsimg.webp",
+      "link_fronend_github": ""
+    }
+  ],
+    "secundaty_proyects" : [
+    {
+      "title": "Blog de café",
+      "description": "Landing page de blog sobre café",
+      "image": "./assets/proyectos/cafe.webp",
+      "link_fronend_github": ""
+    },
+    {
+      "title": "Tip calculator",
+      "description": "Aplicación web para calcular propinas",
+      "image": "./assets/proyectos/tip_cal.webp",
+      "link_fronend_github": ""
+    },
+      {
+      "title": "Interactive card",
+      "description": "Sitio web para simular captura de tarjeta interactiva",
+      "image": "./assets/proyectos/interactive_card.webp",
+      "link_fronend_github": ""
+    }
+  ],
+  "proyects_see_more" : "Ver más",
+  "secundaty_proyect": "proyectos secundarios",
+  "about_me": "acerca de mi",
+  "about_me_paragraphs": [
+    "Mi nombre es Brian Sanchez Aguilar y soy un ingeniero en tecnologías de la información y las comunicaciones.",
+    "Me enfoco en el área del desarrollo de software.",
+    "He estado trabajando como desarrollador desde hace más de un año.",
+    "Dentro de mis intereses está el aprender diferentes idiomas y viajar a diferentes países."
+  ],
+  "how_to_help": "¿Cómo podria ayudarte?",
+  "how_to_help_paragraph": "Puedo ayerdarte a diseñar los sitios y a desarrollar sus funciones, esto mediante lenguajes de programación y softwares especializados.",
+  "learning": "aprendiendo",
+  "learning_technologies": "tecnologías",
+  "learning_paragraphs": ["React-Native", "Kotlin"],
+  "footer_text": "Hecho por Brian Sanchez"
 }
