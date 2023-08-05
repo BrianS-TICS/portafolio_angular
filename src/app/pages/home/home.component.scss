@@ -32,6 +32,8 @@ p {
 
   .seccion-presentacion-contenido {
     gap: 5rem;
+    // min-width: 50vw;
+    min-height: 5rem;
 
     @media (min-width: 768px) {
       display: flex;
@@ -265,13 +267,11 @@ p {
 }
 
 .background-image {
-  background: center fixed linear-gradient(rgba(0, 0, 0, 0.014), rgba(0, 0, 0, 0.911)), url('../../../assets/fodo.jpg');
-  background-position: center;
+  background: center fixed linear-gradient(rgba(0, 0, 0, 0.014), rgba(0, 0, 0, 0.911)), url('../../../assets/fodo.webp');
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  // background-attachment: fixed;
 
-  // background-image: linear-gradient(to right top, #004881, #00599f, #006bbe, #007dde, #008fff);
 }
 
 @keyframes fade-in {
@@ -353,9 +353,4 @@ img {
     top: 10rem;
     left: 1rem;
   }
-}
-
-.loadingContent {
-  background-color: red;
-  width: 100%;
 }

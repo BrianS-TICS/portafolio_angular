@@ -1,6 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { Subject, take, takeUntil } from 'rxjs';
-import { CitasTextualesService } from 'src/app/services/citas-textuales.service';
 import { LanguageService } from 'src/app/services/languages/language.service';
 import { SectionServiceService } from 'src/app/services/navbar/section-service.service';
 
@@ -13,11 +12,11 @@ export class HomeComponent implements OnInit {
 
   public pageContent: any;
   public loadingContent: boolean = true;
+  public isMobile: boolean = false;
 
   private destroy$: Subject<void> = new Subject<void>();
 
   constructor(
-    private citasService: CitasTextualesService,
     private languageService: LanguageService,
     private sectionService: SectionServiceService,
     private elementRef: ElementRef
@@ -27,6 +26,11 @@ export class HomeComponent implements OnInit {
   onScroll(event: Event): void {
     const currentSection = this.detectCurrentSection();
     this.sectionService.emitSectionChange(currentSection);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.checkScreenSize();
   }
 
   public detectCurrentSection(): any {
@@ -43,28 +47,31 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.checkScreenSize();
+
     this.languageService.pageContent
       .pipe(takeUntil(this.destroy$))
       .subscribe((content: any) => {
+
         this.pageContent = content;
+
         if (Object.keys(content).length) {
           this.loadingContent = false;
+          this.currentQuote = this.pageContent.quotes[this.quoteNumber]
         }
+
       });
 
-    this.currentCita = this.citas[0];
 
-    // this.sectionService.sectionChange$.
-    // pipe(
-    //   take(10),
-    // ).subscribe((sectionId) => {
-    //   const yOffset = -80;
-    //   const section = document.querySelector(sectionId);
-    //   if (section) {
-    //     const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    //     window.scrollTo({ top: y, behavior: 'smooth' });
-    //   }
-    // });
+    setInterval(() => {
+      this.getNextQuote()
+    }, 12000);
+
+
+  }
+
+  private checkScreenSize() {
+    this.isMobile = window.innerWidth <= 481;
   }
 
   ngOnDestroy(): void {
@@ -72,54 +79,23 @@ export class HomeComponent implements OnInit {
     this.destroy$.complete();
 
     window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onResize);
   }
 
 
-  public citas: any = [
-    {
-      name_author: "Dean Kamen",
-      contenido: "De vez en cuando, una nueva tecnología, un antiguo problema y una gran idea se convierten en una innovación"
-    },
-    {
-      name_author: "Bill Gates",
-      contenido: "Las grandes oportunidades nacen de haber sabido aprovechar las pequeñas"
-    },
-    {
-      name_author: "Jack Dorsey",
-      contenido: "El mundo se puede cambiar en 140 caracteres"
-    },
-    {
-      name_author: "Sydney J. Harris",
-      contenido: "El verdadero peligro no es que las computadoras comenzaran a pensar como los hombres, sino que los hombres comenzaran a pensar como las computadoras"
-    }
-  ];
+  public currentQuote = null;
+  public quoteNumber = 0;
 
-  public currentCita = null;
-  public citaNumber = 0;
+  public getNextQuote() {
+    this.quoteNumber += 1;
 
-  public obtieneCita() {
-    this.citasService.obtenerCitas().subscribe(
-      {
-        next: (response) => {
-          this.citas = response.data;
-          this.currentCita = this.citas[this.citaNumber]
-        },
-        error: (e) => {
-          console.error(e)
-        }
-      }
-    )
-  }
-
-  public getNextCita() {
-    this.citaNumber = this.citaNumber + 1;
-
-    if (this.citaNumber < this.citas.length) {
-      this.currentCita = this.citas[this.citaNumber]
+    if (this.quoteNumber < this.pageContent.quotes.length) {
+      this.currentQuote = this.pageContent.quotes[this.quoteNumber]
     } else {
-      this.citaNumber = 0;
-      this.currentCita = this.citas[this.citaNumber]
+      this.quoteNumber = 0;
+      this.currentQuote = this.pageContent.quotes[this.quoteNumber]
     }
+
   }
 
 }

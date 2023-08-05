@@ -1,7 +1,13 @@
 <div>
-  <section id='start' class="bg-blue background-image animate__animated animate__fadeIn hidden_header_area">
+  <span class="hidden_header_area"></span>
+  <section id='start' class="bg-blue background-image animate__animated animate__fadeIn">
     <main class="seccion-presentacion container">
       <div class="seccion-presentacion-contenido">
+
+        <div *ngIf="loadingContent" class="loading-place-holder">
+          <div class="loading-place-holder__activity"></div>
+        </div>
+
 
         <div *ngIf="!loadingContent">
           <h1 class="seccion-presentacion__nombre">
@@ -11,13 +17,11 @@
           <h4 class="seccion-presentacion__descripcion">{{ pageContent.job_description }}</h4>
         </div>
 
-        <div *ngIf="loadingContent" class="loadingContent"></div>
-
-        <div class="cita-textual" *ngIf="currentCita">
-          <p class="cita-textual__texto">{{ '" ' + currentCita.contenido + ' "' }} </p>
-          <p class="cita-textual__texto">{{ currentCita.name_author }}.</p>
-          <button class="position-relative btn btn-outline-light mt-2" (click)="getNextCita()">
-            Cambiar cita
+        <div class="cita-textual" *ngIf="!loadingContent">
+          <p class="cita-textual__texto">{{ '" ' + currentQuote.quote + ' "' }} </p>
+          <p class="cita-textual__texto">{{ currentQuote.author_name }}.</p>
+          <button class="position-relative btn btn-outline-light mt-2" (click)="getNextQuote()">
+            {{pageContent.next_quote}}
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-orange">+</span>
           </button>
         </div>
@@ -147,7 +151,9 @@
               <img class="w-auto cursor-pointer" width="50" height="50" src="./assets/svg-pensamiento.svg" alt=""> -->
             </a>
           </div>
-          <img class="card-img-top" [src]="proyect.image" [alt]=" proyect.title + ' proyect image'" loading="lazy">
+          <img class="card-img-top"
+            [src]="isMobile ? proyect.mobile_image ? proyect.mobile_image : proyect.image  : proyect.image"
+            [alt]="proyect.title + ' proyect image'" loading="lazy">
         </div>
       </div>
 
@@ -197,7 +203,7 @@
           <p class="text-blue fw-bolder fs-5">{{ pageContent.how_to_help_paragraph }}</p>
         </div>
         <div class=" col-12 col-lg-4 p-5">
-          <img src="assets/imagen_brian.jpg" alt="web developer brian image" loading="lazy">
+          <img src="assets/imagen_brian.webp" alt="web developer brian image" loading="lazy">
         </div>
       </div>
     </div>

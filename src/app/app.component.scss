@@ -17,6 +17,9 @@ $black : #000000;
   color: $primaryColor;
 }
 
+.bg-blue {
+  background-color: #51595e;
+}
 
 .text-second-color {
   color: $secondColor;
@@ -30,9 +33,6 @@ $black : #000000;
   background-color: $secondColor;
 }
 
-.bg-blue {
-  background-color: $primaryColor;
-}
 
 .bg-dark-blue {
   background-color: $thirdColor;
@@ -68,22 +68,31 @@ a {
   min-height: calc(100vh - 143.97px);
 }
 
+.mobile-content-controller {
+  display: block;
+
+  @media (min-width: 480px) {
+    display: none;
+  }
+}
+
 
 .scroll-stop {
   overflow-x: hidden !important;
   overflow-y: hidden !important;
 }
 
-.link{
+.link {
   text-transform: capitalize;
 }
 
 .hidden_header_area {
   margin-top: 80px;
+  display: block;
 }
 
 .fixed-span {
-  
+
   display: none;
 
   @media (min-width : 680px) {
@@ -97,20 +106,63 @@ a {
     color: black;
     border-radius: 1rem;
     z-index: 9999;
-
+    opacity: 0.7;
     border: 1px solid rgba(255, 255, 255, 0.233);
+    transition: all ease-in-out .2s;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
-  .btn{
+  .btn {
     color: $extraColor;
   }
 
 
-  .activeOption{
-    color : #ff8c00
+  .activeOption {
+    color: #ff8c00
   }
 
 }
-.carousel-indicators {
-  z-index: 1;
+
+.loading-place-holder {
+  position: relative;
+  background-color: $thirdColor;
+  overflow: hidden;
+  z-index: 44;
+
+  min-height: 40vh;
+
+  opacity: .6;
+  width: 100%;
+  height: 100%;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  border-radius: 5px;
+
+}
+
+.loading-place-holder__activity {
+  position: absolute;
+  left: -45%;
+  height: 100%;
+  width: 45%;
+  background-image: linear-gradient(to left, rgb(27 38 45 / 50%), rgb(33 46 54 / 70%), rgb(43 65 78 / 80%), rgb(33 46 54 / 70%), rgb(27 38 45 / 50%));
+
+  animation: loading-place 1s infinite;
+  z-index: 45;
+}
+
+
+
+@keyframes loading-place {
+  0% {
+    left: -45%;
+  }
+
+  100% {
+    left: 100%;
+  }
 }
