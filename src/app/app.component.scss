@@ -78,6 +78,9 @@ a {
   text-transform: capitalize;
 }
 
+.hidden_header_area {
+  margin-top: 80px;
+}
 
 .fixed-span {
   
@@ -85,15 +88,14 @@ a {
 
   @media (min-width : 680px) {
     position: fixed;
-    bottom: 0;
-    right: 0;
+    bottom: 1rem;
+    right: 1rem;
     width: 15rem;
     display: flex;
     justify-content: center;
     background-color: $thirdColor;
     color: black;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+    border-radius: 1rem;
     z-index: 9999;
 
     border: 1px solid rgba(255, 255, 255, 0.233);

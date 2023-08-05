@@ -1,19 +1,20 @@
 <header class="bg-dark-blue header_fixed">
   <div class="container flex-header">
     <div class="d-flex gap-5">
-      <a class="animation_icon" href="/">
+      <a class="animation_icon" routerLink="/">
         <img height="45" width="45" src="assets/bs.svg" alt="logo de la pagina">
       </a>
       <nav class="navegation" *ngIf="!loadingContent">
-        <a class="enlace" [ngClass]=" currentSection == '#start' ? 'active' : '' "
+        <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#start' ? 'active' : '' "
           (click)="scrollToSection('#start')">{{
           pageContent.navegation[0] }}</a>
-        <a class="enlace" [ngClass]=" currentSection == '#knowage' ? 'active' : '' "
+        <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#knowage' ? 'active' : '' "
           (click)="scrollToSection('#knowage')">{{
           pageContent.navegation[2] }}</a>
-        <a class="enlace" [ngClass]=" currentSection == '#work' ? 'active' : '' " (click)="scrollToSection('#work')">{{
+        <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#work' ? 'active' : '' "
+          (click)="scrollToSection('#work')">{{
           pageContent.navegation[1] }}</a>
-        <a class="enlace" [ngClass]=" currentSection == '#about' ? 'active' : '' "
+        <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#about' ? 'active' : '' "
           (click)="scrollToSection('#about')">{{
           pageContent.navegation[3] }} </a>
       </nav>
@@ -43,14 +44,17 @@
 <div #munuMovil *ngIf="movilMenuOpen" (click)="handleCloseMovilNav($event)" class="movil-menu">
   <div class="p-5 d-flex gap-5 flex-column">
     <nav class="navegacion-movil">
-      <a class="enlace" [ngClass]=" currentSection == '#start' ? 'active' : '' " (click)="scrollToSection('#start')">{{
+      <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#start' ? 'active' : '' "
+        (click)="scrollToSection('#start')">{{
         pageContent.navegation[0] }}</a>
-      <a class="enlace" [ngClass]=" currentSection == '#knowage' ? 'active' : '' "
+      <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#knowage' ? 'active' : '' "
         (click)="scrollToSection('#knowage')">{{
         pageContent.navegation[2] }} </a>
-      <a class="enlace" [ngClass]=" currentSection == '#work' ? 'active' : '' " (click)="scrollToSection('#work')">{{
+      <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#work' ? 'active' : '' "
+        (click)="scrollToSection('#work')">{{
         pageContent.navegation[1] }}</a>
-      <a class="enlace" [ngClass]=" currentSection == '#about' ? 'active' : '' " (click)="scrollToSection('#about')">{{
+      <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#about' ? 'active' : '' "
+        (click)="scrollToSection('#about')">{{
         pageContent.navegation[3] }} </a>
     </nav>
     <div class="container-languajes">

@@ -139,14 +139,15 @@
           <div class="proyect-card__description">
             <p class="text-center mt-5 h2">{{ proyect.title }}</p>
             <p class="text-center mt-2 p1">{{ proyect.description }}</p>
-            <a
-              class="text-white text-decoration-underline d-flex gap-5 justify-content-center align-content-center proyect-card__description__icons cursor-pointer">
+
+            <a [routerLink]="'/proyect/'+ proyect.id"
+              class="text-white text-decoration-underline cursor-pointer text-center">
               <p>{{ pageContent.proyects_see_more}}</p>
               <!-- <img class="w-auto cursor-pointer" width="50" height="50" src="./assets/github.svg" alt="">
               <img class="w-auto cursor-pointer" width="50" height="50" src="./assets/svg-pensamiento.svg" alt=""> -->
             </a>
           </div>
-          <img class="card-img-top" [src]="proyect.image" loading="lazy">
+          <img class="card-img-top" [src]="proyect.image" [alt]=" proyect.title + ' proyect image'" loading="lazy">
         </div>
       </div>
 
@@ -173,7 +174,7 @@
                 <img class="w-auto cursor-pointer" width="50" height="50" src="./assets/svg-pensamiento.svg" alt=""> -->
               </a>
             </div>
-            <img class="card-img-top" [src]="proyect.image" alt="`${proyect.title} proyect image`" loading="lazy">
+            <img class="card-img-top" [src]="proyect.image" [alt]=" proyect.title + ' proyect image'" loading="lazy">
           </div>
         </div>
 
@@ -196,7 +197,7 @@
           <p class="text-blue fw-bolder fs-5">{{ pageContent.how_to_help_paragraph }}</p>
         </div>
         <div class=" col-12 col-lg-4 p-5">
-          <img src="assets/imagen_brian.jpg" alt="web developer brian image" loading="lazy" >
+          <img src="assets/imagen_brian.jpg" alt="web developer brian image" loading="lazy">
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import { Subject, take, takeUntil } from 'rxjs';
 import { CitasTextualesService } from 'src/app/services/citas-textuales.service';
 import { LanguageService } from 'src/app/services/languages/language.service';
 import { SectionServiceService } from 'src/app/services/navbar/section-service.service';
@@ -13,6 +14,8 @@ export class HomeComponent implements OnInit {
   public pageContent: any;
   public loadingContent: boolean = true;
 
+  private destroy$: Subject<void> = new Subject<void>();
+
   constructor(
     private citasService: CitasTextualesService,
     private languageService: LanguageService,
@@ -25,7 +28,7 @@ export class HomeComponent implements OnInit {
     const currentSection = this.detectCurrentSection();
     this.sectionService.emitSectionChange(currentSection);
   }
-  
+
   public detectCurrentSection(): any {
     const sections = this.elementRef.nativeElement.querySelectorAll('section');
 
@@ -40,14 +43,35 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.languageService.pageContent.subscribe((content: any) => {
-      this.pageContent = content;
-      if (Object.keys(content).length) {
-        this.loadingContent = false;
-      }
-    });
+    this.languageService.pageContent
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((content: any) => {
+        this.pageContent = content;
+        if (Object.keys(content).length) {
+          this.loadingContent = false;
+        }
+      });
 
     this.currentCita = this.citas[0];
+
+    // this.sectionService.sectionChange$.
+    // pipe(
+    //   take(10),
+    // ).subscribe((sectionId) => {
+    //   const yOffset = -80;
+    //   const section = document.querySelector(sectionId);
+    //   if (section) {
+    //     const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    //     window.scrollTo({ top: y, behavior: 'smooth' });
+    //   }
+    // });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+
+    window.removeEventListener('scroll', this.onScroll);
   }
 
 

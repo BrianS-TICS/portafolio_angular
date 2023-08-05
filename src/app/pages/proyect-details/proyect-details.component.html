@@ -1,0 +1,12 @@
+<main class="container hidden_header_area ">
+
+    <div *ngIf="!loadingContent" class="p-5">
+
+        <a class="btn-return" (click)="returnToHome()" routerLink="/">{{ pageContent.proyect_return }}</a>
+        <h1 class="text-center fw-bold">{{ selectedProyect.title }}</h1>
+        <img [src]="selectedProyect.image" class="card w-100 mt-4" alt="">
+
+        <p class="text-center mt-5"> {{ selectedProyect.description }}</p>
+    </div>
+
+</main>

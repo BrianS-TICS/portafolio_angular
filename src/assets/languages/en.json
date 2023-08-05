@@ -10,31 +10,35 @@
   "proyect": "proyects",
   "proyects": [
     {
+      "id" : 1,
       "title": "Devstagram",
       "description": "Social network to devolopers",
       "image": "./assets/proyectos/devstagram.webp",
       "link_fronend_github": ""
     },
-     {
+    {
+      "id" : 2,
       "title": "APV",
       "description": "Web application for the administration of veterinary patients",
       "image": "https://i.postimg.cc/fbjQfMqr/Login.png",
       "link_fronend_github": ""
     },
-      {
+    {
+      "id" : 3,
       "title": "Travel agency",
       "description": "Web application for travel agency",
       "image": "./assets/proyectos/agenciadeviajes.webp",
       "link_fronend_github": ""
-      },
-       {
+    },
+    {
+      "id" : 4,
       "title": "DevJobs",
       "description": "Web application for job search",
       "image": "./assets/proyectos/devjobsimg.webp",
       "link_fronend_github": ""
     }
   ],
-  "secundaty_proyects" : [
+  "secundaty_proyects": [
     {
       "title": "Coffee Blog",
       "description": "Landing page for a coffee blog",
@@ -47,14 +51,15 @@
       "image": "./assets/proyectos/tip_cal.webp",
       "link_fronend_github": ""
     },
-      {
+    {
       "title": "Interactive card",
       "description": "Website for simulating interactive card capture",
       "image": "./assets/proyectos/interactive_card.webp",
       "link_fronend_github": ""
     }
   ],
-  "proyects_see_more" : "See more",
+  "proyects_see_more": "See more",
+  "proyect_return" : "Go Back",
   "secundaty_proyect": "secondary proyects",
   "about_me": "About me",
   "about_me_paragraphs": [

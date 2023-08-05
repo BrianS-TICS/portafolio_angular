@@ -1,7 +1,7 @@
 {
   "navegation": ["inicio", "proyectos", "conocimientos", "sobre mi"],
   "language": "idiomas",
-  "languages": ["Ingles", "Español"],
+  "languages": ["Inglés", "Español"],
   "name": "Brian Sánchez",
   "job": "Desarrollador Web",
   "job_description": "Me encargo de crear, mantener y modificar aplicaciones web, desde la creación de una base de datos hasta la edición de estilos.",
@@ -10,31 +10,36 @@
   "proyect": "proyectos",
   "proyects": [
     {
+      "id" : 1,
       "title": "Devstagram",
       "description": "Red social para orientada a programadores",
       "image": "./assets/proyectos/devstagram.webp",
       "link_fronend_github": ""
     },
     {
+      "id" : 2,
       "title": "APV",
       "description": "Aplicación web para la administración de pacientes de veterinaria",
       "image": "https://i.postimg.cc/fbjQfMqr/Login.png",
       "link_fronend_github": ""
     },
-      {
+    {
+      "id" : 3,
       "title": "Agencia de viajes",
       "description": "Aplicación web para agencia de viajes",
       "image": "./assets/proyectos/agenciadeviajes.webp",
       "link_fronend_github": ""
     },
-     {
+    {
+      "id" : 4,
       "title": "DevJobs",
       "description": "Aplicación web para búsqueda laboral",
       "image": "./assets/proyectos/devjobsimg.webp",
       "link_fronend_github": ""
     }
   ],
-    "secundaty_proyects" : [
+  "proyect_return" : "Volver",
+  "secundaty_proyects": [
     {
       "title": "Blog de café",
       "description": "Landing page de blog sobre café",
@@ -47,14 +52,14 @@
       "image": "./assets/proyectos/tip_cal.webp",
       "link_fronend_github": ""
     },
-      {
+    {
       "title": "Interactive card",
       "description": "Sitio web para simular captura de tarjeta interactiva",
       "image": "./assets/proyectos/interactive_card.webp",
       "link_fronend_github": ""
     }
   ],
-  "proyects_see_more" : "Ver más",
+  "proyects_see_more": "Ver más",
   "secundaty_proyect": "proyectos secundarios",
   "about_me": "acerca de mi",
   "about_me_paragraphs": [
