@@ -1,19 +1,53 @@
-<main class="container hidden_header_area ">
+<div class="bg-details">
 
-    <section *ngIf="!loadingContent" class="proyect-details">
+    <main class="container hidden_header_area">
 
-        <a class="btn-return" (click)="returnToHome()" routerLink="/">{{ pageContent.proyect_return }}</a>
-        <h1 class="text-center fw-bold">{{ selectedProyect.title }}</h1>
-        <img [src]="selectedProyect.image" class="card w-100 mt-4" alt="">
+        <section *ngIf="!loadingContent" class="proyect-details">
 
-        <p class="text-center mt-5"> {{ selectedProyect.description }}</p>
-        
-        <div class="my-5">
-            <img *ngFor="let image of selectedProyect.image_details" [src]="image" class="card p-0 mt-4 w-100"
-                alt="image detail">
-        </div>
-        
-    </section>
+            <a class="btn-return" (click)="returnToHome()" routerLink="/">{{ pageContent.proyect_return }}</a>
 
-    
-</main>
+            <div class="d-sm-flex justify-content-between">
+                <h1 class="text-center fw-bold text-white">{{ selectedProyect.title }}</h1>
+
+                <a target="_blank" [href]="selectedProyect.link_backend_github" class="d-flex d-sm-flex px-4 btn btn-dark gap-2 align-items-center bg-black rounded-4 btn-git">
+                    <p class="p-0 m-0 fs-5 fw-normal">Github</p>
+                    <div class="icon-github">
+                        <img class="w-100" src="./assets/technologies/github.svg" alt="github repo">
+                    </div>
+                </a>
+            </div>
+            <img [src]="selectedProyect.image" class="card w-100 mt-4" alt="">
+
+            <div class="row mt-5 ">
+
+                <div class="col-12 col-sm-7 ">
+                    <p class="text-left  fw-bold fs-5 text-white"> {{ selectedProyect.description }}</p>
+                    <p class="text-white" *ngFor="let tech of selectedProyect.long_description">{{tech}}</p>
+                </div>
+
+                <div class="col-12 col-sm-5 separation-dark ">
+                    <p class=" fw-bold fs-5 text-white"> {{ selectedProyect.used_technologies }}</p>
+
+                    <div class="row justify-content-center align-items-center">
+                        <div *ngFor="let tech of selectedProyect.technologies" class="text-center col-4 col-lg-3">
+                            <img [src]="tech.image" class="tech-image" alt="image">
+                            <p class="technology-name text-center">{{tech.name}}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="my-5">
+                <img *ngFor="let image of selectedProyect.image_details" [src]="image" class="card p-0 mt-4 w-100"
+                    alt="image detail">
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+<span class="divition-light-line"></span>

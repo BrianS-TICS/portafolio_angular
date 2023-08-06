@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { LanguageService } from 'src/app/services/languages/language.service';
 import { SectionServiceService } from 'src/app/services/navbar/section-service.service';
 

@@ -18,12 +18,8 @@ p {
   }
 }
 
-.container {
-  padding: 2rem;
-}
-
 .seccion-presentacion {
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
 
 
   @media (min-width: 480px) {
@@ -50,7 +46,7 @@ p {
 .seccion-presentacion__descripcion {
   font-size: 1rem;
   color: white;
-  line-height: 1.5;
+  line-height: 1.4;
   max-width: 33rem;
   text-align: left;
 
@@ -173,16 +169,15 @@ p {
 
 .knowage-section {
   padding: 2rem 1.5rem;
-
-  @media (min-width : 480px) {
-    padding: 5rem 2rem;
-  }
-
 }
 
-.knowage-section__title {
-  color: #2b3b45;
+.divition-line {
+  display: block;
+  content: '';
+  height: 10rem solid black;
+  width: 100%;
 }
+
 
 .knowage-section__list {
   list-style: none;
@@ -210,7 +205,7 @@ p {
   background: $warningColor;
   padding: .3rem .2rem;
   border-radius: .4rem;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 1rem;
   margin-top: .5rem;
   color: $extraColor;
@@ -308,13 +303,14 @@ img {
 
 .cita-textual {
   margin-top: 2rem;
-  max-width: 20rem;
+  max-width: 30rem;
   font-family: 'Dancing Script', cursive;
   text-align: center;
 
   @media (min-width : 768px) {
     margin-top: 1rem;
     transform: rotateZ(10deg);
+    max-width: 20rem;
     text-align: left;
   }
 
@@ -353,4 +349,82 @@ img {
     top: 10rem;
     left: 1rem;
   }
+}
+
+.border-corner {
+  position: relative;
+
+  @media (min-width : 768px) {
+
+
+    ::before {
+      content: '';
+      /* Asegura que el pseudo-elemento tenga contenido */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30%;
+      /* Ajusta el ancho del borde */
+      height: 30%;
+      /* Ajusta la altura del borde */
+      border-top: solid #51595e 0.1rem;
+      border-left: solid #51595e 0.1rem;
+
+      box-sizing: border-box;
+      /* Incluye el tamaño del borde en las dimensiones del elemento */
+    }
+
+    ::after {
+      content: '';
+      /* Asegura que el pseudo-elemento tenga contenido */
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 30%;
+      /* Ajusta el ancho del borde */
+      height: 30%;
+      /* Ajusta la altura del borde */
+      border-bottom: solid #51595e 0.1rem;
+      border-right: solid #51595e 0.1rem;
+
+      box-sizing: border-box;
+      /* Incluye el tamaño del borde en las dimensiones del elemento */
+    }
+  }
+}
+
+.border-bottom-custom {
+  display: block;
+  height: .01rem;
+  opacity: 0.4;
+  width: 100%;
+  background-color: #51595e;
+  margin: 1rem auto;
+
+  @media (min-width : 480px) {
+    width: 80%;
+  }
+
+}
+
+.btn-secondary {
+  display: block;
+  padding: .5rem;
+  color: white;
+  text-align: center;
+  font-weight: 400;
+  max-width: 10rem;
+  background-color: #2e85aa;
+
+  &:hover {
+  background-color: #208bb9;
+    
+
+  }
+}
+
+.text-information-color{
+  color: #2b3b45;
+  font-size: 1rem;
+  font-weight: 500;
 }

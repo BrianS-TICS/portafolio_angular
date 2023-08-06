@@ -8,15 +8,15 @@
         <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#start' ? 'active' : '' "
           (click)="scrollToSection('#start')">{{
           pageContent.navegation[0] }}</a>
-        <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#knowage' ? 'active' : '' "
-          (click)="scrollToSection('#knowage')">{{
-          pageContent.navegation[2] }}</a>
         <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#work' ? 'active' : '' "
           (click)="scrollToSection('#work')">{{
           pageContent.navegation[1] }}</a>
         <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#about' ? 'active' : '' "
           (click)="scrollToSection('#about')">{{
           pageContent.navegation[3] }} </a>
+        <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#knowage' ? 'active' : '' "
+          (click)="scrollToSection('#knowage')">{{
+          pageContent.navegation[2] }}</a>
       </nav>
     </div>
     <div class="d-flex gap-5">
@@ -47,15 +47,15 @@
       <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#start' ? 'active' : '' "
         (click)="scrollToSection('#start')">{{
         pageContent.navegation[0] }}</a>
-      <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#knowage' ? 'active' : '' "
-        (click)="scrollToSection('#knowage')">{{
-        pageContent.navegation[2] }} </a>
       <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#work' ? 'active' : '' "
         (click)="scrollToSection('#work')">{{
         pageContent.navegation[1] }}</a>
       <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#about' ? 'active' : '' "
         (click)="scrollToSection('#about')">{{
         pageContent.navegation[3] }} </a>
+      <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#knowage' ? 'active' : '' "
+        (click)="scrollToSection('#knowage')">{{
+        pageContent.navegation[2] }} </a>
     </nav>
     <div class="container-languajes">
       <p class="text-center text-white languajes__titulo">{{ pageContent.language }}</p>

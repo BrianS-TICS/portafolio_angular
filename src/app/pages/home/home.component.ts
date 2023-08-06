@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { Subject, take, takeUntil } from 'rxjs';
 import { LanguageService } from 'src/app/services/languages/language.service';
 import { SectionServiceService } from 'src/app/services/navbar/section-service.service';
@@ -6,13 +6,12 @@ import { SectionServiceService } from 'src/app/services/navbar/section-service.s
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss', './../../app.component.scss', './../../../styles.scss']
+  styleUrls: ['./home.component.scss', './../../app.component.scss', './../../../styles.scss'],
 })
 export class HomeComponent implements OnInit {
 
   public pageContent: any;
   public loadingContent: boolean = true;
-  public isMobile: boolean = false;
 
   private destroy$: Subject<void> = new Subject<void>();
 
@@ -28,26 +27,18 @@ export class HomeComponent implements OnInit {
     this.sectionService.emitSectionChange(currentSection);
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.checkScreenSize();
-  }
 
   public detectCurrentSection(): any {
-    const sections = this.elementRef.nativeElement.querySelectorAll('section');
-
-    for (const section of sections) {
+    const sections: HTMLElement[] = this.elementRef.nativeElement.querySelectorAll('section');
+    const currentSection = Array.from(sections).find(section => {
       const rect = section.getBoundingClientRect();
-      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-        return `#${section.id}`;
-      }
-    }
+      return rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
+    });
 
+    return currentSection ? `#${currentSection.id}` : null;
   }
 
   ngOnInit(): void {
-
-    this.checkScreenSize();
 
     this.languageService.pageContent
       .pipe(takeUntil(this.destroy$))
@@ -70,32 +61,12 @@ export class HomeComponent implements OnInit {
 
   }
 
-  private checkScreenSize() {
-    this.isMobile = window.innerWidth <= 481;
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
-
-    window.removeEventListener('scroll', this.onScroll);
-    window.removeEventListener('resize', this.onResize);
-  }
-
-
   public currentQuote = null;
   public quoteNumber = 0;
 
   public getNextQuote() {
-    this.quoteNumber += 1;
-
-    if (this.quoteNumber < this.pageContent.quotes.length) {
-      this.currentQuote = this.pageContent.quotes[this.quoteNumber]
-    } else {
-      this.quoteNumber = 0;
-      this.currentQuote = this.pageContent.quotes[this.quoteNumber]
-    }
-
+    this.quoteNumber = (this.quoteNumber + 1) % this.pageContent.quotes.length;
+    this.currentQuote = this.pageContent.quotes[this.quoteNumber];
   }
 
 }

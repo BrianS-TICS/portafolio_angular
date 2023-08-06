@@ -1,7 +1,8 @@
 {
-  "navegation": ["home", "proyects", "knowledge", "about me"],
+  "navegation": ["home", "proyects", "skills", "about me"],
   "language": "languages",
   "languages": ["english", "spanish"],
+  "greeting": "Hi, I'm",
   "name": "Brian Sánchez",
   "job": "Web developer",
   "job_description": "I am responsible for creating, maintaining, and modifying web applications, from database creation to style editing.",
@@ -23,8 +24,8 @@
       "quote": "The real danger is not that computers would start to think like men, but that men would start to think like computers."
     }
   ],
-  "next_quote" : "Next quote",
-  "knowledge": "knowledge",
+  "next_quote": "Next quote",
+  "knowledge": "Skills",
   "knowledge_levels": ["basic", "intermediate", "advanced"],
   "proyect": "proyects",
   "proyects": [
@@ -32,8 +33,37 @@
       "id": 1,
       "title": "Devstagram",
       "description": "Social network to devolopers",
+      "long_description": [
+        "Devstagram is a project inspired by current social networks. Therefore, this web application includes the necessary features for login, including email registration and account creation confirmation, as well as a password recovery option.",
+        "It includes image upload functionality, both for creating a new post and for profile modification."
+      ],
       "image": "./assets/proyectos/devstagram.webp",
-      "link_fronend_github": ""
+      "used_technologies": "Used technologies",
+      "technologies": [
+        {
+          "id": "1",
+          "name": "Laravel",
+          "image": "./assets/technologies/laravel.svg"
+        },
+        {
+          "id": "2",
+          "name": "Tailwind CSS",
+          "image": "./assets/technologies/tailwind.svg"
+        },
+        {
+          "id": "3",
+          "name": "Javascript",
+          "image": "./assets/technologies/js.svg"
+        },
+        {
+          "id": "4",
+          "name": "Mysql",
+          "image": "./assets/technologies/mysql-simple.svg"
+        }
+      ],
+      "technical_features": "",
+      "link_fronend_github": "",
+      "link_backend_github": "https://github.com/BrianS-TICS/devstagram"
     },
     {
       "id": 2,
@@ -99,7 +129,7 @@
     "My name is Brian Sanchez Aguilar, and I am an engineer in information and communication technologies.",
     "I specialize in software development.",
     "I have been working as a developer for over a year. ",
-    "learning different languages and traveling to different countries."
+    "One of my interests is to learn different languages and travel to various countries."
   ],
   "how_to_help": "how could i help you?",
   "how_to_help_paragraph": "I can help you design websites and develop their functionalities using programming languages and specialized software.",

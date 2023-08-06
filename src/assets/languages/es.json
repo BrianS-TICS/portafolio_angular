@@ -1,7 +1,8 @@
 {
-  "navegation": ["inicio", "proyectos", "conocimientos", "sobre mi"],
+  "navegation": ["inicio", "proyectos", "habilidades", "sobre mi"],
   "language": "idiomas",
   "languages": ["Inglés", "Español"],
+  "greeting": "Hola, Soy",
   "name": "Brian Sánchez",
   "job": "Desarrollador Web",
   "job_description": "Me encargo de crear, mantener y modificar aplicaciones web, desde la creación de una base de datos hasta la edición de estilos.",
@@ -23,7 +24,7 @@
       "quote": "El verdadero peligro no es que las computadoras comenzaran a pensar como los hombres, sino que los hombres comenzaran a pensar como las computadoras"
     }
   ],
-  "knowledge": "Conocimientos",
+  "knowledge": "Habilidades",
   "knowledge_levels": ["básico", "intermedio", "avanzado"],
   "proyect": "proyectos",
   "proyects": [
@@ -31,8 +32,37 @@
       "id": 1,
       "title": "Devstagram",
       "description": "Red social para orientada a programadores",
+      "long_description": [
+        "Devstagram es un proyecto inspirado en las redes sociales actuales. Por lo tanto esta aplicación web cuenta con las necesarias para un login, incluyendo registro, por email, confirmación de creación de cuenta, asi como tambien una opción de recuperar contraseña.",
+        "Incluye funcionalidad de subida de imagenes, tanto para la creación de un nuevo post como para la modificación de un perfil."
+      ],
       "image": "./assets/proyectos/devstagram.webp",
-      "link_fronend_github": ""
+      "used_technologies": "Tecnologías usadas",
+      "technologies": [
+        {
+          "id": "1",
+          "name": "Laravel",
+          "image": "./assets/technologies/laravel.svg"
+        },
+        {
+          "id": "2",
+          "name": "Tailwind CSS",
+          "image": "./assets/technologies/tailwind.svg"
+        },
+        {
+          "id": "3",
+          "name": "Javascript",
+          "image": "./assets/technologies/js.svg"
+        },
+        {
+          "id": "4",
+          "name": "Mysql",
+          "image": "./assets/technologies/mysql-simple.svg"
+        }
+      ],
+      "technical_features": "",
+      "link_fronend_github": "",
+      "link_backend_github": "https://github.com/BrianS-TICS/devstagram"
     },
     {
       "id": 2,
@@ -76,8 +106,12 @@
     {
       "title": "Blog de café",
       "description": "Landing page de blog sobre café",
+      "long_description": "Landing page de blog sobre café",
       "image": "./assets/proyectos/cafe.webp",
-      "link_fronend_github": ""
+      "features": "",
+      "technical_features": "",
+      "link_fronend_github": "",
+      "link_backend_github": ""
     },
     {
       "title": "Tip calculator",

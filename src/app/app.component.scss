@@ -1,5 +1,6 @@
 $primaryColor : #005aa1;
 $secondColor : #c97207;
+$fourthColor : #ff0000;
 $thirdColor : #1d272e;
 $extraColor : #f1f2f5;
 
@@ -52,11 +53,41 @@ a {
 
 }
 
+.underline-decoration {
+
+  &::after {
+    content: "";
+    display: block;
+    background-color: #2e85aa;
+    height: 1rem;
+    width: 75%;
+    margin-top: -1rem;
+  }
+
+  
+  @media (min-width : 480px) {
+    &::after {
+      content: "";
+      display: block;
+      background-color: #2e85aa;
+      height: 1.2rem;
+      width: 75%;
+      margin-top: -1.2rem;
+    }
+  
+  }
+}
 
 .title {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 900;
   text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+
+  @media (min-width : 310px) {
+    font-size: 2.5rem;
+  }
 
   @media (min-width : 480px) {
     font-size: 3.5rem;

@@ -2,7 +2,7 @@
 
 .knowage-section__list-element {
     color: #2b3b45;
-    font-weight: 900;
+    font-weight: 500;
     font-size: 1rem;
     cursor: default;
     -webkit-user-select: none;
@@ -22,7 +22,7 @@
     text-align: center;
 
     border-radius: 1rem;
-    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    // background: linear-gradient(145deg, #e6e6e6, #ffffff);
     box-shadow: 6px 6px 12px #d9d9d9,
     -6px -6px 12px #ffffff;
 
@@ -30,7 +30,7 @@
 
     &:hover {
         transform: scale(110%) translateY(-.5rem);
-        background: linear-gradient(145deg, #ff8e00, #ff8e00);
+        background-color: #1d272e;
         color: white;
         cursor: pointer;
     }
@@ -40,7 +40,7 @@
     background: $warningColor;
     padding: .3rem .2rem;
     border-radius: .4rem;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 1rem;
     margin-top: .5rem;
     color: $extraColor;

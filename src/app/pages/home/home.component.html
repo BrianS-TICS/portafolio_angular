@@ -11,10 +11,11 @@
 
         <div *ngIf="!loadingContent">
           <h1 class="seccion-presentacion__nombre">
-            <p class="d-block font-title">{{ pageContent.name }}</p>
+            <p class="d-block font-subtitle">{{pageContent.greeting}}</p>
+            <p class="d-block font-title ">{{ pageContent.name }}</p>
           </h1>
           <h3 class="seccion-presentacion__cargo"> {{ pageContent.job }} </h3>
-          <h4 class="seccion-presentacion__descripcion">{{ pageContent.job_description }}</h4>
+          <h4 class="seccion-presentacion__descripcion fs-6">{{ pageContent.job_description }}</h4>
         </div>
 
         <div class="cita-textual" *ngIf="!loadingContent">
@@ -30,9 +31,90 @@
     </main>
   </section>
 
+  <section id='work' class="bg-dark-blue">
+
+    <div *ngIf="!loadingContent" class="container pt-5 pb-md-5">
+      <h1 class="title text-white mb-4  mb-md-5 underline-decoration">{{ pageContent.proyect }}</h1>
+
+      <div class="border-corner pb-3">
+        <article class="d-block mb-5" *ngFor="let proyect of pageContent.proyects">
+          <div class="row w-100 m-0 p-md-5 ">
+            <div class="col-12 col-md-6
+          p-0">
+              <img class="w-100 " [src]="proyect.image" [alt]=" proyect.title + ' proyect image'" loading="lazy">
+            </div>
+            <div class="col-12 col-md-6 text-white px-md-5 pt-3">
+              <p class="text-left mt-4 fs-3 fw-bold">{{ proyect.title }}</p>
+              <p class="text-left mt-1 mt-md-5">{{ proyect.description }}</p>
+              <a [routerLink]="'/proyect/'+ proyect.id" class="px-3 text-white  mt-3 mt-md-5 btn-secondary text">
+                <p>{{ pageContent.proyects_see_more}}</p>
+              </a>
+            </div>
+            <!-- <img class="w-auto cursor-pointer" width="50" height="50" src="./assets/github.svg" alt="">
+            <img class="w-auto cursor-pointer" width="50" height="50" src="./assets/svg-pensamiento.svg" alt=""> -->
+
+          </div>
+          <span class="border-bottom-custom"></span>
+        </article>
+      </div>
+
+      <div>
+        <h2 class="title text-light underline-decoration mb-4  my-md-5">{{ pageContent.secundaty_proyect }}</h2>
+
+        <div class="border-corner pb-3">
+
+          <article class="mb-5" *ngFor="let proyect of pageContent.secundaty_proyects">
+            <div class="row w-100 m-0 p-md-5">
+              <div class="col-12 col-md-6
+            p-0">
+                <img class="w-100 " [src]="proyect.image" [alt]=" proyect.title + ' proyect image'" loading="lazy">
+              </div>
+              <div class="col-12 col-md-6 text-white px-md-5 pt-3">
+                <p class="text-left mt-4 fs-3 fw-bold">{{ proyect.title }}</p>
+                <p class="text-left mt-1 mt-md-5">{{ proyect.description }}</p>
+                <a [routerLink]="'/proyect/'+ proyect.id" class="px-3 mt-3 mt-md-5 btn-secondary">
+                  <p>{{ pageContent.proyects_see_more}}</p>
+                </a>
+              </div>
+              <!-- <img class="w-auto cursor-pointer" width="50" height="50" src="./assets/github.svg" alt="">
+              <img class="w-auto cursor-pointer" width="50" height="50" src="./assets/svg-pensamiento.svg" alt=""> -->
+            </div>
+            <span class="border-bottom-custom"></span>
+          </article>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id='about' class="bg-low-gray">
+    <div *ngIf="!loadingContent" class="container p-4 py-0 pt-4">
+      <div class="row flex-column flex-sm-row">
+        <div class="col-12 col-lg-8">
+          <h1 class="title my-3 underline-decoration">{{ pageContent.about_me }}</h1>
+          <p class="text-information-color " *ngFor="let paragraf of pageContent.about_me_paragraphs">
+            {{paragraf}}
+          </p>
+
+          <h2 class="title mt-5 fs-1 p-0">{{ pageContent.how_to_help }}</h2>
+          <p class="text-information-color">{{ pageContent.how_to_help_paragraph }}</p>
+        </div>
+        <div class=" col-12 col-lg-4 p-5 pb-0">
+          <img src="assets/imagen_brian.webp" alt="web developer brian image" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <span class="divition-line"></span>
+
+
   <div class="bg-low-gray">
-    <section *ngIf="!loadingContent" id='knowage' class="container knowage-section  animate__animated animate__fadeIn">
-      <h2 class="knowage-section__title title">{{ pageContent.knowledge }}</h2>
+    <section *ngIf="!loadingContent" id='knowage'
+      class="container knowage-section  pb-5 animate__animated animate__fadeIn">
+      <h2 class="title underline-decoration">{{ pageContent.knowledge }}</h2>
       <h3 class="knowage-section__subtitle subtitle mt-0">Frontend</h3>
       <ul class="knowage-section__list">
 
@@ -133,86 +215,9 @@
     </section>
   </div>
 
-  <section id='work' class="bg-dark-blue">
-
-    <div *ngIf="!loadingContent" class="container py-5">
-      <h1 class="title text-second-color mb-5 ">{{ pageContent.proyect }}</h1>
-
-      <div class="d-block" *ngFor="let proyect of pageContent.proyects">
-        <div class="proyect-card">
-          <div class="proyect-card__description">
-            <p class="text-center mt-5 h2">{{ proyect.title }}</p>
-            <p class="text-center mt-2 p1">{{ proyect.description }}</p>
-
-            <a [routerLink]="'/proyect/'+ proyect.id"
-              class="text-white text-decoration-underline cursor-pointer text-center">
-              <p>{{ pageContent.proyects_see_more}}</p>
-              <!-- <img class="w-auto cursor-pointer" width="50" height="50" src="./assets/github.svg" alt="">
-              <img class="w-auto cursor-pointer" width="50" height="50" src="./assets/svg-pensamiento.svg" alt=""> -->
-            </a>
-          </div>
-          <img class="card-img-top"
-            [src]="isMobile ? proyect.mobile_image ? proyect.mobile_image : proyect.image  : proyect.image"
-            [alt]="proyect.title + ' proyect image'" loading="lazy">
-        </div>
-      </div>
-
-      <!-- <img src="./assets/proyectos/agenciadeviajes.webp" loading="lazy" class="" alt="...">
-
-        <img src="./assets/proyectos/devjobsimg.webp" loading="lazy" class="" alt="...">
-
-        <img src="https://i.postimg.cc/fbjQfMqr/Login.png " loading="lazy" alt=""> -->
-
-
-
-      <div>
-        <h2 class="title text-light  my-5">{{ pageContent.secundaty_proyect }}</h2>
-
-        <div class="d-block" *ngFor="let proyect of pageContent.secundaty_proyects">
-          <div class="proyect-card">
-            <div class="proyect-card__description">
-              <p class="text-center mt-5 h2">{{ proyect.title }}</p>
-              <p class="text-center mt-2 p1">{{ proyect.description }}</p>
-              <a
-                class="text-white text-decoration-underline d-flex gap-5 justify-content-center align-content-center proyect-card__description__icons cursor-pointer">
-                <p>{{ pageContent.proyects_see_more}}</p>
-                <!-- <img class="w-auto cursor-pointer" width="50" height="50" src="./assets/github.svg" alt="">
-                <img class="w-auto cursor-pointer" width="50" height="50" src="./assets/svg-pensamiento.svg" alt=""> -->
-              </a>
-            </div>
-            <img class="card-img-top" [src]="proyect.image" [alt]=" proyect.title + ' proyect image'" loading="lazy">
-          </div>
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-
-
-  <section id='about' class="bg-low-gray">
-    <div *ngIf="!loadingContent" class="section container">
-      <div class="row flex-column flex-sm-row">
-        <div class="col-12 col-lg-8 p-5 pb-0 pt-0 pb-md-5">
-          <h1 class="title my-3 bg-gray">{{ pageContent.about_me }}</h1>
-          <p class="text-blue fw-bolder fs-5 " *ngFor="let paragraf of pageContent.about_me_paragraphs">
-            {{paragraf}}
-          </p>
-
-          <h2 class="title bg-gray mt-5 fs-1 p-0">{{ pageContent.how_to_help }}</h2>
-          <p class="text-blue fw-bolder fs-5">{{ pageContent.how_to_help_paragraph }}</p>
-        </div>
-        <div class=" col-12 col-lg-4 p-5">
-          <img src="assets/imagen_brian.webp" alt="web developer brian image" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-
   <div class="bg-dark-blue borde-inferior-white">
-    <section *ngIf="!loadingContent" class="section-learning container">
-      <h2 class="section-learning__title title">{{ pageContent.learning }}</h2>
+    <section *ngIf="!loadingContent" class="section-learning container p-4 ">
+      <h2 class="section-learning__title title ">{{ pageContent.learning }}</h2>
       <h3 class="section-learning__subtitle subtitle mt-0">{{ pageContent.learning_technologies }}</h3>
       <ul class="section-learning____list">
         <li class="section-learning___element-list" *ngFor="let paragraf of pageContent.learning_paragraphs"> {{
