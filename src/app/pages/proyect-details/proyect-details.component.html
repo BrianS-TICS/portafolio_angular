@@ -4,7 +4,7 @@
 
         <section *ngIf="!loadingContent" class="proyect-details overflow-hidden">
 
-            <a class="btn-return animate__animated animate__fadeInTopLeft" (click)="returnToHome()" routerLink="/">{{ pageContent.proyect_return }}</a>
+            <a class="btn-return animate__animated animate__fadeInTopLeft" routerLink="/">{{ pageContent.proyect_return }}</a>
 
             <div class="d-sm-flex justify-content-between animate__animated animate__fadeInRight">
                 <h1 class="text-center fw-bold text-white ">{{ selectedProyect.title }}</h1>
@@ -38,10 +38,10 @@
 
             </div>
 
-            <div class="my-5">
+            <!-- <div class="my-5">
                 <img *ngFor="let image of selectedProyect.image_details" [src]="image" class="card p-0 mt-4 w-100"
                     alt="image detail">
-            </div>
+            </div> -->
 
         </section>
 

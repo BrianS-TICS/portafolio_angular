@@ -13,5 +13,5 @@ export class SectionServiceService {
   emitSectionChange(sectionId: string) {
     this.sectionChangeSubject.next(sectionId);
   }
-
+  
 }

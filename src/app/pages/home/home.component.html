@@ -10,21 +10,27 @@
 
 
         <div *ngIf="!loadingContent" class="animate__animated animate__fadeInLeft">
-          <h1 class="seccion-presentacion__nombre animate__animated animate__fadeInLeft">
+          <div class="seccion-presentacion__nombre animate__animated animate__fadeInLeft">
             <p class="d-block font-subtitle animate__animated animate__fadeInLeft">{{pageContent.greeting}}</p>
-            <p class="d-block font-title animate__animated animate__fadeInLeft">{{ pageContent.name }}</p>
-          </h1>
-          <h3 class="seccion-presentacion__cargo"> {{ pageContent.job }} </h3>
-          <h4 class="seccion-presentacion__descripcion fs-6">{{ pageContent.job_description }}</h4>
+            <h1 class="d-block fw-bolder font-title animate__animated animate__fadeInLeft">{{ pageContent.name }}</h1>
+          </div>
+          <h2 class="seccion-presentacion__cargo"> {{ pageContent.job }} </h2>
+          <h3 class="seccion-presentacion__descripcion fs-6">{{ pageContent.job_description }}</h3>
         </div>
 
-        <div #quoteMainNode id="quoteMainNode" class="cita-textual animate__animated  animate__fadeInRight" *ngIf="!loadingContent" >
-          <p class="cita-textual__texto animate__animated  animate__fadeInRight">{{ '" ' + currentQuote.quote + ' "' }} </p>
-          <p class="cita-textual__texto animate__animated  animate__fadeInRight">{{ currentQuote.author_name }}.</p>
-          <button class="position-relative btn btn-outline-light mt-2" (click)="getNextQuote()">
-            {{pageContent.next_quote}}
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-orange">+</span>
-          </button>
+        <div class="cita-textual animate__animated  animate__fadeInRight" *ngIf="!loadingContent">
+          <div #quoteMainNode id="quoteMainNode">
+            <p class="cita-textual__texto animate__animated  animate__fadeInRight">{{ '" ' + currentQuote.quote + ' "'
+              }}
+            </p>
+            <p class="cita-textual__texto animate__animated  animate__fadeInRight">{{ currentQuote.author_name }}.</p>
+          </div>
+          <div #quoteBtnNode id="quoteBtnNode" >
+            <button class="position-relative btn btn-outline-light mt-2" (click)="getNextQuote()">
+              {{pageContent.next_quote}}
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-orange">+</span>
+            </button>
+          </div>
         </div>
 
       </div>
@@ -37,22 +43,19 @@
       <h1 class="title text-white mb-4  mb-md-5 underline-decoration ">{{ pageContent.proyect }}</h1>
 
       <div class="border-corner pb-3 animate__animated animate__slideInRight">
-        <article class="d-block mb-5" *ngFor="let proyect of pageContent.proyects">
+        <article class="mb-5" *ngFor="let proyect of pageContent.proyects">
           <div class="row w-100 m-0 p-md-5 align-items-center">
             <div class="col-12 col-md-6
           p-0">
               <img class="w-100 " [src]="proyect.image" [alt]=" proyect.title + ' proyect image'" loading="lazy">
             </div>
             <div class="col-12 col-md-6 text-white px-md-5 pt-3 pt-md-0">
-              <p class="text-left  fs-3 fw-bold">{{ proyect.title }}</p>
+              <p class="text-left mt-4 mt-sm-1 fs-3 fw-bold">{{ proyect.title }}</p>
               <p class="text-left mt-1 mt-md-5">{{ proyect.description }}</p>
-              <a [routerLink]="'/proyect/'+ proyect.id" class="px-3 text-white  mt-3 mt-md-5 btn-secondary text">
+              <a [routerLink]="'/proyect/'+ proyect.id" class="px-3 text-white fw-semibold  mt-3 mt-md-5 btn-secondary text">
                 <p>{{ pageContent.proyects_see_more}}</p>
               </a>
             </div>
-            <!-- <img class="w-auto cursor-pointer" width="50" height="50" src="./assets/github.svg" alt="">
-            <img class="w-auto cursor-pointer" width="50" height="50" src="./assets/svg-pensamiento.svg" alt=""> -->
-
           </div>
           <span class="border-bottom-custom"></span>
         </article>
@@ -64,13 +67,13 @@
         <div class="border-corner pb-3">
 
           <article class="mb-5" *ngFor="let proyect of pageContent.secundaty_proyects">
-            <div class="row w-100 m-0 p-md-5">
+            <div class="row align-items-center justify-content-center w-100 m-0 p-md-5">
               <div class="col-12 col-md-6
             p-0">
                 <img class="w-100 " [src]="proyect.image" [alt]=" proyect.title + ' proyect image'" loading="lazy">
               </div>
               <div class="col-12 col-md-6 text-white px-md-5 pt-3">
-                <p class="text-left mt-4 fs-3 fw-bold">{{ proyect.title }}</p>
+                <p class="text-left mt-sm-1 fs-3 fw-bold">{{ proyect.title }}</p>
                 <p class="text-left mt-1 mt-md-5">{{ proyect.description }}</p>
                 <a [routerLink]="'/proyect/'+ proyect.id" class="px-3 mt-3 mt-md-5 btn-secondary">
                   <p>{{ pageContent.proyects_see_more}}</p>
@@ -118,98 +121,137 @@
       <h3 class="knowage-section__subtitle subtitle mt-0">Frontend</h3>
       <ul class="knowage-section__list">
 
-        <app-knowledge-card technologyName="Angular" backGroundcolor="warning" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[1] ">
-        </app-knowledge-card>
+        <li>
+          <app-knowledge-card technologyName="Angular" backGroundcolor="warning" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[1] ">
+          </app-knowledge-card>
+        </li>
 
-        <app-knowledge-card technologyName="Angular material" backGroundcolor="success" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[0] ">
-        </app-knowledge-card>
+        <li>
+          <app-knowledge-card technologyName="Angular material" backGroundcolor="success" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[0] ">
+          </app-knowledge-card>
+        </li>
 
-        <app-knowledge-card technologyName="TypeScript" backGroundcolor="warning" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[1] ">
-        </app-knowledge-card>
+        <li>
+          <app-knowledge-card technologyName="TypeScript" backGroundcolor="warning" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[1] ">
+          </app-knowledge-card>
+        </li>
 
-        <app-knowledge-card technologyName="JavaScript" backGroundcolor="warning" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[1] ">
-        </app-knowledge-card>
+        <li>
+          <app-knowledge-card technologyName="JavaScript" backGroundcolor="warning" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[1] ">
+          </app-knowledge-card>
+        </li>
 
-        <app-knowledge-card technologyName="Next.Js" backGroundcolor="success" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[0] ">
-        </app-knowledge-card>
+        <li>
 
-        <app-knowledge-card technologyName="React" backGroundcolor="success" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[0] ">
-        </app-knowledge-card>
+          <app-knowledge-card technologyName="Next.Js" backGroundcolor="success" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[0] ">
+          </app-knowledge-card>
+        </li>
 
-        <app-knowledge-card technologyName="SCSS" backGroundcolor="warning" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[1] ">
-        </app-knowledge-card>
+        <li>
+          <app-knowledge-card technologyName="React" backGroundcolor="success" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[0] ">
+          </app-knowledge-card>
+        </li>
 
-        <app-knowledge-card technologyName="CSS" backGroundcolor="warning" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[1] ">
-        </app-knowledge-card>
+        <li>
+          <app-knowledge-card technologyName="SCSS" backGroundcolor="warning" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[1] ">
+          </app-knowledge-card>
+        </li>
+        <li>
+          <app-knowledge-card technologyName="CSS" backGroundcolor="warning" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[1] ">
+          </app-knowledge-card>
+        </li>
+        <li>
+          <app-knowledge-card technologyName="Bootstrap" backGroundcolor="warning" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[1] ">
+          </app-knowledge-card>
+        </li>
 
-        <app-knowledge-card technologyName="Bootstrap" backGroundcolor="warning" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[1] ">
-        </app-knowledge-card>
-
-        <app-knowledge-card technologyName="Tailwind CSS" backGroundcolor="success" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[0] ">
-        </app-knowledge-card>
+        <li>
+          <app-knowledge-card technologyName="Tailwind CSS" backGroundcolor="success" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[0] ">
+          </app-knowledge-card>
+        </li>
       </ul>
 
       <h3 class="knowage-section__subtitle subtitle">Backend</h3>
       <ul class="knowage-section__list">
 
-        <app-knowledge-card technologyName="Node.Js" backGroundcolor="success" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[0] ">
-        </app-knowledge-card>
+        <li>
+          <app-knowledge-card technologyName="Node.Js" backGroundcolor="success" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[0] ">
+          </app-knowledge-card>
+        </li>
 
-        <app-knowledge-card technologyName="Express" backGroundcolor="success" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[0] ">
-        </app-knowledge-card>
+        <li>
+          <app-knowledge-card technologyName="Express" backGroundcolor="success" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[0] ">
+          </app-knowledge-card>
+        </li>
 
-        <app-knowledge-card technologyName="MongoDB" backGroundcolor="success" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[0] ">
-        </app-knowledge-card>
+        <li>
+          <app-knowledge-card technologyName="MongoDB" backGroundcolor="success" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[0] ">
+          </app-knowledge-card>
+        </li>
+        <li>
 
-        <app-knowledge-card technologyName="Mysql" backGroundcolor="warning" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[1] ">
-        </app-knowledge-card>
+          <app-knowledge-card technologyName="Mysql" backGroundcolor="warning" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[1] ">
+          </app-knowledge-card>
+        </li>
 
-        <app-knowledge-card technologyName="SQL" backGroundcolor="warning" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[1] ">
-        </app-knowledge-card>
-
-        <app-knowledge-card technologyName="Php" backGroundcolor="success" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[0] ">
-        </app-knowledge-card>
-
-        <app-knowledge-card technologyName="Laravel" backGroundcolor="warning" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[1] ">
-        </app-knowledge-card>
+        <li>
+          <app-knowledge-card technologyName="SQL" backGroundcolor="warning" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[1] ">
+          </app-knowledge-card>
+        </li>
+        <li>
+          <app-knowledge-card technologyName="Php" backGroundcolor="success" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[0] ">
+          </app-knowledge-card>
+        </li>
+        <li>
+          <app-knowledge-card technologyName="Laravel" backGroundcolor="warning" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[1] ">
+          </app-knowledge-card>
+        </li>
 
       </ul>
 
       <h3 class="knowage-section__title subtitle mt-4">Extras</h3>
       <ul class="knowage-section__list">
 
-        <app-knowledge-card technologyName="Git" backGroundcolor="warning" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[1]">
-        </app-knowledge-card>
+        <li>
+          <app-knowledge-card technologyName="Git" backGroundcolor="warning" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[1]">
+          </app-knowledge-card>
+        </li>
 
-        <app-knowledge-card technologyName="GitHub" backGroundcolor="warning" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[1]">
-        </app-knowledge-card>
+        <li>
+          <app-knowledge-card technologyName="GitHub" backGroundcolor="warning" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[1]">
+          </app-knowledge-card>
+        </li>
 
-        <app-knowledge-card technologyName="Scrum" backGroundcolor="success" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[0] ">
-        </app-knowledge-card>
+        <li>
+          <app-knowledge-card technologyName="Scrum" backGroundcolor="success" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[0] ">
+          </app-knowledge-card>
+        </li>
 
-        <app-knowledge-card technologyName="Jira" backGroundcolor="success" technologyUrl=""
-          [namelevel]=" pageContent.knowledge_levels[0]">
-        </app-knowledge-card>
+        <li>
+          <app-knowledge-card technologyName="Jira" backGroundcolor="success" technologyUrl=""
+            [namelevel]=" pageContent.knowledge_levels[0]">
+          </app-knowledge-card>
+        </li>
 
       </ul>
     </section>
