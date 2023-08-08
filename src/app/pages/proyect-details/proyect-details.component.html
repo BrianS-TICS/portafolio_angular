@@ -2,23 +2,23 @@
 
     <main class="container hidden_header_area">
 
-        <section *ngIf="!loadingContent" class="proyect-details">
+        <section *ngIf="!loadingContent" class="proyect-details overflow-hidden">
 
-            <a class="btn-return" (click)="returnToHome()" routerLink="/">{{ pageContent.proyect_return }}</a>
+            <a class="btn-return animate__animated animate__fadeInTopLeft" (click)="returnToHome()" routerLink="/">{{ pageContent.proyect_return }}</a>
 
-            <div class="d-sm-flex justify-content-between">
-                <h1 class="text-center fw-bold text-white">{{ selectedProyect.title }}</h1>
+            <div class="d-sm-flex justify-content-between animate__animated animate__fadeInRight">
+                <h1 class="text-center fw-bold text-white ">{{ selectedProyect.title }}</h1>
 
-                <a target="_blank" [href]="selectedProyect.link_backend_github" class="d-flex d-sm-flex px-4 btn btn-dark gap-2 align-items-center bg-black rounded-4 btn-git">
+                <a target="_blank" [href]="selectedProyect.link_backend_github" class="d-flex d-sm-flex px-4 btn btn-dark gap-2 align-items-center bg-black rounded-4 btn-git animate__animated animate__fadeInRight">
                     <p class="p-0 m-0 fs-5 fw-normal">Github</p>
                     <div class="icon-github">
                         <img class="w-100" src="./assets/technologies/github.svg" alt="github repo">
                     </div>
                 </a>
             </div>
-            <img [src]="selectedProyect.image" class="card w-100 mt-4" alt="">
+            <img [src]="selectedProyect.image" class="w-100 mt-4  animate__animated animate__fadeInUp" alt="">
 
-            <div class="row mt-5 ">
+            <div class="row mt-5 animate__animated animate__fadeInUp">
 
                 <div class="col-12 col-sm-7 ">
                     <p class="text-left  fw-bold fs-5 text-white"> {{ selectedProyect.description }}</p>

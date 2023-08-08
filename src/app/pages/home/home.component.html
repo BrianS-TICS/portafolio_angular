@@ -1,26 +1,26 @@
 <div>
   <span class="hidden_header_area"></span>
-  <section id='start' class="bg-blue background-image animate__animated animate__fadeIn">
+  <section id='start' class="bg-blue background-image">
     <main class="seccion-presentacion container">
-      <div class="seccion-presentacion-contenido">
+      <div class="seccion-presentacion-contenido overflow-hidden">
 
-        <div *ngIf="loadingContent" class="loading-place-holder">
+        <!-- <div *ngIf="loadingContent" class="loading-place-holder">
           <div class="loading-place-holder__activity"></div>
-        </div>
+        </div> -->
 
 
-        <div *ngIf="!loadingContent">
-          <h1 class="seccion-presentacion__nombre">
-            <p class="d-block font-subtitle">{{pageContent.greeting}}</p>
-            <p class="d-block font-title ">{{ pageContent.name }}</p>
+        <div *ngIf="!loadingContent" class="animate__animated animate__fadeInLeft">
+          <h1 class="seccion-presentacion__nombre animate__animated animate__fadeInLeft">
+            <p class="d-block font-subtitle animate__animated animate__fadeInLeft">{{pageContent.greeting}}</p>
+            <p class="d-block font-title animate__animated animate__fadeInLeft">{{ pageContent.name }}</p>
           </h1>
           <h3 class="seccion-presentacion__cargo"> {{ pageContent.job }} </h3>
           <h4 class="seccion-presentacion__descripcion fs-6">{{ pageContent.job_description }}</h4>
         </div>
 
-        <div class="cita-textual" *ngIf="!loadingContent">
-          <p class="cita-textual__texto">{{ '" ' + currentQuote.quote + ' "' }} </p>
-          <p class="cita-textual__texto">{{ currentQuote.author_name }}.</p>
+        <div #quoteMainNode id="quoteMainNode" class="cita-textual animate__animated  animate__fadeInRight" *ngIf="!loadingContent" >
+          <p class="cita-textual__texto animate__animated  animate__fadeInRight">{{ '" ' + currentQuote.quote + ' "' }} </p>
+          <p class="cita-textual__texto animate__animated  animate__fadeInRight">{{ currentQuote.author_name }}.</p>
           <button class="position-relative btn btn-outline-light mt-2" (click)="getNextQuote()">
             {{pageContent.next_quote}}
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-orange">+</span>
@@ -33,18 +33,18 @@
 
   <section id='work' class="bg-dark-blue">
 
-    <div *ngIf="!loadingContent" class="container pt-5 pb-md-5">
-      <h1 class="title text-white mb-4  mb-md-5 underline-decoration">{{ pageContent.proyect }}</h1>
+    <div *ngIf="!loadingContent" class="container pt-5 pb-md-5 animate__animated animate__slideInUp overflow-hidden">
+      <h1 class="title text-white mb-4  mb-md-5 underline-decoration ">{{ pageContent.proyect }}</h1>
 
-      <div class="border-corner pb-3">
+      <div class="border-corner pb-3 animate__animated animate__slideInRight">
         <article class="d-block mb-5" *ngFor="let proyect of pageContent.proyects">
-          <div class="row w-100 m-0 p-md-5 ">
+          <div class="row w-100 m-0 p-md-5 align-items-center">
             <div class="col-12 col-md-6
           p-0">
               <img class="w-100 " [src]="proyect.image" [alt]=" proyect.title + ' proyect image'" loading="lazy">
             </div>
-            <div class="col-12 col-md-6 text-white px-md-5 pt-3">
-              <p class="text-left mt-4 fs-3 fw-bold">{{ proyect.title }}</p>
+            <div class="col-12 col-md-6 text-white px-md-5 pt-3 pt-md-0">
+              <p class="text-left  fs-3 fw-bold">{{ proyect.title }}</p>
               <p class="text-left mt-1 mt-md-5">{{ proyect.description }}</p>
               <a [routerLink]="'/proyect/'+ proyect.id" class="px-3 text-white  mt-3 mt-md-5 btn-secondary text">
                 <p>{{ pageContent.proyects_see_more}}</p>

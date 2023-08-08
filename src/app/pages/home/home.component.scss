@@ -299,8 +299,6 @@ img {
   width: 100%;
 }
 
-// ! Pendiente el uso de media querys para adaptar imagen
-
 .cita-textual {
   margin-top: 2rem;
   max-width: 30rem;
@@ -309,7 +307,7 @@ img {
 
   @media (min-width : 768px) {
     margin-top: 1rem;
-    transform: rotateZ(10deg);
+    // transform: rotateZ(10deg);
     max-width: 20rem;
     text-align: left;
   }
@@ -395,8 +393,8 @@ img {
 
 .border-bottom-custom {
   display: block;
-  height: .01rem;
-  opacity: 0.4;
+  height: 0.1rem;
+
   width: 100%;
   background-color: #51595e;
   margin: 1rem auto;

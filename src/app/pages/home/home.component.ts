@@ -65,6 +65,25 @@ export class HomeComponent implements OnInit {
   public quoteNumber = 0;
 
   public getNextQuote() {
+
+
+    const divQuote = document.querySelector('#quoteMainNode');
+
+    let classes = divQuote.classList.value
+      ;
+    // Elimina la clase de animación anterior
+    divQuote.classList.remove('animate__fadeInRightBig');
+
+    // Agrega las clases para aplicar la animación
+    classes = "cita-textual animate__animated animate__fadeInRightBig";
+    divQuote.classList.value = classes;
+
+    // Detectar el final de la animación y restablecer las clases después
+    divQuote.addEventListener('animationend', () => {
+      divQuote.classList.remove('animate__fadeInRightBig');
+
+    }, { once: true });
+
     this.quoteNumber = (this.quoteNumber + 1) % this.pageContent.quotes.length;
     this.currentQuote = this.pageContent.quotes[this.quoteNumber];
   }
