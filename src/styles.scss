@@ -2,6 +2,7 @@
 @import '~animate.css/animate.min.css';
 
 
+
 ul {
   margin: 0;
   padding: 0;
@@ -10,4 +11,8 @@ ul {
 .scroll-stop {
   overflow-x: hidden !important;
   overflow-y: hidden !important;
+}
+
+.bg-page {
+  background-color: #1d272e;
 }

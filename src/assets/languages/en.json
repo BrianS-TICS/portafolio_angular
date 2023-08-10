@@ -70,55 +70,196 @@
       "title": "APV",
       "description": "Web application for the administration of veterinary patients",
       "image": "./assets/proyects/apv/login.webp",
-      "mobile_image": "./assets/proyects/apv/login_movil.webp",
-      "image_details": [
-        "./assets/proyects/apv/details/administration_empty.webp",
-        "./assets/proyects/apv/details/administration.webp",
-        "./assets/proyects/apv/details/change_pass.webp",
-        "./assets/proyects/apv/details/edit_perfile.webp",
-        "./assets/proyects/apv/details/reset_pass.webp"
+      "used_technologies": "Used technologies",
+      "technologies": [
+              {
+          "id": "3",
+          "name": "Javascript",
+          "image": "./assets/technologies/js.svg"
+        },
+        {
+          "id": "9",
+          "name": "React",
+          "image": "./assets/technologies/react.svg"
+        },
+        {
+          "id": "2",
+          "name": "Bootstrap",
+          "image": "./assets/technologies/tailwind.svg"
+        },
+        {
+          "id": "5",
+          "name": "NodeJs",
+          "image": "./assets/technologies/nodejs.svg"
+        },
+        {
+          "id": "6",
+          "name": "Mongodb",
+          "image": "./assets/technologies/mongodb.svg"
+        }
       ],
-      "image_details_mobile": [
-        "./assets/proyects/apv/details/funcionalidad_movil.webp",
-        "./assets/proyects/apv/details/funcionalidad_2_movil.webp",
-        "./assets/proyects/apv/details/perfil_movil.webp",
-        "./assets/proyects/apv/details/reset_pass_movil.webp"
-      ],
-      "link_fronend_github": ""
+      "link_fronend_github": "https://github.com/BrianS-TICS/apv_MEARN",
+      "link_backend_github": "https://github.com/BrianS-TICS/apv_MEARN"
     },
     {
       "id": 3,
       "title": "Travel agency",
       "description": "Web application for travel agency",
       "image": "./assets/proyectos/agenciadeviajes.webp",
-      "link_fronend_github": ""
+            "used_technologies": "Used technologies",
+
+      "technologies": [
+              {
+          "id": "3",
+          "name": "Javascript",
+          "image": "./assets/technologies/js.svg"
+        },
+        {
+          "id": "7",
+          "name": "Pug",
+          "image": "./assets/technologies/pug.svg"
+        },
+        {
+          "id": "8",
+          "name": "Bootstrap",
+          "image": "./assets/technologies/bootstrap.svg"
+        },
+        {
+          "id": "5",
+          "name": "NodeJs",
+          "image": "./assets/technologies/nodejs.svg"
+        },
+        {
+          "id": "6",
+          "name": "Mongodb",
+          "image": "./assets/technologies/mongodb.svg"
+        }
+      ],
+      "link_fronend_github": "https://github.com/BrianS-TICS/AgenciaDeViajes",
+      "link_backend_github": "https://github.com/BrianS-TICS/AgenciaDeViajes"
     },
     {
       "id": 4,
       "title": "DevJobs",
       "description": "Web application for job search",
       "image": "./assets/proyectos/devjobsimg.webp",
-      "link_fronend_github": ""
+            "used_technologies": "Used technologies",
+
+         "technologies": [
+
+        {
+          "id": "1",
+          "name": "Laravel",
+          "image": "./assets/technologies/laravel.svg"
+        },
+        {
+          "id": "2",
+          "name": "Tailwind CSS",
+          "image": "./assets/technologies/tailwind.svg"
+        },
+        {
+          "id": "3",
+          "name": "Javascript",
+          "image": "./assets/technologies/js.svg"
+        },
+        {
+          "id": "4",
+          "name": "Mysql",
+          "image": "./assets/technologies/mysql-simple.svg"
+        }
+      ],
+      "link_fronend_github": "https://github.com/BrianS-TICS/devjobs",
+      "link_backend_github": "https://github.com/BrianS-TICS/devjobs"
     }
   ],
   "secundaty_proyects": [
     {
+      "id": 5,
       "title": "Coffee Blog",
       "description": "Landing page for a coffee blog",
       "image": "./assets/proyectos/cafe.webp",
-      "link_fronend_github": ""
+            "used_technologies": "Used technologies",
+
+         "technologies": [
+        {
+          "id": "10",
+          "name": "Html",
+          "image": "./assets/technologies/html.svg"
+        },
+        {
+          "id": "11",
+          "name": "Css",
+          "image": "./assets/technologies/css.svg"
+        },
+        {
+          "id": "3",
+          "name": "Javascript",
+          "image": "./assets/technologies/js.svg"
+        }
+      ],
+       "link_fronend_github": "https://github.com/BrianS-TICS/BlogDeCafe",
+      "link_backend_github": "https://github.com/BrianS-TICS/BlogDeCafe"
     },
     {
+      "id": 6,
       "title": "Tip calculator",
       "description": "Web application for calculating tips",
       "image": "./assets/proyectos/tip_cal.webp",
-      "link_fronend_github": ""
+            "used_technologies": "Used technologies",
+
+          "technologies": [
+  {
+          "id": "9",
+          "name": "React",
+          "image": "./assets/technologies/react.svg"
+        },
+
+            {
+          "id": "3",
+          "name": "Javascript",
+          "image": "./assets/technologies/js.svg"
+        }
+        ,
+        {
+          "id": "11",
+          "name": "Css",
+          "image": "./assets/technologies/css.svg"
+        }
+    
+      ],
+       "link_fronend_github": "https://github.com/BrianS-TICS/TipCalculatorApp",
+      "link_backend_github": "https://github.com/BrianS-TICS/TipCalculatorApp"
     },
     {
+      "id": 7,
       "title": "Interactive card",
       "description": "Website for simulating interactive card capture",
       "image": "./assets/proyectos/interactive_card.webp",
-      "link_fronend_github": ""
+            "used_technologies": "Used technologies",
+
+      "technologies": [
+  {
+          "id": "9",
+          "name": "React",
+          "image": "./assets/technologies/react.svg"
+        },
+
+            {
+          "id": "3",
+          "name": "Javascript",
+          "image": "./assets/technologies/js.svg"
+        }
+        ,
+        {
+          "id": "11",
+          "name": "Css",
+          "image": "./assets/technologies/css.svg"
+        }
+    
+      ],
+      "link_fronend_github": "https://github.com/BrianS-TICS/interactive-card",
+        "link_backend_github": "https://github.com/BrianS-TICS/interactive-card"
+
     }
   ],
   "proyects_see_more": "See more",

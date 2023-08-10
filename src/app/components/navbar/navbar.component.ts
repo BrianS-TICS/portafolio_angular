@@ -51,7 +51,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
     if (section) {
       const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
+    } else {
+      setTimeout(() => {
+        const section = document.querySelector(sectionId);
+        const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
 
+      }, 200);
     }
   }
 

@@ -25,7 +25,7 @@
             </p>
             <p class="cita-textual__texto animate__animated  animate__fadeInRight">{{ currentQuote.author_name }}.</p>
           </div>
-          <div #quoteBtnNode id="quoteBtnNode" >
+          <div #quoteBtnNode id="quoteBtnNode">
             <button class="position-relative btn btn-outline-light mt-2" (click)="getNextQuote()">
               {{pageContent.next_quote}}
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-orange">+</span>
@@ -39,54 +39,56 @@
 
   <section id='work' class="bg-dark-blue">
 
-    <div *ngIf="!loadingContent" class="container pt-5 pb-md-5 animate__animated animate__slideInUp overflow-hidden">
-      <h1 class="title text-white mb-4  mb-md-5 underline-decoration ">{{ pageContent.proyect }}</h1>
+    <div class="overflow-hidden">
+      <div *ngIf="!loadingContent" class="container pt-5 pb-md-5 animate__animated animate__slideInUp overflow-hidden">
+        <h1 class="title text-white mb-4  mb-md-5 underline-decoration ">{{ pageContent.proyect }}</h1>
 
-      <div class="border-corner pb-3 animate__animated animate__slideInRight">
-        <article class="mb-5" *ngFor="let proyect of pageContent.proyects">
-          <div class="row w-100 m-0 p-md-5 align-items-center">
-            <div class="col-12 col-md-6
-          p-0">
-              <img class="w-100 " [src]="proyect.image" [alt]=" proyect.title + ' proyect image'" loading="lazy">
-            </div>
-            <div class="col-12 col-md-6 text-white px-md-5 pt-3 pt-md-0">
-              <p class="text-left mt-4 mt-sm-1 fs-3 fw-bold">{{ proyect.title }}</p>
-              <p class="text-left mt-1 mt-md-5">{{ proyect.description }}</p>
-              <a [routerLink]="'/proyect/'+ proyect.id" class="px-3 text-white fw-semibold  mt-3 mt-md-5 btn-secondary text">
-                <p>{{ pageContent.proyects_see_more}}</p>
-              </a>
-            </div>
-          </div>
-          <span class="border-bottom-custom"></span>
-        </article>
-      </div>
-
-      <div>
-        <h2 class="title text-light underline-decoration mb-4  my-md-5">{{ pageContent.secundaty_proyect }}</h2>
-
-        <div class="border-corner pb-3">
-
-          <article class="mb-5" *ngFor="let proyect of pageContent.secundaty_proyects">
-            <div class="row align-items-center justify-content-center w-100 m-0 p-md-5">
+        <div class="border-corner pb-3 animate__animated animate__slideInRight">
+          <article class="mb-5" *ngFor="let proyect of pageContent.proyects">
+            <div class="row w-100 m-0 p-md-5 align-items-center">
               <div class="col-12 col-md-6
-            p-0">
+          p-0">
                 <img class="w-100 " [src]="proyect.image" [alt]=" proyect.title + ' proyect image'" loading="lazy">
               </div>
-              <div class="col-12 col-md-6 text-white px-md-5 pt-3">
-                <p class="text-left mt-sm-1 fs-3 fw-bold">{{ proyect.title }}</p>
+              <div class="col-12 col-md-6 text-white px-md-5 pt-3 pt-md-0">
+                <p class="text-left mt-4 mt-sm-1 fs-3 fw-bold">{{ proyect.title }}</p>
                 <p class="text-left mt-1 mt-md-5">{{ proyect.description }}</p>
-                <a [routerLink]="'/proyect/'+ proyect.id" class="px-3 mt-3 mt-md-5 btn-secondary">
+                <a [routerLink]="'/proyect/'+ proyect.id"
+                  class="px-3 text-white fw-semibold  mt-3 mt-md-5 btn-secondary text">
                   <p>{{ pageContent.proyects_see_more}}</p>
                 </a>
               </div>
-              <!-- <img class="w-auto cursor-pointer" width="50" height="50" src="./assets/github.svg" alt="">
-              <img class="w-auto cursor-pointer" width="50" height="50" src="./assets/svg-pensamiento.svg" alt=""> -->
             </div>
             <span class="border-bottom-custom"></span>
           </article>
-
         </div>
 
+        <div>
+          <h2 class="title text-light underline-decoration mb-4  my-md-5">{{ pageContent.secundaty_proyect }}</h2>
+
+          <div class="border-corner pb-3">
+
+            <article class="mb-5" *ngFor="let proyect of pageContent.secundaty_proyects">
+              <div class="row align-items-center justify-content-center w-100 m-0 p-md-5">
+                <div class="col-12 col-md-6
+              p-0">
+                  <img class="w-100 " [src]="proyect.image" [alt]=" proyect.title + ' proyect image'" loading="lazy">
+                </div>
+                <div class="col-12 col-md-6 text-white px-md-5 pt-3">
+                  <p class="text-left mt-sm-1 fs-3 fw-bold">{{ proyect.title }}</p>
+                  <p class="text-left mt-1 mt-md-5">{{ proyect.description }}</p>
+                  <a [routerLink]="'/proyect/'+ proyect.id"
+                  class="px-3 text-white fw-semibold  mt-3 mt-md-5 btn-secondary text">
+                  <p>{{ pageContent.proyects_see_more}}</p>
+                </a>
+                </div>
+              </div>
+              <span class="border-bottom-custom"></span>
+            </article>
+
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
@@ -257,8 +259,8 @@
     </section>
   </div>
 
-  <div class="bg-dark-blue borde-inferior-white">
-    <section *ngIf="!loadingContent" class="section-learning container p-4 ">
+  <div class="bg-dark-blue borde-inferior">
+    <section *ngIf="!loadingContent" class="section-learning container p-4 animate__animated animate__fadeIn">
       <h2 class="section-learning__title title ">{{ pageContent.learning }}</h2>
       <h3 class="section-learning__subtitle subtitle mt-0">{{ pageContent.learning_technologies }}</h3>
       <ul class="section-learning____list">

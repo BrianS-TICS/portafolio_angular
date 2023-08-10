@@ -1,7 +1,6 @@
 import { AfterContentInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LanguageService } from 'src/app/services/languages/language.service';
-import { SectionServiceService } from 'src/app/services/navbar/section-service.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
@@ -28,18 +27,33 @@ export class ProyectDetailsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadPageContent()
-    window.scrollTo({
-      top: 0,
-      left: 0,
-    });
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 0);
   };
 
 
   ngOnDestroy(): void {
     this.destroy$.next();
-    this.destroy$.complete(); 
+    this.destroy$.complete();
     this.selectedIdProyect = 0;
     this.selectedProyect = {};
+  }
+
+  public scrollToSection(sectionId: string): void {
+    const yOffset = -80;
+    const section = document.querySelector(sectionId);
+    if (section) {
+      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    } else {
+      setTimeout(() => {
+        const section = document.querySelector(sectionId);
+        const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+
+      }, 500);
+    }
   }
 
   private getUrlId() {
@@ -65,8 +79,17 @@ export class ProyectDetailsComponent implements OnInit, OnDestroy {
 
   private searchIdInPageContent() {
     const proyects = this.pageContent.proyects;
+
     this.selectedProyect = proyects.find((proyect: any) => proyect.id == this.selectedIdProyect)
+    if (this.selectedProyect) {
+      this.loadingContent = false;
+      return
+    }
+
+    const secundaryProyects = this.pageContent.secundaty_proyects;
+    this.selectedProyect = secundaryProyects.find((proyect: any) => proyect.id == this.selectedIdProyect)
     this.loadingContent = false;
+
 
   }
 
