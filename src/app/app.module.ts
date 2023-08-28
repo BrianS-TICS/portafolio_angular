@@ -11,9 +11,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LanguagesComponent } from './components/languages/languages.component';
 import { KnowledgeCardComponent } from './components/knowledge-card/knowledge-card.component';
 import { RouterModule } from '@angular/router';
-import { HomeRoutingModule } from './pages/home/home-routing.module';
+
 import { ProyectDetailsComponent } from './pages/proyect-details/proyect-details.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { ProyectLayoutComponent } from './layouts/proyect-layout/proyect-layout.component';
 
 
 @NgModule({
@@ -26,13 +28,14 @@ import { AppRoutingModule } from './app-routing.module';
     LanguagesComponent,
     KnowledgeCardComponent,
     ProyectDetailsComponent,
+    MainLayoutComponent,
+    ProyectLayoutComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule,
-    HomeRoutingModule,
-    AppRoutingModule 
+    AppRoutingModule
   ],
   providers: [
 

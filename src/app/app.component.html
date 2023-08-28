@@ -1,7 +1,5 @@
-<app-navbar></app-navbar>
-<!-- <app-home></app-home> -->
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+
 <span *ngIf="!loadingContent" class="fixed-span">
     <button (click)="changeLanguage('en')" [ngClass]="currentLanguague == 'en' ? 'activeOption' : '' "
         class="btn w-50 link">{{ pageContent.languages[0] }}</button>

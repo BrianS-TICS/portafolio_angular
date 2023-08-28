@@ -49,13 +49,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
   ngOnInit(): void {
 
-    window.scrollTo(0, 0);
-
-
-    setTimeout(() => {
-      this.sectionService.emitSectionChange('#start');
-    }, 200);
-
     this.scrollSubscription = this.scrollSubject.pipe(debounceTime(0)).subscribe(
       (response) => {
         const currentSection = this.detectCurrentSection();
