@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterContentInit, Component, Directive, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LanguageService } from 'src/app/services/languages/language.service';
 import { takeUntil } from 'rxjs/operators';
@@ -9,6 +9,8 @@ import { Subject } from 'rxjs';
   templateUrl: './proyect-details.component.html',
   styleUrls: ['./proyect-details.component.scss']
 })
+
+
 export class ProyectDetailsComponent implements OnInit, OnDestroy {
 
   constructor(
@@ -27,9 +29,9 @@ export class ProyectDetailsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadPageContent()
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 0);
+    // setTimeout(() => {
+    //   window.scrollTo(0, 0);
+    // }, 0);
   };
 
 

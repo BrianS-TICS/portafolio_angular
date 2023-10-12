@@ -70,6 +70,9 @@
       "description": "Aplicación web para la administración de pacientes de veterinaria",
       "image": "./assets/proyects/apv/login.webp",
       "used_technologies": "Tecnologías usadas",
+      "long_description": [
+        "APV es un proyecto creado con la finalidad de administrar y gestionar correctamente pacientes de una veterinaria \n Incluye funcionalidad login, creación de cuenta y recuperación de contraseña."
+      ],
       "technologies": [
         {
           "id": "3",
@@ -106,6 +109,9 @@
       "description": "Aplicación web para agencia de viajes",
       "image": "./assets/proyectos/agenciadeviajes.webp",
       "used_technologies": "Tecnologías usadas",
+      "long_description": [
+        "Este es un proyecto creado con el propósito de mostrar reseñas y comentarios de turistas hacia otros. Para esto la aplicación cuenta con la funcionalidad de guardar comentarios de los usuarios."
+      ],
       "technologies": [
         {
           "id": "3",
@@ -142,6 +148,9 @@
       "description": "Aplicación web para búsqueda laboral",
       "image": "./assets/proyectos/devjobsimg.webp",
       "used_technologies": "Tecnologías usadas",
+      "long_description": [
+        "Devjobs es un proyecto creado con la finalidad de conectar a empleadores del area TI hacia posibles talentos. \n El proyecto cuenta con creación de usuarios, recuperación de contraseña, login, creaciónes de vacantes y por ultimo la opción de aplicar a estas vacantes considerando roles."
+      ],
       "technologies": [
         {
           "id": "1",

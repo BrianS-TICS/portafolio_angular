@@ -1,7 +1,15 @@
 {
-  "navegation": ["home", "proyects", "skills", "about me"],
+  "navegation": [
+    "home",
+    "proyects",
+    "skills",
+    "about me"
+  ],
   "language": "languages",
-  "languages": ["english", "spanish"],
+  "languages": [
+    "english",
+    "spanish"
+  ],
   "greeting": "Hi, I'm",
   "name": "Brian Sánchez",
   "job": "Web developer",
@@ -26,7 +34,11 @@
   ],
   "next_quote": "Next quote",
   "knowledge": "Skills",
-  "knowledge_levels": ["basic", "intermediate", "advanced"],
+  "knowledge_levels": [
+    "basic",
+    "intermediate",
+    "advanced"
+  ],
   "proyect": "proyects",
   "proyects": [
     {
@@ -71,8 +83,11 @@
       "description": "Web application for the administration of veterinary patients",
       "image": "./assets/proyects/apv/login.webp",
       "used_technologies": "Used technologies",
+      "long_description": [
+        "APV is a project created with the purpose of correctly administering and managing veterinary patients. \n Includes login, account creation and password recovery functionality."
+      ],
       "technologies": [
-              {
+        {
           "id": "3",
           "name": "Javascript",
           "image": "./assets/technologies/js.svg"
@@ -106,10 +121,12 @@
       "title": "Travel agency",
       "description": "Web application for travel agency",
       "image": "./assets/proyectos/agenciadeviajes.webp",
-            "used_technologies": "Used technologies",
-
+      "used_technologies": "Used technologies",
+      "long_description": [
+        "This is a project created with the purpose of showing reviews and comments from tourists to others. For this, the application has the functionality of saving user comments."
+      ],
       "technologies": [
-              {
+        {
           "id": "3",
           "name": "Javascript",
           "image": "./assets/technologies/js.svg"
@@ -143,10 +160,11 @@
       "title": "DevJobs",
       "description": "Web application for job search",
       "image": "./assets/proyectos/devjobsimg.webp",
-            "used_technologies": "Used technologies",
-
-         "technologies": [
-
+      "used_technologies": "Used technologies",
+      "long_description": [
+        "Devjobs is a project created with the purpose of connecting employers in the IT area to potential talents. \n The project has user creation, password recovery, login, creation of vacancies and finally the option to apply for these vacancies considering roles."
+      ],
+      "technologies": [
         {
           "id": "1",
           "name": "Laravel",
@@ -178,9 +196,8 @@
       "title": "Coffee Blog",
       "description": "Landing page for a coffee blog",
       "image": "./assets/proyectos/cafe.webp",
-            "used_technologies": "Used technologies",
-
-         "technologies": [
+      "used_technologies": "Used technologies",
+      "technologies": [
         {
           "id": "10",
           "name": "Html",
@@ -197,7 +214,7 @@
           "image": "./assets/technologies/js.svg"
         }
       ],
-       "link_fronend_github": "https://github.com/BrianS-TICS/BlogDeCafe",
+      "link_fronend_github": "https://github.com/BrianS-TICS/BlogDeCafe",
       "link_backend_github": "https://github.com/BrianS-TICS/BlogDeCafe"
     },
     {
@@ -205,29 +222,25 @@
       "title": "Tip calculator",
       "description": "Web application for calculating tips",
       "image": "./assets/proyectos/tip_cal.webp",
-            "used_technologies": "Used technologies",
-
-          "technologies": [
-  {
+      "used_technologies": "Used technologies",
+      "technologies": [
+        {
           "id": "9",
           "name": "React",
           "image": "./assets/technologies/react.svg"
         },
-
-            {
+        {
           "id": "3",
           "name": "Javascript",
           "image": "./assets/technologies/js.svg"
-        }
-        ,
+        },
         {
           "id": "11",
           "name": "Css",
           "image": "./assets/technologies/css.svg"
         }
-    
       ],
-       "link_fronend_github": "https://github.com/BrianS-TICS/TipCalculatorApp",
+      "link_fronend_github": "https://github.com/BrianS-TICS/TipCalculatorApp",
       "link_backend_github": "https://github.com/BrianS-TICS/TipCalculatorApp"
     },
     {
@@ -235,31 +248,26 @@
       "title": "Interactive card",
       "description": "Website for simulating interactive card capture",
       "image": "./assets/proyectos/interactive_card.webp",
-            "used_technologies": "Used technologies",
-
+      "used_technologies": "Used technologies",
       "technologies": [
-  {
+        {
           "id": "9",
           "name": "React",
           "image": "./assets/technologies/react.svg"
         },
-
-            {
+        {
           "id": "3",
           "name": "Javascript",
           "image": "./assets/technologies/js.svg"
-        }
-        ,
+        },
         {
           "id": "11",
           "name": "Css",
           "image": "./assets/technologies/css.svg"
         }
-    
       ],
       "link_fronend_github": "https://github.com/BrianS-TICS/interactive-card",
-        "link_backend_github": "https://github.com/BrianS-TICS/interactive-card"
-
+      "link_backend_github": "https://github.com/BrianS-TICS/interactive-card"
     }
   ],
   "proyects_see_more": "See more",
@@ -276,6 +284,9 @@
   "how_to_help_paragraph": "I can help you design websites and develop their functionalities using programming languages and specialized software.",
   "learning": "learning",
   "learning_technologies": "technologies",
-  "learning_paragraphs": ["React-Native", "Kotlin"],
+  "learning_paragraphs": [
+    "React-Native",
+    "Kotlin"
+  ],
   "footer_text": "By Brian Sanchez"
 }

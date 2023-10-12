@@ -4,12 +4,14 @@
 
         <section *ngIf="!loadingContent" class="proyect-details overflow-hidden">
 
-            <a class="btn-return animate__animated animate__fadeInTopLeft d-inline-block" routerLink="/" (click)="scrollToSection('#work')">{{ pageContent.proyect_return }}</a>
+            <a class="btn-return animate__animated animate__fadeInTopLeft d-inline-block" routerLink="/"
+                (click)="scrollToSection('#work')">{{ pageContent.proyect_return }}</a>
 
             <div class="d-sm-flex justify-content-between animate__animated animate__fadeInRight">
                 <h1 class="text-center fw-bold text-white ">{{ selectedProyect.title }}</h1>
 
-                <a target="_blank" [href]="selectedProyect.link_backend_github" class="d-flex d-sm-flex px-4 btn btn-dark gap-2 align-items-center bg-black rounded-4 btn-git animate__animated animate__fadeInRight">
+                <a target="_blank" [href]="selectedProyect.link_backend_github"
+                    class="d-flex d-sm-flex px-4 btn btn-dark gap-2 align-items-center bg-black rounded-4 btn-git animate__animated animate__fadeInRight">
                     <p class="p-0 m-0 fs-5 fw-normal">Github</p>
                     <div class="icon-github">
                         <img class="w-100" src="./assets/technologies/github.svg" alt="github repo">
@@ -45,12 +47,5 @@
     </main>
 
 </div>
-<p class="p-5">1</p>
-<p class="p-5">1</p>
-<p class="p-5">1</p>
-<p class="p-5">1</p>
-<p class="p-5">1</p>
-<p class="p-5">1</p>
-<p class="p-5">1</p>
-<p class="p-5">1</p>
+
 <span *ngIf="!loadingContent" class="divition-light-line"></span>

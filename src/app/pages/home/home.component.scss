@@ -266,7 +266,7 @@ p {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-
+  z-index: 1;
 }
 
 @keyframes fade-in {
@@ -415,14 +415,30 @@ img {
   background-color: #2e85aa;
 
   &:hover {
-  background-color: #208bb9;
-    
+    background-color: #208bb9;
+
 
   }
 }
 
-.text-information-color{
+.text-information-color {
   color: #2b3b45;
   font-size: 1rem;
   font-weight: 500;
+}
+
+.technology-tag {
+
+  display: block;
+  font-size: .8rem;
+  padding-right: 1rem;
+  color: #ff9a00;
+  margin-right: .5rem;
+  text-align: center;
+
+  @media (min-width : 760px) {
+    text-align: left;
+    border-radius: .2rem;
+    display: inline-block;
+  }
 }
