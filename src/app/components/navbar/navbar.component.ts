@@ -45,7 +45,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.ngUnsubscribe.complete();
   }
 
+  public allowPageScroll () {
+    this.body?.classList.remove('scroll-stop');
+  }
+
   public scrollToSection(sectionId: string): void {
+
+    this.allowPageScroll();
+
     const yOffset = -80;
     const section = document.querySelector(sectionId);
     if (section) {
@@ -86,7 +93,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   public handleCloseMovilNav(e: any) {
     this.movilMenuOpen = false;
-    this.body?.classList.remove('scroll-stop');
+    this.allowPageScroll();
   }
 
   public handleMovilMenu(e: any) {
