@@ -12,15 +12,16 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       { path: '', component: HomeComponent },
+      { path: 'proyect/:id', component: ProyectDetailsComponent },
     ]
   },
-  {
-    path: 'proyect/:id',
-    component: ProyectLayoutComponent,
-    children: [
-      { path: '', component: ProyectDetailsComponent }
-    ]
-  },
+  // {
+  //   path: 'proyect/:id',
+  //   component: MainLayoutComponent,
+  //   children: [
+  //     { path: '', component: ProyectDetailsComponent }
+  //   ]
+  // },
   { path: '**', redirectTo: '' }
 ];
 

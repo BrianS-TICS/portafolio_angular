@@ -55,7 +55,7 @@
                 </div>
                 <a [routerLink]="'/proyect/'+ proyect.id"
                   class="px-3 text-white fw-semibold  mt-3 mt-md-5 btn-secondary text">
-                  <p>{{ pageContent.proyects_see_more}}</p>
+                  <p>{{ pageContent.proyects_see_more +" "+  proyect.title }}</p>
                 </a>
               </div>
             </div>
@@ -79,7 +79,7 @@
                   <p class="text-left mt-1 mt-md-5">{{ proyect.description }}</p>
                   <a [routerLink]="'/proyect/'+ proyect.id"
                     class="px-3 text-white fw-semibold  mt-3 mt-md-5 btn-secondary text">
-                    <p>{{ pageContent.proyects_see_more}}</p>
+                    <p>{{ pageContent.proyects_see_more + " "+  proyect.title }}</p>
                   </a>
                 </div>
               </div>

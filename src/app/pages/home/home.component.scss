@@ -367,13 +367,15 @@ img {
       /* Ajusta la altura del borde */
       border-top: solid #51595e 0.1rem;
       border-left: solid #51595e 0.1rem;
-
+      z-index: -1;
       box-sizing: border-box;
       /* Incluye el tamaño del borde en las dimensiones del elemento */
     }
 
     ::after {
       content: '';
+      z-index: -1;
+
       /* Asegura que el pseudo-elemento tenga contenido */
       position: absolute;
       bottom: 0;
@@ -411,11 +413,10 @@ img {
   color: white;
   text-align: center;
   font-weight: 400;
-  max-width: 10rem;
-  background-color: #2e85aa;
+  background-color: #00608a;
 
   &:hover {
-    background-color: #208bb9;
+    background-color: #0070a0;
   }
 }
 
