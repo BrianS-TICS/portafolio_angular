@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private destroy$: Subject<void> = new Subject<void>();
   private changeQuoteInterval;
+  private startSectionId = '#start';
+
   constructor(
     private languageService: LanguageService,
     private sectionService: SectionServiceService,
@@ -23,7 +25,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event): void {
-    // Emitir el evento de desplazamiento al sujeto para que se ejecute con debounce
     this.scrollSubject.next();
   }
 
@@ -49,8 +50,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
   ngOnInit(): void {
 
+    this.sectionService.emitSectionChange(this.startSectionId);
+
     this.scrollSubscription = this.scrollSubject.pipe(debounceTime(0)).subscribe(
-      (response) => {
+      () => {
         const currentSection = this.detectCurrentSection();
         if (currentSection) {
           this.sectionService.emitSectionChange(currentSection);
@@ -65,7 +68,7 @@ export class HomeComponent implements OnInit, OnDestroy {
           this.loadingContent = false;
           this.currentQuote = this.pageContent.quotes[this.quoteNumber]
         }
-
+        window.document.title = 'Brian Sánchez | ' +  this.pageContent.job;
       });
 
 
@@ -88,18 +91,15 @@ export class HomeComponent implements OnInit, OnDestroy {
     let divQuoteClasses = divQuote.classList.value;
     let btnQuoteClasses = btnQuote.classList.value;
 
-    // Elimina la clase de animación anterior
     divQuote.classList.remove('animate__fadeInRightBig');
     btnQuote.classList.remove('animate__fadeInRightBig');
 
-    // Agrega las clases para aplicar la animación
     divQuoteClasses = "cita-textual animate__animated animate__fadeInRightBig";
     divQuote.classList.value = divQuoteClasses;
 
     btnQuoteClasses = "cita-textual animate__animated animate__fadeInBottomRight";
     btnQuote.classList.value = btnQuoteClasses;
 
-    // Detectar el final de la animación y restablecer las clases después
     divQuote.addEventListener('animationend', () => {
       divQuote.classList.remove('animate__fadeInRightBig');
       btnQuote.classList.remove('animate__fadeInBottomRight');

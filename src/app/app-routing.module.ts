@@ -20,7 +20,8 @@ const routes: Routes = [
     children: [
       { path: '', component: ProyectDetailsComponent }
     ]
-  }
+  },
+  { path: '**', redirectTo: '' }
 ];
 
 

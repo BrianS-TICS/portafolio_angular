@@ -11,7 +11,8 @@ export class SectionServiceService {
   sectionChange$ = this.sectionChangeSubject.asObservable();
 
   emitSectionChange(sectionId: string) {
+    console.log(sectionId)
     this.sectionChangeSubject.next(sectionId);
   }
-  
+
 }

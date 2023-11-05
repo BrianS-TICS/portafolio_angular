@@ -2,7 +2,7 @@
   <div class="container flex-header">
     <div class="d-flex gap-5">
       <a (click)="allowPageScroll()"  routerLink="/">
-        <img height="45" width="45" src="assets/bs.svg" alt="logo de la pagina">
+        <img height="45" width="45" src="assets/bs.svg" alt="logo de la pagina" loading="lazy">
       </a>
       <nav class="navegation" *ngIf="!loadingContent">
         <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#start' ? 'active' : '' "
@@ -22,13 +22,13 @@
     <div class="d-flex gap-5">
       <span class="d-flex gap-3">
         <a target="_blank" href="https://github.com/BrianS-TICS?tab=repositories">
-          <img height="25" width="25" src="assets/github.svg" alt="logo de github">
+          <img height="25" width="25" src="assets/github.svg" alt="logo de github" loading="lazy">
         </a>
         <a target="_blank" href="https://www.linkedin.com/in/briansanchezaguilar/">
-          <img height="25" width="25" src="assets/icons8-linkedin.svg" alt="logo de linkedin">
+          <img height="25" width="25" src="assets/icons8-linkedin.svg" alt="logo de linkedin" loading="lazy">
         </a>
         <a target="_blank" href="mailto:briansanchezaguilar@correo.com">
-          <img height="25" width="25" src="assets/gmail.svg" alt="logo de gmail">
+          <img height="25" width="25" src="assets/gmail.svg" alt="logo de gmail" loading="lazy">
         </a>
       </span>
     </div>
@@ -61,10 +61,10 @@
       <p class="text-center text-white languajes__titulo">{{ pageContent.language }}</p>
       <span class="d-flex justify-content-center gap-2">
         <button (click)="changeLanguage('en')" class="btn languajes__btn text-white">
-          <img class="flag" loading="lazy" src="./assets/flags/flag_usa.svg" alt="usa">
+          <img width="60" height="60" class="flag" loading="lazy" src="./assets/flags/usa_flag.png" alt="usa flag">
         </button>
         <button (click)="changeLanguage('es')" class="btn languajes__btn text-white">
-          <img class="flag" loading="lazy" src="./assets/flags/flag_esp.svg" alt="spain">
+          <img width="60" height="60" class="flag" loading="lazy" src="./assets/flags/mx_flag.png" alt="mexican flag">
         </button>
       </span>
     </div>

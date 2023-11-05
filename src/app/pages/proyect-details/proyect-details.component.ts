@@ -1,3 +1,4 @@
+import { SectionServiceService } from 'src/app/services/navbar/section-service.service';
 import { AfterContentInit, Component, Directive, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LanguageService } from 'src/app/services/languages/language.service';
@@ -16,6 +17,7 @@ export class ProyectDetailsComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private languageService: LanguageService,
+    private sectionService : SectionServiceService
   ) {
   }
 
@@ -25,13 +27,12 @@ export class ProyectDetailsComponent implements OnInit, OnDestroy {
   public loadingContent: boolean = true;
 
   private destroy$: Subject<void> = new Subject<void>();
-
+  private defaultSectionId = '#work';
 
   ngOnInit(): void {
     this.loadPageContent()
-    // setTimeout(() => {
-    //   window.scrollTo(0, 0);
-    // }, 0);
+    this.sectionService.emitSectionChange(this.defaultSectionId);
+
   };
 
 
@@ -80,18 +81,19 @@ export class ProyectDetailsComponent implements OnInit, OnDestroy {
   }
 
   private searchIdInPageContent() {
-    const proyects = this.pageContent.proyects;
 
+    const proyects = this.pageContent.proyects;
     this.selectedProyect = proyects.find((proyect: any) => proyect.id == this.selectedIdProyect)
     if (this.selectedProyect) {
       this.loadingContent = false;
+      window.document.title = 'Brian Sánchez | ' +  this.selectedProyect.title;
       return
     }
 
     const secundaryProyects = this.pageContent.secundaty_proyects;
     this.selectedProyect = secundaryProyects.find((proyect: any) => proyect.id == this.selectedIdProyect)
     this.loadingContent = false;
-
+    window.document.title = 'Brian Sánchez | ' +  this.selectedProyect.title;
 
   }
 
