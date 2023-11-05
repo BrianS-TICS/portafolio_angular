@@ -1,6 +1,3 @@
 User-agent: *
-Disallow: /admin/
 Disallow: /private/
-Disallow: /archived/
 Allow: /public/
-Disallow: /temp/
