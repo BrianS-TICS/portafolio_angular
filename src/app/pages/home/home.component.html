@@ -27,9 +27,9 @@
             </button>
           </div>
         </div>
-
       </div>
     </main>
+    <img src="assets/wave.svg"   width="100%"   alt="">
   </section>
 
   <section id='work' class="bg-dark-blue">
@@ -91,6 +91,8 @@
         </div>
       </div>
     </div>
+    <img src="assets/wave2.svg" width="100%"   alt="">
+
   </section>
 
 
@@ -119,65 +121,66 @@
   <div class="bg-low-gray">
     <section *ngIf="!loadingContent" id='knowage'
       class="container knowage-section  pb-5 animate__animated animate__fadeIn">
+
       <h2 class="title underline-decoration">{{ pageContent.knowledge }}</h2>
       <h3 class="knowage-section__subtitle subtitle mt-0">Frontend</h3>
       <ul class="knowage-section__list">
 
         <li>
-          <app-knowledge-card technologyName="Angular" backGroundcolor="warning" technologyUrl=""
+          <app-knowledge-card technologyName="Angular" imageName="angular" backGroundcolor="warning" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[1] ">
           </app-knowledge-card>
         </li>
 
         <li>
-          <app-knowledge-card technologyName="Angular material" backGroundcolor="success" technologyUrl=""
+          <app-knowledge-card technologyName="Angular material" imageName="angular" backGroundcolor="success" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[0] ">
           </app-knowledge-card>
         </li>
 
         <li>
-          <app-knowledge-card technologyName="TypeScript" backGroundcolor="warning" technologyUrl=""
+          <app-knowledge-card technologyName="TypeScript" imageName="ts" backGroundcolor="warning" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[1] ">
           </app-knowledge-card>
         </li>
 
         <li>
-          <app-knowledge-card technologyName="JavaScript" backGroundcolor="warning" technologyUrl=""
+          <app-knowledge-card technologyName="JavaScript" imageName="js" backGroundcolor="warning" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[1] ">
           </app-knowledge-card>
         </li>
 
         <li>
 
-          <app-knowledge-card technologyName="Next.Js" backGroundcolor="success" technologyUrl=""
+          <app-knowledge-card technologyName="Next.Js" imageName="nextjs"  backGroundcolor="success" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[0] ">
           </app-knowledge-card>
         </li>
 
         <li>
-          <app-knowledge-card technologyName="React" backGroundcolor="success" technologyUrl=""
+          <app-knowledge-card technologyName="React" imageName="react"  backGroundcolor="success" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[0] ">
           </app-knowledge-card>
         </li>
 
         <li>
-          <app-knowledge-card technologyName="SCSS" backGroundcolor="warning" technologyUrl=""
+          <app-knowledge-card technologyName="SCSS" imageName="scss"  backGroundcolor="warning" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[1] ">
           </app-knowledge-card>
         </li>
         <li>
-          <app-knowledge-card technologyName="CSS" backGroundcolor="warning" technologyUrl=""
+          <app-knowledge-card technologyName="CSS" imageName="css"  backGroundcolor="warning" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[1] ">
           </app-knowledge-card>
         </li>
         <li>
-          <app-knowledge-card technologyName="Bootstrap" backGroundcolor="warning" technologyUrl=""
+          <app-knowledge-card technologyName="Bootstrap" imageName="bootstrap"  backGroundcolor="warning" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[1] ">
           </app-knowledge-card>
         </li>
 
         <li>
-          <app-knowledge-card technologyName="Tailwind CSS" backGroundcolor="success" technologyUrl=""
+          <app-knowledge-card technologyName="Tailwind CSS" imageName="tailwind"  backGroundcolor="success" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[0] ">
           </app-knowledge-card>
         </li>
@@ -187,41 +190,41 @@
       <ul class="knowage-section__list">
 
         <li>
-          <app-knowledge-card technologyName="Node.Js" backGroundcolor="success" technologyUrl=""
+          <app-knowledge-card technologyName="Node.Js" imageName="nodejs"  backGroundcolor="success" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[0] ">
           </app-knowledge-card>
         </li>
 
         <li>
-          <app-knowledge-card technologyName="Express" backGroundcolor="success" technologyUrl=""
+          <app-knowledge-card technologyName="Express" imageName="express" backGroundcolor="success" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[0] ">
           </app-knowledge-card>
         </li>
 
         <li>
-          <app-knowledge-card technologyName="MongoDB" backGroundcolor="success" technologyUrl=""
+          <app-knowledge-card technologyName="MongoDB" imageName="mongo" backGroundcolor="success" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[0] ">
           </app-knowledge-card>
         </li>
         <li>
 
-          <app-knowledge-card technologyName="Mysql" backGroundcolor="warning" technologyUrl=""
+          <app-knowledge-card technologyName="Mysql" imageName="mysql-simple" backGroundcolor="warning" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[1] ">
           </app-knowledge-card>
         </li>
 
         <li>
-          <app-knowledge-card technologyName="SQL" backGroundcolor="warning" technologyUrl=""
+          <app-knowledge-card technologyName="SQL" imageName="sql" backGroundcolor="warning" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[1] ">
           </app-knowledge-card>
         </li>
         <li>
-          <app-knowledge-card technologyName="Php" backGroundcolor="success" technologyUrl=""
+          <app-knowledge-card technologyName="Php" imageName="php" backGroundcolor="success" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[0] ">
           </app-knowledge-card>
         </li>
         <li>
-          <app-knowledge-card technologyName="Laravel" backGroundcolor="warning" technologyUrl=""
+          <app-knowledge-card technologyName="Laravel" imageName="laravel"  backGroundcolor="warning" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[1] ">
           </app-knowledge-card>
         </li>
@@ -232,25 +235,25 @@
       <ul class="knowage-section__list">
 
         <li>
-          <app-knowledge-card technologyName="Git" backGroundcolor="warning" technologyUrl=""
+          <app-knowledge-card technologyName="Git" imageName="git" backGroundcolor="warning" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[1]">
           </app-knowledge-card>
         </li>
 
         <li>
-          <app-knowledge-card technologyName="GitHub" backGroundcolor="warning" technologyUrl=""
+          <app-knowledge-card technologyName="GitHub" imageName="github"  backGroundcolor="warning" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[1]">
           </app-knowledge-card>
         </li>
 
         <li>
-          <app-knowledge-card technologyName="Scrum" backGroundcolor="success" technologyUrl=""
+          <app-knowledge-card technologyName="Scrum" imageName="scrum"   backGroundcolor="success" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[0] ">
           </app-knowledge-card>
         </li>
 
         <li>
-          <app-knowledge-card technologyName="Jira" backGroundcolor="success" technologyUrl=""
+          <app-knowledge-card technologyName="Jira" imageName="jira"   backGroundcolor="success" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[0]">
           </app-knowledge-card>
         </li>

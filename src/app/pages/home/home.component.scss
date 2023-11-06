@@ -454,4 +454,12 @@ img {
 
 }
 
+.bg-wave{
+  position: absolute;
+  height: 100%;
+  width: 100%;
 
+  bottom: 0;
+  background: url('../../../assets/wave.svg');
+  background-position: bottom;
+}

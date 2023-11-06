@@ -15,6 +15,7 @@ export class KnowledgeCardComponent implements OnInit {
   @Input() technologyUrl: string = '';
   @Input() namelevel: string = '';
   @Input() backGroundcolor: string = '';
+  @Input() imageName: string = '';
 
   public BACKGROUNDCOLORS = [
     "success",
