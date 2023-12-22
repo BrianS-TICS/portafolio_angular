@@ -11,28 +11,12 @@
     "spanish"
   ],
   "greeting": "Hi, I'm",
-  "name": "Brian Sánchez",
+  "name": "Brian Sanchez",
   "job": "Web developer",
   "job_description": "I am responsible for creating, maintaining, and modifying web applications, from database creation to style editing.",
-  "quotes": [
-    {
-      "author_name": "Dean Kamen",
-      "quote": "Every now and then, a new technology, an old problem, and a big idea turn into an innovation."
-    },
-    {
-      "author_name": "Bill Gates",
-      "quote": "Great opportunities arise from having known how to make the most of the small ones."
-    },
-    {
-      "author_name": "Jack Dorsey",
-      "quote": "The world can be changed in 140 characters."
-    },
-    {
-      "author_name": "Sydney J. Harris",
-      "quote": "The real danger is not that computers would start to think like men, but that men would start to think like computers."
-    }
-  ],
-  "next_quote": "Next quote",
+  "resume_title": "Discover my professional career by downloading my Resume",
+  "resume_btn": "Download Resume",
+  "resume_path": "/assets/resume/Resume - Brian Sanchez.pdf",
   "knowledge": "Skills",
   "knowledge_levels": [
     "basic",

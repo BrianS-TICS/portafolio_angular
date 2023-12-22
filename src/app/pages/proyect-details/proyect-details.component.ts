@@ -86,14 +86,14 @@ export class ProyectDetailsComponent implements OnInit, OnDestroy {
     this.selectedProyect = proyects.find((proyect: any) => proyect.id == this.selectedIdProyect)
     if (this.selectedProyect) {
       this.loadingContent = false;
-      window.document.title = 'Brian Sánchez | ' +  this.selectedProyect.title;
+      window.document.title = 'Brian Sanchez | ' +  this.selectedProyect.title;
       return
     }
 
     const secundaryProyects = this.pageContent.secundaty_proyects;
     this.selectedProyect = secundaryProyects.find((proyect: any) => proyect.id == this.selectedIdProyect)
     this.loadingContent = false;
-    window.document.title = 'Brian Sánchez | ' +  this.selectedProyect.title;
+    window.document.title = 'Brian Sanchez | ' +  this.selectedProyect.title;
 
   }
 

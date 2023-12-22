@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from './services/languages/language.service';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -15,9 +16,10 @@ export class AppComponent {
   constructor(
     private languageService: LanguageService
   ) { }
-  
+
 
   ngOnInit(): void {
+    AOS.init();
     this.currentLanguague = this.languageService.currentLanguague;
     this.loadPageLanguage();
   }

@@ -1,41 +1,33 @@
-<div>
+<div *ngIf="!loadingContent">
   <span class="hidden_header_area"></span>
-  <section id='start' class="bg-blue background-image">
+  <section id='start' class="background-image">
     <main class="seccion-presentacion container">
       <div class="seccion-presentacion-contenido overflow-hidden">
 
-        <div *ngIf="!loadingContent" class="animate__animated animate__fadeInLeft">
-          <div class="seccion-presentacion__nombre animate__animated animate__fadeInLeft">
-            <p class="d-block font-subtitle animate__animated animate__fadeInLeft">{{pageContent.greeting}}</p>
-            <h1 class="d-block fw-bolder font-title animate__animated animate__fadeInLeft">{{ pageContent.name }}</h1>
+        <div class="">
+          <div class="seccion-presentacion__nombre ">
+            <p class="d-block font-subtitle ">{{pageContent.greeting}}</p>
+            <h1 class="d-block fw-bolder font-title ">{{ pageContent.name }}</h1>
           </div>
           <h2 class="seccion-presentacion__cargo"> {{ pageContent.job }} </h2>
-          <h3 class="seccion-presentacion__descripcion fs-6">{{ pageContent.job_description }}</h3>
+          <h3 class="seccion-presentacion__descripcion">{{ pageContent.job_description }}</h3>
         </div>
 
-        <div class="cita-textual animate__animated  animate__fadeInRight" *ngIf="!loadingContent">
-          <div #quoteMainNode id="quoteMainNode">
-            <p class="cita-textual__texto animate__animated  animate__fadeInRight">{{ '" ' + currentQuote.quote + ' "'
-              }}
-            </p>
-            <p class="cita-textual__texto animate__animated  animate__fadeInRight">{{ currentQuote.author_name }}.</p>
-          </div>
-          <div #quoteBtnNode id="quoteBtnNode">
-            <button class="position-relative btn btn-outline-light mt-2" (click)="getNextQuote()">
-              {{pageContent.next_quote}}
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-orange">+</span>
-            </button>
-          </div>
-        </div>
+        <section class="resume-section">
+          <p class="resume-section__text">{{ this.pageContent.resume_title }}</p>
+          <button class="position-relative btn btn-outline-light mt-2" (click)="downloadCV()">
+            {{ this.pageContent.resume_btn }}
+          </button>
+        </section>
       </div>
     </main>
-    <img src="assets/wave.svg"   width="100%"   alt="">
+    <img src="assets/wave.svg" width="100%" alt="">
   </section>
 
   <section id='work' class="bg-dark-blue">
 
     <div class="overflow-hidden">
-      <div *ngIf="!loadingContent" class="container pt-5 pb-md-5 animate__animated animate__slideInUp overflow-hidden">
+      <div class="container pt-5 pb-md-5 animate__animated animate__slideInUp overflow-hidden">
         <h1 class="title text-white mb-4  mb-md-5 underline-decoration ">{{ pageContent.proyect }}</h1>
 
         <div class="border-corner pb-3 animate__animated animate__slideInRight">
@@ -55,7 +47,7 @@
                 </div>
                 <a [routerLink]="'/proyect/'+ proyect.id"
                   class="px-3 text-white fw-semibold  mt-3 mt-md-5 btn-secondary text">
-                  <p>{{ pageContent.proyects_see_more +" "+  proyect.title }}</p>
+                  <p>{{ pageContent.proyects_see_more +" "+ proyect.title }}</p>
                 </a>
               </div>
             </div>
@@ -79,7 +71,7 @@
                   <p class="text-left mt-1 mt-md-5">{{ proyect.description }}</p>
                   <a [routerLink]="'/proyect/'+ proyect.id"
                     class="px-3 text-white fw-semibold  mt-3 mt-md-5 btn-secondary text">
-                    <p>{{ pageContent.proyects_see_more + " "+  proyect.title }}</p>
+                    <p>{{ pageContent.proyects_see_more + " "+ proyect.title }}</p>
                   </a>
                 </div>
               </div>
@@ -91,13 +83,13 @@
         </div>
       </div>
     </div>
-    <img src="assets/wave2.svg" width="100%"   alt="">
+    <img src="assets/wave2.svg" width="100%" alt="">
 
   </section>
 
 
   <section id='about' class="bg-low-gray">
-    <div *ngIf="!loadingContent" class="container p-4 py-0 pt-4">
+    <div class="container p-4 py-0 pt-4">
       <div class="row flex-column flex-sm-row">
         <div class="col-12 col-lg-8">
           <h1 class="title my-3 underline-decoration">{{ pageContent.about_me }}</h1>
@@ -119,8 +111,7 @@
 
 
   <div class="bg-low-gray">
-    <section *ngIf="!loadingContent" id='knowage'
-      class="container knowage-section  pb-5 animate__animated animate__fadeIn">
+    <section id='knowage' class="container knowage-section  pb-5 animate__animated animate__fadeIn">
 
       <h2 class="title underline-decoration">{{ pageContent.knowledge }}</h2>
       <h3 class="knowage-section__subtitle subtitle mt-0">Frontend</h3>
@@ -133,8 +124,8 @@
         </li>
 
         <li>
-          <app-knowledge-card technologyName="Angular material" imageName="angular" backGroundcolor="success" technologyUrl=""
-            [namelevel]=" pageContent.knowledge_levels[0] ">
+          <app-knowledge-card technologyName="Angular material" imageName="angular" backGroundcolor="success"
+            technologyUrl="" [namelevel]=" pageContent.knowledge_levels[0] ">
           </app-knowledge-card>
         </li>
 
@@ -152,36 +143,36 @@
 
         <li>
 
-          <app-knowledge-card technologyName="Next.Js" imageName="nextjs"  backGroundcolor="success" technologyUrl=""
+          <app-knowledge-card technologyName="Next.Js" imageName="nextjs" backGroundcolor="success" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[0] ">
           </app-knowledge-card>
         </li>
 
         <li>
-          <app-knowledge-card technologyName="React" imageName="react"  backGroundcolor="success" technologyUrl=""
+          <app-knowledge-card technologyName="React" imageName="react" backGroundcolor="success" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[0] ">
           </app-knowledge-card>
         </li>
 
         <li>
-          <app-knowledge-card technologyName="SCSS" imageName="scss"  backGroundcolor="warning" technologyUrl=""
+          <app-knowledge-card technologyName="SCSS" imageName="scss" backGroundcolor="warning" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[1] ">
           </app-knowledge-card>
         </li>
         <li>
-          <app-knowledge-card technologyName="CSS" imageName="css"  backGroundcolor="warning" technologyUrl=""
+          <app-knowledge-card technologyName="CSS" imageName="css" backGroundcolor="warning" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[1] ">
           </app-knowledge-card>
         </li>
         <li>
-          <app-knowledge-card technologyName="Bootstrap" imageName="bootstrap"  backGroundcolor="warning" technologyUrl=""
-            [namelevel]=" pageContent.knowledge_levels[1] ">
+          <app-knowledge-card technologyName="Bootstrap" imageName="bootstrap" backGroundcolor="warning"
+            technologyUrl="" [namelevel]=" pageContent.knowledge_levels[1] ">
           </app-knowledge-card>
         </li>
 
         <li>
-          <app-knowledge-card technologyName="Tailwind CSS" imageName="tailwind"  backGroundcolor="success" technologyUrl=""
-            [namelevel]=" pageContent.knowledge_levels[0] ">
+          <app-knowledge-card technologyName="Tailwind CSS" imageName="tailwind" backGroundcolor="success"
+            technologyUrl="" [namelevel]=" pageContent.knowledge_levels[0] ">
           </app-knowledge-card>
         </li>
       </ul>
@@ -190,7 +181,7 @@
       <ul class="knowage-section__list">
 
         <li>
-          <app-knowledge-card technologyName="Node.Js" imageName="nodejs"  backGroundcolor="success" technologyUrl=""
+          <app-knowledge-card technologyName="Node.Js" imageName="nodejs" backGroundcolor="success" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[0] ">
           </app-knowledge-card>
         </li>
@@ -224,7 +215,7 @@
           </app-knowledge-card>
         </li>
         <li>
-          <app-knowledge-card technologyName="Laravel" imageName="laravel"  backGroundcolor="warning" technologyUrl=""
+          <app-knowledge-card technologyName="Laravel" imageName="laravel" backGroundcolor="warning" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[1] ">
           </app-knowledge-card>
         </li>
@@ -241,19 +232,19 @@
         </li>
 
         <li>
-          <app-knowledge-card technologyName="GitHub" imageName="github"  backGroundcolor="warning" technologyUrl=""
+          <app-knowledge-card technologyName="GitHub" imageName="github" backGroundcolor="warning" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[1]">
           </app-knowledge-card>
         </li>
 
         <li>
-          <app-knowledge-card technologyName="Scrum" imageName="scrum"   backGroundcolor="success" technologyUrl=""
+          <app-knowledge-card technologyName="Scrum" imageName="scrum" backGroundcolor="success" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[0] ">
           </app-knowledge-card>
         </li>
 
         <li>
-          <app-knowledge-card technologyName="Jira" imageName="jira"   backGroundcolor="success" technologyUrl=""
+          <app-knowledge-card technologyName="Jira" imageName="jira" backGroundcolor="success" technologyUrl=""
             [namelevel]=" pageContent.knowledge_levels[0]">
           </app-knowledge-card>
         </li>
@@ -263,7 +254,7 @@
   </div>
 
   <div class="bg-dark-blue borde-inferior">
-    <section *ngIf="!loadingContent" class="section-learning container p-4 animate__animated animate__fadeIn">
+    <section class="section-learning container p-4 animate__animated animate__fadeIn">
       <h2 class="section-learning__title title ">{{ pageContent.learning }}</h2>
       <h3 class="section-learning__subtitle subtitle mt-0">{{ pageContent.learning_technologies }}</h3>
       <ul class="section-learning____list">

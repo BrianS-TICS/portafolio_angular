@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import * as defaultPageContent from '../../../assets/languages/en.json';
+import * as defaultPageContent from '../../../assets/languages/es.json';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
 
@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class LanguageService {
 
-  public currentLanguague: string = 'en';
+  public currentLanguague: string = 'es';
   public pageContent: BehaviorSubject<any> = new BehaviorSubject({});
 
   constructor(

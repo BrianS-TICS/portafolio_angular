@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   public loadingContent: boolean = true;
 
   private destroy$: Subject<void> = new Subject<void>();
-  private changeQuoteInterval;
   private startSectionId = '#start';
 
   constructor(
@@ -31,21 +30,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   private scrollSubject = new Subject<void>();
   private scrollSubscription: Subscription;
 
-  public detectCurrentSection(): any {
-    const sections: HTMLElement[] = this.elementRef.nativeElement.querySelectorAll('section');
-    const currentSection = Array.from(sections).find(section => {
-      const rect = section.getBoundingClientRect();
-      return rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
-    });
-
-    return currentSection ? `#${currentSection.id}` : null;
-  }
-
-
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-    clearInterval(this.changeQuoteInterval);
     this.scrollSubscription.unsubscribe();
   }
   ngOnInit(): void {
@@ -66,48 +53,36 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.pageContent = content;
         if (Object.keys(content).length) {
           this.loadingContent = false;
-          this.currentQuote = this.pageContent.quotes[this.quoteNumber]
         }
-        window.document.title = 'Brian Sánchez | ' +  this.pageContent.job;
+        window.document.title = 'Brian Sanchez | ' + this.pageContent.job;
       });
 
-
-    this.changeQuoteInterval = setInterval(() => {
-      this.getNextQuote()
-    }, 12000);
-
   }
 
 
+  public detectCurrentSection(): any {
+    const sections: HTMLElement[] = this.elementRef.nativeElement.querySelectorAll('section');
+    const currentSection = Array.from(sections).find(section => {
+      const rect = section.getBoundingClientRect();
+      return rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
+    });
 
-  public currentQuote = null;
-  public quoteNumber = 0;
-
-  public getNextQuote() {
-
-    const divQuote = document.querySelector('#quoteMainNode');
-    const btnQuote = document.querySelector('#quoteBtnNode');
-
-    let divQuoteClasses = divQuote.classList.value;
-    let btnQuoteClasses = btnQuote.classList.value;
-
-    divQuote.classList.remove('animate__fadeInRightBig');
-    btnQuote.classList.remove('animate__fadeInRightBig');
-
-    divQuoteClasses = "cita-textual animate__animated animate__fadeInRightBig";
-    divQuote.classList.value = divQuoteClasses;
-
-    btnQuoteClasses = "cita-textual animate__animated animate__fadeInBottomRight";
-    btnQuote.classList.value = btnQuoteClasses;
-
-    divQuote.addEventListener('animationend', () => {
-      divQuote.classList.remove('animate__fadeInRightBig');
-      btnQuote.classList.remove('animate__fadeInBottomRight');
-
-    }, { once: true });
-
-    this.quoteNumber = (this.quoteNumber + 1) % this.pageContent.quotes.length;
-    this.currentQuote = this.pageContent.quotes[this.quoteNumber];
+    return currentSection ? `#${currentSection.id}` : null;
   }
 
+
+  downloadCV(): void {
+
+    const pdfUrl = this.pageContent.resume_path;
+
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.target = '_blank';
+    link.download = 'brian_sanchez_cv.pdf';
+
+    document.body.appendChild(link);
+
+    link.click();
+    document.body.removeChild(link);
+  }
 }

@@ -3,27 +3,12 @@
   "language": "idiomas",
   "languages": ["Inglés", "Español"],
   "greeting": "Hola, Soy",
-  "name": "Brian Sánchez",
+  "name": "Brian Sanchez",
   "job": "Desarrollador Web",
   "job_description": "Me encargo de crear, mantener y modificar aplicaciones web, desde la creación de una base de datos hasta la edición de estilos.",
-  "quotes": [
-    {
-      "author_name": "Dean Kamen",
-      "quote": "De vez en cuando, una nueva tecnología, un antiguo problema y una gran idea se convierten en una innovación"
-    },
-    {
-      "author_name": "Bill Gates",
-      "quote": "Las grandes oportunidades nacen de haber sabido aprovechar las pequeñas"
-    },
-    {
-      "author_name": "Jack Dorsey",
-      "quote": "El mundo se puede cambiar en 140 caracteres"
-    },
-    {
-      "author_name": "Sydney J. Harris",
-      "quote": "El verdadero peligro no es que las computadoras comenzaran a pensar como los hombres, sino que los hombres comenzaran a pensar como las computadoras"
-    }
-  ],
+  "resume_title": "Descubre mi carrera profesional descargando mi Curriculum Vitae",
+  "resume_btn": "Descargar CV",
+  "resume_path": "/assets/resume/CV - Brian Sanchez.pdf",
   "knowledge": "Habilidades",
   "knowledge_levels": ["básico", "intermedio", "avanzado"],
   "proyect": "proyectos",
