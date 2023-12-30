@@ -22,7 +22,9 @@ export class LanguageService {
   private getLocalStorageLanguage() {
 
     const selectedLocalStorageLan = localStorage.getItem('lan');
-    this.currentLanguague = selectedLocalStorageLan;
+    if (selectedLocalStorageLan) {
+      this.currentLanguague = selectedLocalStorageLan;
+    }
 
     if (!selectedLocalStorageLan) {
       this.putLocalStorageLanguage(this.currentLanguague)
