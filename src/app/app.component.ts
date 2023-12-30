@@ -10,6 +10,7 @@ import AOS from 'aos';
 })
 export class AppComponent implements OnInit {
 
+
   public pageContent: any;
   public loadingContent: boolean = true;
   public currentLanguague: string;
