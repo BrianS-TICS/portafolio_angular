@@ -1,12 +1,12 @@
-import { ChangeDetectionStrategy, Component, ElementRef, HostListener, OnDestroy, OnInit } from '@angular/core';
-import { Subject, Subscription, debounceTime, take, takeUntil } from 'rxjs';
+import { Component, ElementRef, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { Subject, Subscription, debounceTime, takeUntil } from 'rxjs';
 import { LanguageService } from 'src/app/services/languages/language.service';
 import { SectionServiceService } from 'src/app/services/navbar/section-service.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss', './../../app.component.scss', './../../../styles.scss'],
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
 

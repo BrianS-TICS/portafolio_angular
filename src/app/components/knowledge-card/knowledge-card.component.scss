@@ -1,8 +1,13 @@
+@use "/src/app/shared/variables" as *;
 @import '../../app.component.scss';
 
+$warningColor : #00816e;
+$successColor : #005d85;
+$dangerColor : #850900;
+
 .knowage-section__list-element {
-    color: #2b3b45;
-    font-weight: 500;
+    color: $details-color-4;
+    font-weight: normal;
     font-size: 1rem;
     cursor: default;
     -webkit-user-select: none;
@@ -30,7 +35,7 @@
 
     &:hover {
         transform: scale(110%) translateY(-.5rem);
-        background-color: #1d272e;
+        background-color: $details-color-4;
         color: white;
         cursor: pointer;
     }
@@ -40,16 +45,15 @@
     background: $warningColor;
     padding: .3rem .2rem;
     border-radius: .4rem;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 1rem;
     margin-top: .5rem;
-    color: $extraColor;
+    color: $terciry-text-color;
     text-transform: capitalize;
 }
 
 .knowage-section__list-text {
     margin: .3rem 0 0 0;
-
 }
 
 .knowage-section__list-img {

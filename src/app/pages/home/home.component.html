@@ -1,81 +1,87 @@
 <div *ngIf="!loadingContent">
-  <span class="hidden_header_area"></span>
-  <section id='start' class="background-image">
+  <section id='start' class="presentation-section">
     <main class="seccion-presentacion container">
-      <div class="seccion-presentacion-contenido overflow-hidden">
+      <div class="seccion-presentacion-contenido">
 
-        <div class="">
-          <div class="seccion-presentacion__nombre ">
-            <p class="d-block font-subtitle ">{{pageContent.greeting}}</p>
-            <h1 class="d-block fw-bolder font-title ">{{ pageContent.name }}</h1>
-          </div>
-          <h2 class="seccion-presentacion__cargo"> {{ pageContent.job }} </h2>
-          <h3 class="seccion-presentacion__descripcion">{{ pageContent.job_description }}</h3>
+        <div class="seccion-presentacion__nombre ">
+          <p class="d-block font-subtitle ">{{pageContent.greeting}}</p>
         </div>
+        <h2 data-aos="flip-down" data-aos-delay="200" class="seccion-presentacion__cargo"> {{ pageContent.job }} </h2>
+        <h3 class="seccion-presentacion__descripcion">{{ pageContent.job_description }}</h3>
 
-        <section class="resume-section">
-          <p class="resume-section__text">{{ this.pageContent.resume_title }}</p>
-          <button class="position-relative btn btn-outline-light mt-2" (click)="downloadCV()">
-            {{ this.pageContent.resume_btn }}
-          </button>
-        </section>
       </div>
+
+      <section class="resume-section">
+        <p class="resume-section__text">{{ this.pageContent.resume_title }}</p>
+        <button class="position-relative btn btn-outline-dark mt-1 resume-section__btn" (click)="downloadCV()">
+          {{ this.pageContent.resume_btn }}
+        </button>
+      </section>
     </main>
-    <img src="assets/wave.svg" width="100%" alt="">
+
   </section>
 
-  <section id='work' class="bg-dark-blue">
+  <section id='about' class="about-section">
+    <div class="container p-4 py-0 pt-4">
+      <h1 data-aos="zoom-in-right" class="about-title-section my-3 underline-decoration">{{ pageContent.about_me }}</h1>
+      <p data-aos="zoom-in-left" class="about__text-information"
+        *ngFor="let paragraf of pageContent.about_me_paragraphs">
+        {{paragraf}}
+      </p>
 
-    <div class="overflow-hidden">
-      <div class="container pt-5 pb-md-5 animate__animated animate__slideInUp overflow-hidden">
-        <h1 class="title text-white mb-4  mb-md-5 underline-decoration ">{{ pageContent.proyect }}</h1>
+      <h2 data-aos="zoom-in-right" class="about-subtitle-section mt-5 p-0">{{ pageContent.how_to_help }}</h2>
+      <p data-aos="zoom-in-left" class="about__text-information">{{ pageContent.how_to_help_paragraph }}</p>
 
-        <div class="border-corner pb-3 animate__animated animate__slideInRight">
-          <article class="mb-5" *ngFor="let proyect of pageContent.proyects">
-            <div class="row w-100 m-0 p-md-5 align-items-center">
-              <div class="col-12 col-md-6
-          p-0">
-                <img class="w-100 " [src]="proyect.image" [alt]=" proyect.title + ' proyect image'" loading="lazy">
+
+    </div>
+  </section>
+
+  <section id='work' class="work-section">
+
+    <div class="">
+      <div class="container pt-5 pb-md-5 ">
+        <h1 class="proyect-section-title mb-md-5 underline-decoration ">{{ pageContent.proyect }}</h1>
+
+        <div class="proyect-card-container">
+          <article data-aos="zoom-in" class="proyect-card" *ngFor="let proyect of pageContent.proyects">
+            <div>
+              <div>
+                <img width="500" height="250" class="proyect-image " [src]="proyect.image"
+                  [alt]=" proyect.title + ' proyect image'" [attr.loading]="proyect.loading ? 'eager' : 'lazy'">
               </div>
-              <div class="col-12 col-md-6 text-white px-md-5 pt-3 pt-md-0">
-                <p class="text-left mt-4 mt-sm-1 fs-3 fw-bold">{{ proyect.title }}</p>
-                <p class="text-left mt-1 mt-md-5">{{ proyect.description }}</p>
-                <div class="technology-tag-container mt-3">
-                  <span class="technology-tag" *ngFor="let technology of proyect.technologies">
-                    {{ '#' + technology.name}}
-                  </span>
-                </div>
-                <a [routerLink]="'/proyect/'+ proyect.id"
-                  class="px-3 text-white fw-semibold  mt-3 mt-md-5 btn-secondary text">
+              <div>
+                <p class="proyect-card__title">{{ proyect.title }}</p>
+                <p class="proyect-description">{{ proyect.description }}</p>
+                <a [routerLink]="'/proyect/'+ proyect.id" class="px-3 proyect-btn mt-3 mt-md-5 btn-secondary">
                   <p>{{ pageContent.proyects_see_more +" "+ proyect.title }}</p>
                 </a>
               </div>
+
             </div>
-            <span class="border-bottom-custom"></span>
           </article>
         </div>
 
         <div>
-          <h2 class="title text-light underline-decoration mb-4  my-md-5">{{ pageContent.secundaty_proyect }}</h2>
+          <h2 class="proyect-section-title underline-decoration mb-4  my-md-5">{{ pageContent.secundaty_proyect }}</h2>
 
-          <div class="border-corner pb-3">
+          <div class="proyect-card-container">
 
-            <article class="mb-5" *ngFor="let proyect of pageContent.secundaty_proyects">
-              <div class="row align-items-center justify-content-center w-100 m-0 p-md-5">
-                <div class="col-12 col-md-6
-              p-0">
-                  <img class="w-100 " [src]="proyect.image" [alt]=" proyect.title + ' proyect image'" loading="lazy">
+            <article data-aos="zoom-in" class="proyect-card" *ngFor="let proyect of pageContent.secundaty_proyects">
+
+              <div>
+                <div>
+                  <img width="500" height="250" class="proyect-image" [src]="proyect.image"
+                    [alt]=" proyect.title + ' proyect image'" loading="lazy">
                 </div>
-                <div class="col-12 col-md-6 text-white px-md-5 pt-3">
-                  <p class="text-left mt-sm-1 fs-3 fw-bold">{{ proyect.title }}</p>
-                  <p class="text-left mt-1 mt-md-5">{{ proyect.description }}</p>
-                  <a [routerLink]="'/proyect/'+ proyect.id"
-                    class="px-3 text-white fw-semibold  mt-3 mt-md-5 btn-secondary text">
+                <div>
+                  <p class="proyect-card__title">{{ proyect.title }}</p>
+                  <p class="proyect-description">{{ proyect.description }}</p>
+                  <a [routerLink]="'/proyect/'+ proyect.id" class="px-3 proyect-btn mt-3 mt-md-5 btn-secondary ">
                     <p>{{ pageContent.proyects_see_more + " "+ proyect.title }}</p>
                   </a>
                 </div>
+
               </div>
-              <span class="border-bottom-custom"></span>
             </article>
 
           </div>
@@ -83,38 +89,14 @@
         </div>
       </div>
     </div>
-    <img src="assets/wave2.svg" width="100%" alt="">
 
   </section>
 
+  <div class="">
+    <section id='knowage' class="container knowage-section  pb-5 ">
 
-  <section id='about' class="bg-low-gray">
-    <div class="container p-4 py-0 pt-4">
-      <div class="row flex-column flex-sm-row">
-        <div class="col-12 col-lg-8">
-          <h1 class="title my-3 underline-decoration">{{ pageContent.about_me }}</h1>
-          <p class="text-information-color " *ngFor="let paragraf of pageContent.about_me_paragraphs">
-            {{paragraf}}
-          </p>
-
-          <h2 class="title mt-5 fs-1 p-0">{{ pageContent.how_to_help }}</h2>
-          <p class="text-information-color">{{ pageContent.how_to_help_paragraph }}</p>
-        </div>
-        <div class=" col-12 col-lg-4 p-5 pb-0">
-          <img src="assets/imagen_brian.webp" alt="web developer brian image" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <span class="divition-line"></span>
-
-
-  <div class="bg-low-gray">
-    <section id='knowage' class="container knowage-section  pb-5 animate__animated animate__fadeIn">
-
-      <h2 class="title underline-decoration">{{ pageContent.knowledge }}</h2>
-      <h3 class="knowage-section__subtitle subtitle mt-0">Frontend</h3>
+      <h2 class="knowage-section-title underline-decoration">{{ pageContent.knowledge }}</h2>
+      <h3 class="knowage-section__subtitle ">Frontend</h3>
       <ul class="knowage-section__list">
 
         <li>
@@ -177,7 +159,7 @@
         </li>
       </ul>
 
-      <h3 class="knowage-section__subtitle subtitle">Backend</h3>
+      <h3 class="knowage-section__subtitle">Backend</h3>
       <ul class="knowage-section__list">
 
         <li>
@@ -253,10 +235,10 @@
     </section>
   </div>
 
-  <div class="bg-dark-blue borde-inferior">
-    <section class="section-learning container p-4 animate__animated animate__fadeIn">
-      <h2 class="section-learning__title title ">{{ pageContent.learning }}</h2>
-      <h3 class="section-learning__subtitle subtitle mt-0">{{ pageContent.learning_technologies }}</h3>
+  <div class="learning-section">
+    <section class="section-learning container p-4 ">
+      <h2 class="section-learning__title">{{ pageContent.learning }}</h2>
+      <h3 class="section-learning__subtitle mt-0">{{ pageContent.learning_technologies }}</h3>
       <ul class="section-learning____list">
         <li class="section-learning___element-list" *ngFor="let paragraf of pageContent.learning_paragraphs"> {{
           paragraf }}</li>

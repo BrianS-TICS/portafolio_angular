@@ -1,0 +1,70 @@
+$main-bg-color: #ffffff;
+$secondary-bg-color: rgba(0, 0, 0, 0.808); ;
+
+$details-color-1: rgba(0, 0, 0, 0.808);
+$details-color-2: #44749d;
+$details-color-3: #ffffff;
+$details-color-4: #51595e;
+
+$secondary-text-color: #313131;
+$terciry-text-color: #ffffff;
+$icons-color : #1778b4;
+
+$contrast-color-1: #2c87a6;
+$contrast-color-2: #00608a;
+$contrast-color-3: #ff9a00;
+$contrast-color-4: #2c2c2c;
+
+$fs-sm-exception : 1rem;
+$fs-sm-tiny : 1.1rem;
+$fs-sm-small : 1.3rem;
+$fs-sm-regular : 1.3rem;
+$fs-sm-big : 2.3rem;
+
+$fs-lg-tiny-exception : 1.2rem;
+$fs-lg-tiny : 1.6rem;
+$fs-lg-small : 2rem;
+$fs-lg-regular : 2rem;
+$fs-lg-big : 4.875rem;
+
+$default-filter : invert;
+
+
+.container {
+
+  @media (min-width: 576px) {
+    max-width: 570px;
+  }
+
+  @media (min-width: 768px) {
+    width: 90%;
+    max-width: 1200px;
+  }
+
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  }
+
+}
+
+.btn-secondary {
+  display: block;
+
+  padding: .5rem;
+  color: $terciry-text-color;
+  text-align: center;
+  font-weight: 400;
+  border-radius: .7rem;
+  border: solid $terciry-text-color .1rem;
+
+  &:hover {
+    background-color: $terciry-text-color;
+    color: $secondary-text-color;
+
+  }
+
+  @media (min-width: 670px) {
+    display: inline-block;
+  }
+
+}

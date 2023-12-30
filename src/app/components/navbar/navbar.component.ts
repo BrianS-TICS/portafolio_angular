@@ -28,6 +28,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
 
     this.body = document.querySelector('body');
+    this.currentLanguague = this.languageService.currentLanguague;
 
     this.languageService.pageContent.pipe(takeUntil(this.ngUnsubscribe)).subscribe((content: any) => {
       this.pageContent = content;

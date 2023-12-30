@@ -1,6 +1,6 @@
-<router-outlet></router-outlet>
+<app-main-layout></app-main-layout>
 
-<span *ngIf="!loadingContent" class="fixed-span">
+<span data-aos="fade-right"   data-aos-easing="ease-in-back"  data-aos-duration="500" data-aos-offset="500" *ngIf="!loadingContent" class="fixed-span">
     <button (click)="changeLanguage('en')" [ngClass]="currentLanguague == 'en' ? 'activeOption' : '' "
         class="btn w-50 link">{{ pageContent.languages[0] }}</button>
     <button (click)="changeLanguage('es')" [ngClass]="currentLanguague == 'es' ? 'activeOption' : '' "

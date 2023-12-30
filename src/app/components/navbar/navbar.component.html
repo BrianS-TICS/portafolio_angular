@@ -1,37 +1,30 @@
-<header class="bg-dark-blue header_fixed">
-  <div class="container flex-header">
+<header class="header_fixed">
+  <div *ngIf="!loadingContent" class="container flex-header">
     <div class="d-flex gap-5">
-      <a (click)="allowPageScroll()"  routerLink="/">
-        <img height="45" width="45" src="assets/bs.svg" alt="logo de la pagina" loading="lazy">
-      </a>
-      <nav class="navegation" *ngIf="!loadingContent">
-        <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#start' ? 'active' : '' "
-          (click)="scrollToSection('#start')">{{
-          pageContent.navegation[0] }}</a>
-        <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#work' ? 'active' : '' "
-          (click)="scrollToSection('#work')">{{
-          pageContent.navegation[1] }}</a>
-        <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#about' ? 'active' : '' "
-          (click)="scrollToSection('#about')">{{
-          pageContent.navegation[3] }} </a>
-        <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#knowage' ? 'active' : '' "
-          (click)="scrollToSection('#knowage')">{{
-          pageContent.navegation[2] }}</a>
-      </nav>
+      <div class="header_card">
+        <img class="header_face-img" height="45" width="45" src="assets/brian-sanchez.jpg" alt="logo de la pagina"
+          loading="lazy">
+        <p class="header_card__text">Brian Sanchez</p>
+        <img class="header_verify-icon" height="24" width="24" src="assets/verify.svg" alt="logo de la verify"
+          loading="lazy">
+      </div>
     </div>
-    <div class="d-flex gap-5">
-      <span class="d-flex gap-3">
-        <a target="_blank" href="https://github.com/BrianS-TICS?tab=repositories">
-          <img height="25" width="25" src="assets/github.svg" alt="logo de github" loading="lazy">
-        </a>
-        <a target="_blank" href="https://www.linkedin.com/in/briansanchezaguilar/">
-          <img height="25" width="25" src="assets/icons8-linkedin.svg" alt="logo de linkedin" loading="lazy">
-        </a>
-        <a target="_blank" href="mailto:briansanchezaguilar@correo.com">
-          <img height="25" width="25" src="assets/gmail.svg" alt="logo de gmail" loading="lazy">
-        </a>
-      </span>
-    </div>
+
+    <nav class="navegation">
+      <a routerLink="/" class="link" [ngClass]=" currentSection == '#start' ? 'active' : '' "
+        (click)="scrollToSection('#start')">
+        <span class="link-number">01 </span> {{ pageContent.navegation[0] }}</a>
+      <a routerLink="/" class="link" [ngClass]=" currentSection == '#work' ? 'active' : '' "
+        (click)="scrollToSection('#work')">
+        <span class="link-number">02 </span> {{ pageContent.navegation[1] }}</a>
+      <a routerLink="/" class="link" [ngClass]=" currentSection == '#about' ? 'active' : '' "
+        (click)="scrollToSection('#about')">
+        <span class="link-number">03 </span> {{ pageContent.navegation[3] }} </a>
+      <a routerLink="/" class="link" [ngClass]=" currentSection == '#knowage' ? 'active' : '' "
+        (click)="scrollToSection('#knowage')">
+        <span class="link-number">04 </span> {{ pageContent.navegation[2] }}</a>
+    </nav>
+
     <div class="movil-nav">
       <div [ngClass]="movilMenuOpen ? 'movil-nav__icon-menu open' : 'movil-nav__icon-menu' "
         (click)="handleMovilMenu($event)">
@@ -42,31 +35,28 @@
 </header>
 
 <div #munuMovil *ngIf="movilMenuOpen" (click)="handleCloseMovilNav($event)" class="movil-menu">
-  <div class="p-5 d-flex gap-5 flex-column">
+  <div class="">
     <nav class="navegacion-movil">
-      <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#start' ? 'active' : '' "
-        (click)="scrollToSection('#start')">{{
-        pageContent.navegation[0] }}</a>
-      <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#work' ? 'active' : '' "
-        (click)="scrollToSection('#work')">{{
-        pageContent.navegation[1] }}</a>
-      <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#about' ? 'active' : '' "
-        (click)="scrollToSection('#about')">{{
-        pageContent.navegation[3] }} </a>
-      <a routerLink="/" class="enlace" [ngClass]=" currentSection == '#knowage' ? 'active' : '' "
-        (click)="scrollToSection('#knowage')">{{
-        pageContent.navegation[2] }} </a>
+      <a routerLink="/" class="link" [ngClass]=" currentSection == '#start' ? 'active' : '' "
+        (click)="scrollToSection('#start')">
+        <span class="link-number">01 </span> {{ pageContent.navegation[0] }}</a>
+      <a routerLink="/" class="link" [ngClass]=" currentSection == '#work' ? 'active' : '' "
+        (click)="scrollToSection('#work')">
+        <span class="link-number">02 </span> {{ pageContent.navegation[1] }}</a>
+      <a routerLink="/" class="link" [ngClass]=" currentSection == '#about' ? 'active' : '' "
+        (click)="scrollToSection('#about')">
+        <span class="link-number">03 </span> {{ pageContent.navegation[3] }} </a>
+      <a routerLink="/" class="link" [ngClass]=" currentSection == '#knowage' ? 'active' : '' "
+        (click)="scrollToSection('#knowage')">
+        <span class="link-number">04 </span> {{ pageContent.navegation[2] }}</a>
     </nav>
-    <div class="container-languajes">
-      <p class="text-center text-white languajes__titulo">{{ pageContent.language }}</p>
-      <span class="d-flex justify-content-center gap-2">
-        <button (click)="changeLanguage('en')" class="btn languajes__btn text-white">
-          <img width="60" height="60" class="flag" loading="lazy" src="./assets/flags/usa_flag.png" alt="usa flag">
-        </button>
-        <button (click)="changeLanguage('es')" class="btn languajes__btn text-white">
-          <img width="60" height="60" class="flag" loading="lazy" src="./assets/flags/mx_flag.png" alt="mexican flag">
-        </button>
-      </span>
-    </div>
   </div>
+
+  <span *ngIf="!loadingContent" class="languaje-field-container">
+    <button (click)="changeLanguage('en')" [ngClass]="currentLanguague == 'en' ? 'activeOption' : '' "
+      class="btn w-50 ">{{ pageContent.languages[0] }}</button>
+    <button (click)="changeLanguage('es')" [ngClass]="currentLanguague == 'es' ? 'activeOption' : '' "
+      class="btn w-50 "> {{ pageContent.languages[1] }}</button>
+  </span>
+
 </div>

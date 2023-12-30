@@ -8,7 +8,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-import { LanguagesComponent } from './components/languages/languages.component';
 import { KnowledgeCardComponent } from './components/knowledge-card/knowledge-card.component';
 import { RouterModule } from '@angular/router';
 
@@ -23,9 +22,7 @@ import { ProyectLayoutComponent } from './layouts/proyect-layout/proyect-layout.
     AppComponent,
     NavbarComponent,
     HomeComponent,
-
     FooterComponent,
-    LanguagesComponent,
     KnowledgeCardComponent,
     ProyectDetailsComponent,
     MainLayoutComponent,

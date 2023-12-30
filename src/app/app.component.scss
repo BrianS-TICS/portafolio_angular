@@ -1,47 +1,13 @@
-$primaryColor : #004a83;
-$secondColor : #c97207;
-$fourthColor : #ff0000;
-$thirdColor : #1d272e;
-$extraColor : #f1f2f5;
+@use "/src/app/shared/variables" as *;
 
-$successColor : #00816e;
+
 $warningColor : #005d85;
-$dangerColor : #ff4000b8;
+$warningColor : #005d85;
 
-$black : #000000;
-
-.text-gray {
-  color: #2b3b45c5;
-}
-
-.text-blue {
-  color: $primaryColor;
-}
-
-.bg-blue {
-  background-color: #000000;
-}
-
-.text-second-color {
-  color: $secondColor;
-}
-
-.bg-low-gray {
-  background-color: $extraColor;
-}
-
-.bg-orange {
-  background-color: $secondColor;
-}
-
-
-.bg-dark-blue {
-  background-color: $thirdColor;
-}
 
 a {
   text-decoration: none;
-  color: $black;
+
 }
 
 .section {
@@ -117,28 +83,23 @@ a {
   text-transform: capitalize;
 }
 
-.hidden_header_area {
-  margin-top: 80px;
-  display: block;
-}
 
 .fixed-span {
 
   display: none;
 
-  @media (min-width : 680px) {
+  @media (min-width : 768px) {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
     width: 15rem;
     display: flex;
     justify-content: center;
-    background-color: $thirdColor;
-    color: black;
+    background-color: $main-bg-color;
     border-radius: 1rem;
-    z-index: 9999;
+    z-index: 1;
     opacity: 0.7;
-    border: 1px solid rgba(255, 255, 255, 0.233);
+    border: 1px solid $contrast-color-2;
     transition: all ease-in-out .2s;
 
     &:hover {
@@ -147,12 +108,14 @@ a {
   }
 
   .btn {
-    color: $extraColor;
+    color: $secondary-text-color;
+    font-size: $fs-sm-tiny;
   }
 
 
   .activeOption {
-    color: #ff8c00
+    color: $contrast-color-1;
+    font-weight: bold;
   }
 
 }

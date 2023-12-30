@@ -10,9 +10,8 @@
     "english",
     "spanish"
   ],
-  "greeting": "Hi, I'm",
-  "name": "Brian Sanchez",
-  "job": "Web developer",
+  "greeting": "Hi, I'm Brian",
+  "job": "Full-Stack Web Developer",
   "job_description": "I am responsible for creating, maintaining, and modifying web applications, from database creation to style editing.",
   "resume_title": "Discover my professional career by downloading my Resume",
   "resume_btn": "Download Resume",
@@ -27,13 +26,15 @@
   "proyects": [
     {
       "id": 1,
+      "loading" : "eager",
       "title": "Devstagram",
       "description": "Social network to devolopers",
       "long_description": [
         "Devstagram is a project inspired by current social networks. Therefore, this web application includes the necessary features for login, including email registration and account creation confirmation, as well as a password recovery option.",
         "It includes image upload functionality, both for creating a new post and for profile modification."
       ],
-      "image": "./assets/proyectos/devstagram.webp",
+      "image": "./assets/proyects/devstagram.webp",
+      "image_lg": "./assets/proyects/devstagram-lg.webp",
       "used_technologies": "Used technologies",
       "technologies": [
         {
@@ -65,7 +66,8 @@
       "id": 2,
       "title": "APV",
       "description": "Web application for the administration of veterinary patients",
-      "image": "./assets/proyects/apv/login.webp",
+      "image": "./assets/proyects/apv.webp",
+      "image_lg": "./assets/proyects/apv-lg.webp",
       "used_technologies": "Used technologies",
       "long_description": [
         "APV is a project created with the purpose of correctly administering and managing veterinary patients. \n Includes login, account creation and password recovery functionality."
@@ -104,7 +106,8 @@
       "id": 3,
       "title": "Travel agency",
       "description": "Web application for travel agency",
-      "image": "./assets/proyectos/agenciadeviajes.webp",
+      "image": "./assets/proyects/agenciadeviajes.webp",
+      "image_lg": "./assets/proyects/agenciadeviajes-lg.webp",
       "used_technologies": "Used technologies",
       "long_description": [
         "This is a project created with the purpose of showing reviews and comments from tourists to others. For this, the application has the functionality of saving user comments."
@@ -143,7 +146,8 @@
       "id": 4,
       "title": "DevJobs",
       "description": "Web application for job search",
-      "image": "./assets/proyectos/devjobsimg.webp",
+      "image": "./assets/proyects/devjobsimg.webp",
+      "image_lg": "./assets/proyects/devjobsimg-lg.webp",
       "used_technologies": "Used technologies",
       "long_description": [
         "Devjobs is a project created with the purpose of connecting employers in the IT area to potential talents. \n The project has user creation, password recovery, login, creation of vacancies and finally the option to apply for these vacancies considering roles."
@@ -179,7 +183,9 @@
       "id": 5,
       "title": "Coffee Blog",
       "description": "Landing page for a coffee blog",
-      "image": "./assets/proyectos/cafe.webp",
+      "image": "./assets/proyects/cafe.webp",
+      "image_lg": "./assets/proyects/cafe-lg.webp",
+
       "used_technologies": "Used technologies",
       "technologies": [
         {
@@ -205,7 +211,8 @@
       "id": 6,
       "title": "Tip calculator",
       "description": "Web application for calculating tips",
-      "image": "./assets/proyectos/tip_cal.webp",
+      "image": "./assets/proyects/tip_cal.webp",
+      "image_lg": "./assets/proyects/tip_cal-lg.webp",
       "used_technologies": "Used technologies",
       "technologies": [
         {
@@ -231,7 +238,9 @@
       "id": 7,
       "title": "Interactive card",
       "description": "Website for simulating interactive card capture",
-      "image": "./assets/proyectos/interactive_card.webp",
+      "image": "./assets/proyects/interactive_card.webp",
+      "image_lg": "./assets/proyects/interactive_card-lg.webp",
+
       "used_technologies": "Used technologies",
       "technologies": [
         {
@@ -272,5 +281,5 @@
     "React-Native",
     "Kotlin"
   ],
-  "footer_text": "By Brian Sanchez"
+  "footer_text": "© 2024 Brian Sanchez"
 }

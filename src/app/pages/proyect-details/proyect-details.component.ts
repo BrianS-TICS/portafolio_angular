@@ -1,9 +1,10 @@
 import { SectionServiceService } from 'src/app/services/navbar/section-service.service';
 import { AfterContentInit, Component, Directive, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LanguageService } from 'src/app/services/languages/language.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-proyect-details',
@@ -14,11 +15,17 @@ import { Subject } from 'rxjs';
 
 export class ProyectDetailsComponent implements OnInit, OnDestroy {
 
+  mobileQuery: MediaQueryList;
+
   constructor(
     private route: ActivatedRoute,
     private languageService: LanguageService,
-    private sectionService : SectionServiceService
+    private sectionService: SectionServiceService,
+    private mediaMatcher: MediaMatcher,
+    private router: Router
   ) {
+    this.mobileQuery = mediaMatcher.matchMedia('(max-width: 670px)');
+
   }
 
   public selectedIdProyect: number = 0;
@@ -85,15 +92,21 @@ export class ProyectDetailsComponent implements OnInit, OnDestroy {
     const proyects = this.pageContent.proyects;
     this.selectedProyect = proyects.find((proyect: any) => proyect.id == this.selectedIdProyect)
     if (this.selectedProyect) {
+      window.document.title = 'Brian Sanchez | ' + this.selectedProyect.title;
       this.loadingContent = false;
-      window.document.title = 'Brian Sanchez | ' +  this.selectedProyect.title;
       return
     }
 
     const secundaryProyects = this.pageContent.secundaty_proyects;
     this.selectedProyect = secundaryProyects.find((proyect: any) => proyect.id == this.selectedIdProyect)
-    this.loadingContent = false;
-    window.document.title = 'Brian Sanchez | ' +  this.selectedProyect.title;
+    if (this.selectedProyect) {
+      window.document.title = 'Brian Sanchez | ' + this.selectedProyect.title;
+      this.loadingContent = false;
+    }
+
+    if (!this.selectedProyect) {
+      this.router.navigate(['./']);
+    }
 
   }
 

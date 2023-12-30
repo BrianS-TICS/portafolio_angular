@@ -2,9 +2,9 @@
   "navegation": ["inicio", "proyectos", "habilidades", "sobre mi"],
   "language": "idiomas",
   "languages": ["Inglés", "Español"],
-  "greeting": "Hola, Soy",
+  "greeting": "Hola, Soy Brian",
   "name": "Brian Sanchez",
-  "job": "Desarrollador Web",
+  "job": "Desarrollador Web Full-Stack",
   "job_description": "Me encargo de crear, mantener y modificar aplicaciones web, desde la creación de una base de datos hasta la edición de estilos.",
   "resume_title": "Descubre mi carrera profesional descargando mi Curriculum Vitae",
   "resume_btn": "Descargar CV",
@@ -15,13 +15,15 @@
   "proyects": [
     {
       "id": 1,
+      "loading" : "eager",
       "title": "Devstagram",
       "description": "Red social para orientada a programadores",
       "long_description": [
         "Devstagram es un proyecto inspirado en las redes sociales actuales. Por lo tanto esta aplicación web cuenta con las necesarias para un login, incluyendo registro, por email, confirmación de creación de cuenta, asi como tambien una opción de recuperar contraseña.",
         "Incluye funcionalidad de subida de imagenes, tanto para la creación de un nuevo post como para la modificación de un perfil."
       ],
-      "image": "./assets/proyectos/devstagram.webp",
+      "image": "./assets/proyects/devstagram.webp",
+      "image_lg": "./assets/proyects/devstagram-lg.webp",
       "used_technologies": "Tecnologías usadas",
       "technologies": [
         {
@@ -53,7 +55,8 @@
       "id": 2,
       "title": "APV",
       "description": "Aplicación web para la administración de pacientes de veterinaria",
-      "image": "./assets/proyects/apv/login.webp",
+      "image": "./assets/proyects/apv.webp",
+      "image_lg": "./assets/proyects/apv-lg.webp",
       "used_technologies": "Tecnologías usadas",
       "long_description": [
         "APV es un proyecto creado con la finalidad de administrar y gestionar correctamente pacientes de una veterinaria \n Incluye funcionalidad login, creación de cuenta y recuperación de contraseña."
@@ -92,7 +95,8 @@
       "id": 3,
       "title": "Agencia de viajes",
       "description": "Aplicación web para agencia de viajes",
-      "image": "./assets/proyectos/agenciadeviajes.webp",
+      "image": "./assets/proyects/agenciadeviajes.webp",
+      "image_lg": "./assets/proyects/agenciadeviajes-lg.webp",
       "used_technologies": "Tecnologías usadas",
       "long_description": [
         "Este es un proyecto creado con el propósito de mostrar reseñas y comentarios de turistas hacia otros. Para esto la aplicación cuenta con la funcionalidad de guardar comentarios de los usuarios."
@@ -131,7 +135,8 @@
       "id": 4,
       "title": "DevJobs",
       "description": "Aplicación web para búsqueda laboral",
-      "image": "./assets/proyectos/devjobsimg.webp",
+      "image": "./assets/proyects/devjobsimg.webp",
+      "image_lg": "./assets/proyects/devjobsimg-lg.webp",
       "used_technologies": "Tecnologías usadas",
       "long_description": [
         "Devjobs es un proyecto creado con la finalidad de conectar a empleadores del area TI hacia posibles talentos. \n El proyecto cuenta con creación de usuarios, recuperación de contraseña, login, creaciónes de vacantes y por ultimo la opción de aplicar a estas vacantes considerando roles."
@@ -162,14 +167,13 @@
       "link_backend_github": "https://github.com/BrianS-TICS/devjobs"
     }
   ],
-  "proyect_return": "Volver",
   "secundaty_proyects": [
     {
       "id": 5,
-      "title": "Blog de café",
-      "description": "Landing page de blog sobre café",
-      "long_description": "Landing page de blog sobre café",
-      "image": "./assets/proyectos/cafe.webp",
+      "title": "Coffee Blog",
+      "description": "Landing page para blog de café",
+      "image": "./assets/proyects/cafe.webp",
+      "image_lg": "./assets/proyects/cafe-lg.webp",
       "used_technologies": "Tecnologías usadas",
       "technologies": [
         {
@@ -193,10 +197,10 @@
     },
     {
       "id": 6,
-
       "title": "Tip calculator",
       "description": "Aplicación web para calcular propinas",
-      "image": "./assets/proyectos/tip_cal.webp",
+      "image": "./assets/proyects/tip_cal.webp",
+      "image_lg": "./assets/proyects/tip_cal-lg.webp",
       "used_technologies": "Tecnologías usadas",
       "technologies": [
         {
@@ -223,7 +227,8 @@
       "id": 7,
       "title": "Interactive card",
       "description": "Sitio web para simular captura de tarjeta interactiva",
-      "image": "./assets/proyectos/interactive_card.webp",
+      "image": "./assets/proyects/interactive_card.webp",
+      "image_lg": "./assets/proyects/interactive_card-lg.webp",
       "used_technologies": "Tecnologías usadas",
       "technologies": [
         {
@@ -247,10 +252,10 @@
       "link_backend_github": "https://github.com/BrianS-TICS/interactive-card"
     }
   ],
-  "next_quote": "Cambiar cita",
+  "proyect_return": "Volver",
   "proyects_see_more": "Ver más de",
   "secundaty_proyect": "proyectos secundarios",
-  "about_me": "acerca de mi",
+  "about_me": "Sobre mi",
   "about_me_paragraphs": [
     "Mi nombre es Brian Sanchez Aguilar y soy estudiante de ingeniería en tecnologías de la información y las comunicaciones.",
     "Me enfoco en el área del desarrollo de software.",
@@ -262,5 +267,5 @@
   "learning": "aprendiendo",
   "learning_technologies": "tecnologías",
   "learning_paragraphs": ["React-Native", "Kotlin"],
-  "footer_text": "Hecho por Brian Sanchez"
+  "footer_text": "© 2024 Brian Sanchez"
 }

@@ -1,50 +1,59 @@
 <div class="bg-details">
 
-    <main class="container hidden_header_area">
+  <main class="container">
 
-        <section *ngIf="!loadingContent" class="proyect-details overflow-hidden">
+    <section *ngIf="!loadingContent" class="proyect-details">
 
-            <a class="btn-return animate__animated animate__fadeInTopLeft d-inline-block" routerLink="/"
-                (click)="scrollToSection('#work')">{{ pageContent.proyect_return }}</a>
+      <a class="btn-secondary" routerLink="/" (click)="scrollToSection('#work')">{{ pageContent.proyect_return }}</a>
 
-            <div class="d-sm-flex justify-content-between animate__animated animate__fadeInRight">
-                <h1 class="text-center fw-bold text-white ">{{ selectedProyect.title }}</h1>
+      <div class="proyect-details__header">
+        <h1  data-aos="flip-down" data-aos-delay="300"   class="fw-bold text-white ">{{ selectedProyect.title }}</h1>
 
-                <a target="_blank" [href]="selectedProyect.link_backend_github"
-                    class="d-flex d-sm-flex px-4 btn btn-dark gap-2 align-items-center bg-black rounded-4 btn-git animate__animated animate__fadeInRight">
-                    <p class="p-0 m-0 fs-5 fw-normal">Github</p>
-                    <div class="icon-github">
-                        <img width="25" src="./assets/github.svg" alt="github repo">
-                    </div>
-                </a>
-            </div>
-            <img [src]="selectedProyect.image" class="w-100 mt-4  animate__animated animate__fadeInUp" alt="">
+        <a target="_blank" [href]="selectedProyect.link_backend_github"
+          class="d-flex d-sm-flex px-4 btn btn-dark gap-2 align-items-center bg-black rounded-4 btn-git ">
+          <p class="p-0 m-0 ">Github</p>
+          <div class="icon-github">
+            <img width="25" height="25" src="./assets/github.svg" alt="github repo">
+          </div>
+        </a>
+      </div>
 
-            <div class="row mt-5 animate__animated animate__fadeInUp">
+      <img width="500" height="250" loading="lazy" *ngIf="mobileQuery.matches" class="proyect-details__img "
+        [src]="selectedProyect.image" alt="proyect image">
+      <img width="1920" height="500" loading="lazy" *ngIf="!mobileQuery.matches" class="proyect-details__img "
+        [src]="selectedProyect.image_lg" alt="proyect image" />
 
-                <div class="col-12 col-sm-7 ">
-                    <p class="text-left  fw-bold fs-5 text-white"> {{ selectedProyect.description }}</p>
-                    <p class="text-white" *ngFor="let tech of selectedProyect.long_description">{{tech}}</p>
-                </div>
+      <div class="row mt-5 ">
+        <div class="col-12 col-sm-7 ">
+          <p class="proyect-detail__description"> {{ selectedProyect.description }}</p>
+          <ng-container *ngIf="selectedProyect.long_description?.length > 0 ">
+            <p class="proyect-detail__long-description" *ngFor="let tech of selectedProyect.long_description || [] ">{{tech}}
+            </p>
+          </ng-container>
+        </div>
 
-                <div class="col-12 col-sm-5 separation-dark ">
-                    <p class=" fw-bold fs-5 text-white"> {{ selectedProyect.used_technologies }}</p>
+        <div class="col-12 col-sm-5 separation-dark ">
+          <p *ngIf="selectedProyect.used_technologies" class="proyect-detail__used-technologies"> {{
+            selectedProyect.used_technologies }}</p>
 
-                    <div class="row justify-content-center align-items-center">
-                        <div *ngFor="let tech of selectedProyect.technologies" class="text-center col-4 col-lg-3">
-                            <img [src]="tech.image" class="tech-image" alt="image">
-                            <p class="technology-name text-center">{{tech.name}}</p>
-                        </div>
-                    </div>
-                </div>
+          <div class="row justify-content-center align-items-center">
+            <ng-container *ngIf="selectedProyect.technologies?.length > 0">
+              <div *ngFor="let tech of selectedProyect.technologies || [] " class="text-center col-4 col-lg-3">
+                <img [src]="tech.image" class="tech-image" alt="image">
+                <p class="proyect-detail__technology-name">{{tech.name}}</p>
+              </div>
 
-            </div>
+            </ng-container>
+          </div>
+        </div>
+
+      </div>
 
 
-        </section>
+    </section>
 
 
-    </main>
+  </main>
 
 </div>
 

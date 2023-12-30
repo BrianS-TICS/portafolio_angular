@@ -1,10 +1,26 @@
-@import '../../app.component.scss';
+@use "/src/app/shared/variables" as *;
+
+.footer {
+
+}
+
 .footer__texto-derechos{
   text-align: center;
   text-decoration: dotted;
   margin: 0;
-  font-style: italic;
-  color: white;
+  font-weight: 300;
+  font-style: normal;
+  color: $terciry-text-color;
+}
+
+.proyect-detail__technology-name {
+  font-size: $fs-sm-tiny;
+  color: $terciry-text-color;
+  font-weight: 300;
+  line-height: 1.5;
+  @media (min-width : 670px) {
+    font-size: $fs-lg-tiny-exception;
+  }
 }
 
 .padding-footer{
@@ -12,9 +28,9 @@
 }
 
 .top-border{
-  border-top: .1rem solid #51595e;
+  border-top: .1rem solid $details-color-3;
 }
 
 .bg-gray-dark{
-  background-color: $thirdColor;
+  background-color: $secondary-bg-color;
 }

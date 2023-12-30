@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from './services/languages/language.service';
+
 import AOS from 'aos';
 
 @Component({
@@ -7,11 +8,11 @@ import AOS from 'aos';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  public pageContent : any;
-  public loadingContent : boolean = true ;
-  public currentLanguague : string;
+  public pageContent: any;
+  public loadingContent: boolean = true;
+  public currentLanguague: string;
 
   constructor(
     private languageService: LanguageService
@@ -42,7 +43,7 @@ export class AppComponent {
     );
   }
 
-  public changeLanguage(newLanguage : string) {
+  public changeLanguage(newLanguage: string) {
     this.languageService.changeLanguage(newLanguage);
     this.loadPageLanguage();
   }
