@@ -39,6 +39,14 @@
 
   .header_card__text {
     margin: 0;
+    font-weight: bold;
+    font-size: $fs-sm-tiny;
+
+    @media (min-width : 768px) {
+      font-size: $fs-lg-tiny-exception;
+    }
+
+
   }
 
 

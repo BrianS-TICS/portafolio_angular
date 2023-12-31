@@ -13,7 +13,7 @@
 
       <section class="resume-section">
         <p class="resume-section__text">{{ this.pageContent.resume_title }}</p>
-        <button class="position-relative btn btn-outline-dark mt-1 resume-section__btn" (click)="downloadCV()">
+        <button class="position-relative btn btn-outline-dark mt-1 resume-section__btn" (click)="downloadPDF()">
           {{ this.pageContent.resume_btn }}
         </button>
       </section>
@@ -23,7 +23,7 @@
 
   <section id='about' class="about-section">
     <div class="container p-4 py-0 pt-4">
-      <h1 data-aos="zoom-in-right" class="about-title-section my-3 underline-decoration">{{ pageContent.about_me }}</h1>
+      <h2 data-aos="zoom-in-right" class="about-title-section my-3 underline-decoration">{{ pageContent.about_me }}</h2>
       <p data-aos="zoom-in-left" class="about__text-information"
         *ngFor="let paragraf of pageContent.about_me_paragraphs">
         {{paragraf}}
@@ -40,7 +40,7 @@
 
     <div class="">
       <div class="container pt-5 pb-md-5 ">
-        <h1 class="proyect-section-title mb-md-5 underline-decoration ">{{ pageContent.proyect }}</h1>
+        <h2 class="proyect-section-title mb-md-5 underline-decoration ">{{ pageContent.proyect }}</h2>
 
         <div class="proyect-card-container">
           <article data-aos="zoom-in" class="proyect-card" *ngFor="let proyect of pageContent.proyects">
@@ -62,7 +62,7 @@
         </div>
 
         <div>
-          <h2 class="proyect-section-title underline-decoration mb-4  my-md-5">{{ pageContent.secundaty_proyect }}</h2>
+          <h2 class="proyect-section-title mb-4  my-md-5">{{ pageContent.secundaty_proyect }}</h2>
 
           <div class="proyect-card-container">
 
@@ -204,7 +204,7 @@
 
       </ul>
 
-      <h3 class="knowage-section__title subtitle mt-4">Extras</h3>
+      <h3 class="knowage-section__subtitle">Extras</h3>
       <ul class="knowage-section__list">
 
         <li>

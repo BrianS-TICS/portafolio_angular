@@ -54,7 +54,11 @@ export class HomeComponent implements OnInit, OnDestroy {
         if (Object.keys(content).length) {
           this.loadingContent = false;
         }
-        window.document.title = 'Brian Sanchez | ' + this.pageContent.job;
+
+        if (this.pageContent.job) {
+          window.document.title = 'Brian Sanchez | ' + this.pageContent.job;
+        }
+
       });
 
   }
@@ -71,14 +75,22 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
 
-  downloadCV(): void {
+  downloadPDF(): void {
 
     const pdfUrl = this.pageContent.resume_path;
 
     const link = document.createElement('a');
     link.href = pdfUrl;
     link.target = '_blank';
-    link.download = 'brian_sanchez_cv.pdf';
+    link.download = '';
+
+    if ( pdfUrl == "/assets/resumes/Resume - Brian Sanchez.pdf" ) {
+      link.download = 'Brian Sanchez - Resume.pdf';
+
+    }else {
+      link.download = 'CV - Brian-Sanchez.pdf';
+    }
+
 
     document.body.appendChild(link);
 

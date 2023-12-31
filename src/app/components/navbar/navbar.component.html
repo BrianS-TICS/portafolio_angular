@@ -4,7 +4,7 @@
       <div class="header_card">
         <img class="header_face-img" height="45" width="45" src="assets/brian-sanchez.jpg" alt="logo de la pagina"
           loading="lazy">
-        <p class="header_card__text">Brian Sanchez</p>
+        <h1 class="header_card__text">Brian Sanchez</h1>
         <img class="header_verify-icon" height="24" width="24" src="assets/verify.svg" alt="logo de la verify"
           loading="lazy">
       </div>
@@ -14,12 +14,12 @@
       <a routerLink="/" class="link" [ngClass]=" currentSection == '#start' ? 'active' : '' "
         (click)="scrollToSection('#start')">
         <span class="link-number">01 </span> {{ pageContent.navegation[0] }}</a>
-      <a routerLink="/" class="link" [ngClass]=" currentSection == '#work' ? 'active' : '' "
-        (click)="scrollToSection('#work')">
-        <span class="link-number">02 </span> {{ pageContent.navegation[1] }}</a>
       <a routerLink="/" class="link" [ngClass]=" currentSection == '#about' ? 'active' : '' "
         (click)="scrollToSection('#about')">
-        <span class="link-number">03 </span> {{ pageContent.navegation[3] }} </a>
+        <span class="link-number">02 </span> {{ pageContent.navegation[3] }} </a>
+      <a routerLink="/" class="link" [ngClass]=" currentSection == '#work' ? 'active' : '' "
+        (click)="scrollToSection('#work')">
+        <span class="link-number">03 </span> {{ pageContent.navegation[1] }}</a>
       <a routerLink="/" class="link" [ngClass]=" currentSection == '#knowage' ? 'active' : '' "
         (click)="scrollToSection('#knowage')">
         <span class="link-number">04 </span> {{ pageContent.navegation[2] }}</a>
@@ -40,12 +40,12 @@
       <a routerLink="/" class="link" [ngClass]=" currentSection == '#start' ? 'active' : '' "
         (click)="scrollToSection('#start')">
         <span class="link-number">01 </span> {{ pageContent.navegation[0] }}</a>
-      <a routerLink="/" class="link" [ngClass]=" currentSection == '#work' ? 'active' : '' "
-        (click)="scrollToSection('#work')">
-        <span class="link-number">02 </span> {{ pageContent.navegation[1] }}</a>
       <a routerLink="/" class="link" [ngClass]=" currentSection == '#about' ? 'active' : '' "
         (click)="scrollToSection('#about')">
-        <span class="link-number">03 </span> {{ pageContent.navegation[3] }} </a>
+        <span class="link-number">02 </span> {{ pageContent.navegation[3] }} </a>
+      <a routerLink="/" class="link" [ngClass]=" currentSection == '#work' ? 'active' : '' "
+        (click)="scrollToSection('#work')">
+        <span class="link-number">03 </span> {{ pageContent.navegation[1] }}</a>
       <a routerLink="/" class="link" [ngClass]=" currentSection == '#knowage' ? 'active' : '' "
         (click)="scrollToSection('#knowage')">
         <span class="link-number">04 </span> {{ pageContent.navegation[2] }}</a>
