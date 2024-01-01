@@ -436,13 +436,12 @@
 
 .proyect-card__title {
   font-size: $fs-sm-small;
+  font-weight: bold;
   color: $terciry-text-color;
-
   margin-top: 2rem;
-  font-weight: bolder;
 
   @media (min-width : 670px) {
-    font-size: $fs-lg-small;
+    font-size: $fs-lg-tiny;
   }
 }
 

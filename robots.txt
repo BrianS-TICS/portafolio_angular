@@ -1,1 +1,4 @@
-user-agent: *
+User-agent: *
+Disallow: /private/
+Allow: /public/
+X-Robots-Tag: index
