@@ -7,7 +7,7 @@ import { ProyectDetailsComponent } from './pages/proyect-details/proyect-details
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'proyect/:id', component: ProyectDetailsComponent },
-  { path: '**', redirectTo: ''  ,pathMatch: 'full' }
+  { path: '**', redirectTo: '', }
 ];
 
 
