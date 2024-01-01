@@ -19,6 +19,7 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "@vercel/analytics": "^1.1.1",
     "aos": "^2.3.4",
     "bootstrap": "^5.2.2",
     "rxjs": "~7.5.0",
