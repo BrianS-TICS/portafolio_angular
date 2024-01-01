@@ -1,5 +1,5 @@
 $main-bg-color: #ffffff;
-$secondary-bg-color: rgba(0, 0, 0, 0.808); ;
+$secondary-bg-color: rgba(0, 0, 0, 0.808);
 
 $details-color-1: rgba(0, 0, 0, 0.808);
 $details-color-2: #44749d;
@@ -68,3 +68,48 @@ $default-filter : invert;
   }
 
 }
+
+.underline-decoration {
+
+  &::after {
+    content: "";
+    display: block;
+    background-color: $icons-color;
+    height: 1rem;
+    width: 75%;
+    margin-top: -1rem;
+  }
+
+
+  @media (min-width : 480px) {
+    &::after {
+      content: "";
+      display: block;
+      background-color: $icons-color;
+      height: 1.2rem;
+      width: 75%;
+      margin-top: -1.2rem;
+    }
+
+  }
+}
+
+
+.scroll-stop {
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}
+
+.link {
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+ul, li, p, a{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+

@@ -1,22 +1,7 @@
 @use "/src/app/shared/variables" as *;
-@import '../../app.component.scss';
-
-ul {
-  list-style: none;
-}
-
-img {
-  width: 100%;
-}
-
-p {
-  margin: 0;
-}
 
 .seccion-presentacion {
-  // padding: 2rem 1rem;
   margin-top: 1rem;
-
   .seccion-presentacion-contenido {
     gap: 5rem;
 
@@ -136,12 +121,6 @@ p {
   cursor: pointer;
 }
 
-.span-invisible {
-  position: absolute;
-  right: 0;
-  width: 0;
-}
-
 .knowage-section {
   padding: 2rem 1.5rem;
 }
@@ -170,7 +149,7 @@ p {
 
 
 .knowage-section__list-level {
-  background: $warningColor;
+  background: $icons-color;
   padding: .3rem .2rem;
   border-radius: .4rem;
   font-weight: 500;
@@ -227,15 +206,6 @@ p {
 
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
 
 .section-learning__title {
   color: $terciry-text-color;

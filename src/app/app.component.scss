@@ -1,70 +1,6 @@
 @use "/src/app/shared/variables" as *;
 
 
-$warningColor : #005d85;
-$warningColor : #005d85;
-
-
-a {
-  text-decoration: none;
-
-}
-
-.section {
-  padding: 1rem 1rem;
-
-  @media (min-width : 480px) {
-    padding: 5rem 1rem;
-  }
-
-}
-
-.underline-decoration {
-
-  &::after {
-    content: "";
-    display: block;
-    background-color: #2e85aa;
-    height: 1rem;
-    width: 75%;
-    margin-top: -1rem;
-  }
-
-
-  @media (min-width : 480px) {
-    &::after {
-      content: "";
-      display: block;
-      background-color: #2e85aa;
-      height: 1.2rem;
-      width: 75%;
-      margin-top: -1.2rem;
-    }
-
-  }
-}
-
-.title {
-  font-size: 2rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  position: relative;
-  display: inline-block;
-
-  @media (min-width : 310px) {
-    font-size: 2.5rem;
-  }
-
-  @media (min-width : 480px) {
-    font-size: 3.5rem;
-  }
-}
-
-.main {
-  position: relative;
-  min-height: calc(100vh - 143.97px);
-}
-
 .mobile-content-controller {
   display: block;
 
@@ -73,21 +9,9 @@ a {
   }
 }
 
-
-.scroll-stop {
-  overflow-x: hidden !important;
-  overflow-y: hidden !important;
-}
-
-.link {
-  text-transform: capitalize;
-}
-
-
 .fixed-span {
 
   display: none;
-
   @media (min-width : 768px) {
     position: fixed;
     bottom: 1rem;
@@ -118,15 +42,4 @@ a {
     font-weight: bold;
   }
 
-}
-
-
-@keyframes loading-place {
-  0% {
-    left: -45%;
-  }
-
-  100% {
-    left: 100%;
-  }
 }

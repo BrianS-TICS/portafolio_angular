@@ -38,7 +38,7 @@
 
           <div class="row justify-content-center align-items-center">
             <ng-container *ngIf="selectedProyect.technologies?.length > 0">
-              <div *ngFor="let tech of selectedProyect.technologies || [] " class="text-center col-4 col-lg-3">
+              <div *ngFor="let tech of selectedProyect.technologies || [] " class="text-center col-4 col-lg-3 mt-2">
                 <img [src]="tech.image" class="tech-image" alt="image">
                 <p class="proyect-detail__technology-name">{{tech.name}}</p>
               </div>
