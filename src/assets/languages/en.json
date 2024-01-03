@@ -13,6 +13,7 @@
   "greeting": "Hi, I'm Brian",
   "job": "Full-Stack Web Developer",
   "job_description": "Specialized in the creation, maintenance, and optimization of web applications.",
+  "contact_title" : "CONTACT ME",
   "resume_title": "Discover my professional career by downloading my Resume",
   "resume_btn": "Download Resume",
   "resume_path": "/assets/resumes/Resume - Brian Sanchez.pdf",

@@ -1,36 +1,168 @@
 <div *ngIf="!loadingContent">
   <section id='start' class="presentation-section">
     <main class="seccion-presentacion container">
-      <div class="seccion-presentacion-contenido">
 
-        <div class="seccion-presentacion__nombre ">
-          <p class="d-block font-subtitle ">{{pageContent.greeting}}</p>
+      <div class="presentation-sides">
+        <div>
+          <div class="seccion-presentacion-contenido">
+            <div class="seccion-presentacion__nombre ">
+              <p class="">{{pageContent.greeting}}</p>
+            </div>
+            <h2 data-aos="flip-down" data-aos-delay="200" class="seccion-presentacion__cargo"> {{ pageContent.job }}
+            </h2>
+            <h3 class="seccion-presentacion__descripcion">{{ pageContent.job_description }}</h3>
+
+          </div>
+
+          <section class="resume-section">
+            <p class="resume-section__text">{{ this.pageContent.resume_title }}</p>
+            <button class="position-relative btn btn-outline-dark mt-1 resume-section__btn" (click)="downloadPDF()">
+              {{ this.pageContent.resume_btn }}
+            </button>
+          </section>
         </div>
-        <h2 data-aos="flip-down" data-aos-delay="200" class="seccion-presentacion__cargo"> {{ pageContent.job }} </h2>
-        <h3 class="seccion-presentacion__descripcion">{{ pageContent.job_description }}</h3>
 
+
+        <div>
+          <p class="contact-title">{{ this.pageContent.contact_title }}</p>
+          <div class="contact-icons-container">
+
+            <a class="contact-icons__icon" target="_blank" href="mailto:briansanchezaguilar@gmail.com">
+              <img width="30" height="30" src="./assets/gmail.svg" alt="gmail icon">
+            </a>
+            <a class="contact-icons__icon" target="_blank" href="https://www.linkedin.com/in/briansanchezaguilar/">
+              <img width="30" height="30" src="./assets/linkedin.svg" alt="linkedin icon">
+            </a>
+
+            <a class="contact-icons__icon" target="_blank" href="https://github.com/BrianS-TICS">
+              <img width="30" height="30" class="contact-icons__img" src="./assets/github.svg" alt="github icon">
+            </a>
+
+          </div>
+        </div>
       </div>
 
-      <section class="resume-section">
-        <p class="resume-section__text">{{ this.pageContent.resume_title }}</p>
-        <button class="position-relative btn btn-outline-dark mt-1 resume-section__btn" (click)="downloadPDF()">
-          {{ this.pageContent.resume_btn }}
-        </button>
-      </section>
+      <div class="arrow-container">
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+      </div>
+
     </main>
 
   </section>
 
   <section id='about' class="about-section">
-    <div class="container p-4 py-0 pt-4">
+
+    <div class="container">
+
       <h2 data-aos="zoom-in-right" class="about-title-section my-3 underline-decoration">{{ pageContent.about_me }}</h2>
+
       <p data-aos="zoom-in-left" class="about__text-information"
         *ngFor="let paragraf of pageContent.about_me_paragraphs">
         {{paragraf}}
       </p>
 
+      <h3 class="experience-timeline-title">Experiencia</h3>
+      <div class="experience-timeline-container">
+
+        <div data-aos="zoom-in-right" class="experience-timeline__element ">
+          <img class="experience-timeline__element__img" src="./assets/experience/duoLogo.png" alt="">
+          <div>
+            <h4 class="experience-timeline__element__title">Desarrollador Full-Stack</h4>
+            <p class="experience-timeline__element__subtitle">DuoSeptem</p>
+            <p class="experience-timeline__element__date">
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon"
+                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 12h6v6h-6z"></path>
+                <path
+                  d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm.001 16H5V8h14l.001 12z">
+                </path>
+              </svg>
+              <span>Octubre de 2022</span> - <span>Actualmente</span>
+            </p>
+          </div>
+        </div>
+
+        <div data-aos="fade-up" class="experience-timeline__line"></div>
+
+        <div></div>
+        <div></div>
+
+        <div data-aos="fade-up" class="experience-timeline__line"></div>
+
+        <div data-aos="zoom-in-left" class="experience-timeline__element">
+          <div>
+            <h4 class="experience-timeline__element__title">Desarrollador Full-Stack</h4>
+            <p class="experience-timeline__element__subtitle">DuoSeptem</p>
+            <p class="experience-timeline__element__date">
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon"
+                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 12h6v6h-6z"></path>
+                <path
+                  d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm.001 16H5V8h14l.001 12z">
+                </path>
+              </svg>
+              <span>Octubre de 2022</span> - <span>Actualmente</span>
+            </p>
+          </div>
+          <img class="experience-timeline__element__img" src="./assets/experience/duoLogo.png" alt="">
+        </div>
+
+      </div>
+
+
+      
+      <h3 class="experience-timeline-title ">Educación</h3>
+      <div class="experience-timeline-container">
+
+        <div data-aos="zoom-in-right" class="experience-timeline__element ">
+          <img class="m-3" width="70" height="70" src="./assets/education/tec-cul.png" alt="">
+          <div>
+            <h4 class="experience-timeline__element__title">Ingeniería en tecnologías de información y comunicaciones</h4>
+            <p class="experience-timeline__element__subtitle">Instituto Tecnológico de Culiacán</p>
+            <p class="experience-timeline__element__date">
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon"
+                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 12h6v6h-6z"></path>
+                <path
+                  d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm.001 16H5V8h14l.001 12z">
+                </path>
+              </svg>
+              <span>Octubre de 2022</span> - <span>Actualmente</span>
+            </p>
+          </div>
+        </div>
+
+        <div data-aos="fade-up" class="experience-timeline__line"></div>
+
+        <div></div>
+        <div></div>
+
+        <div data-aos="fade-up" class="experience-timeline__line"></div>
+
+        <div data-aos="zoom-in-left" class="experience-timeline__element">
+          <div>
+            <h4 class="experience-timeline__element__title">Desarrollador Full-Stack</h4>
+            <p class="experience-timeline__element__subtitle">DuoSeptem</p>
+            <p class="experience-timeline__element__date">
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon"
+                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 12h6v6h-6z"></path>
+                <path
+                  d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm.001 16H5V8h14l.001 12z">
+                </path>
+              </svg>
+              <span>Octubre de 2022</span> - <span>Actualmente</span>
+            </p>
+          </div>
+          <img class="experience-timeline__element__img" src="./assets/experience/duoLogo.png" alt="">
+        </div>
+
+      </div>
+
+<!--       
       <h2 data-aos="zoom-in-right" class="about-subtitle-section mt-5 p-0">{{ pageContent.how_to_help }}</h2>
-      <p data-aos="zoom-in-left" class="about__text-information">{{ pageContent.how_to_help_paragraph }}</p>
+      <p data-aos="zoom-in-left" class="about__text-information">{{ pageContent.how_to_help_paragraph }}</p> -->
 
 
     </div>
