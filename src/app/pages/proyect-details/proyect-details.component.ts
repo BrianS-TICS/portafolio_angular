@@ -1,9 +1,10 @@
 import { SectionServiceService } from 'src/app/services/navbar/section-service.service';
-import { AfterContentInit, Component, Directive, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LanguageService } from 'src/app/services/languages/language.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+
 import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({
