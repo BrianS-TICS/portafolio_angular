@@ -1,33 +1,21 @@
 {
-  "navegation": [
-    "home",
-    "proyects",
-    "skills",
-    "about me"
-  ],
+  "navegation": ["home", "proyects", "skills", "about me"],
   "language": "languages",
-  "languages": [
-    "english",
-    "spanish"
-  ],
+  "languages": ["english", "spanish"],
   "greeting": "Hi, I'm Brian",
   "job": "Full-Stack Web Developer",
   "job_description": "Specialized in the creation, maintenance, and optimization of web applications.",
-  "contact_title" : "CONTACT ME",
+  "contact_title": "CONTACT ME",
   "resume_title": "Discover my professional career by downloading my Resume",
   "resume_btn": "Download Resume",
   "resume_path": "/assets/resumes/Resume - Brian Sanchez.pdf",
   "knowledge": "Skills",
-  "knowledge_levels": [
-    "basic",
-    "intermediate",
-    "advanced"
-  ],
+  "knowledge_levels": ["basic", "intermediate", "advanced"],
   "proyect": "proyects",
   "proyects": [
     {
       "id": 1,
-      "loading" : "eager",
+      "loading": "eager",
       "title": "Devstagram",
       "description": "Social network to devolopers",
       "long_description": [
@@ -274,13 +262,42 @@
     "I have been working as a developer for over a year. ",
     "One of my interests is to learn different languages and travel to various countries."
   ],
-  "how_to_help": "how could i help you?",
-  "how_to_help_paragraph": "I can help you design websites and develop their functionalities using programming languages and specialized software.",
-  "learning": "learning",
-  "learning_technologies": "technologies",
-  "learning_paragraphs": [
-    "React-Native",
-    "Kotlin"
+  "experience_title": "Experience",
+  "experience_subtitle": "Work History",
+  "experiences": [
+    {
+      "title": "Full-Stack Developer",
+      "entity": "DuoSeptem",
+      "img": "./assets/experience/duoLogo.webp",
+      "period": "October 2022 - Present"
+    }
+  ],
+  "education_title": "Education",
+  "education_subtitle": "Academic Background",
+  "education": [
+    {
+      "title": "High School with a focus on Physics and Mathematics",
+      "entity": "Carlos Marx High School - High School",
+      "img": "./assets/education/Logo_Uas.svg",
+      "period": "August 2016 - June 2019"
+    },
+    {
+      "title": "Bachelor's in Information and Communication Technologies Engineering",
+      "entity": "Technological Institute of Culiacán - University",
+      "img": "./assets/education/tec-cul.webp",
+      "period": "August 2019 - June 2024"
+    }
+  ],  
+  "courses": "courses",
+  "courses_subtitle": "In addition to my academic background, I have taken a series of courses.",
+  "courses_paragraphs": [
+    "SOLID Principles and Clean Code | Udemy",
+    "Laravel 9 | Build Applications and Websites with PHP 8 and MVC | Udemy",
+    "Modern JavaScript Guide | Udemy",
+    "Angular 14 | The Complete Guide | Udemy",
+    "GitHub for Developers | LinkedIn Learning",
+    "Advanced JavaScript 1 | LinkedIn Learning",
+    "Advanced JavaScript 2 | LinkedIn Learning"
   ],
   "footer_text": "© 2024 Brian Sanchez"
 }

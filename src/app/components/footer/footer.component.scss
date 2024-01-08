@@ -1,10 +1,8 @@
 @use "/src/app/shared/variables" as *;
 
-.footer {
+.footer {}
 
-}
-
-.footer__texto-derechos{
+.footer__texto-derechos {
   text-align: center;
   text-decoration: dotted;
   margin: 0;
@@ -18,19 +16,68 @@
   color: $terciry-text-color;
   font-weight: 300;
   line-height: 1.5;
+
   @media (min-width : 670px) {
     font-size: $fs-lg-tiny-exception;
   }
 }
 
-.padding-footer{
+.padding-footer {
   padding: 1.8rem;
 }
 
-.top-border{
+.top-border {
   border-top: .1rem solid $details-color-3;
 }
 
-.bg-gray-dark{
+.bg-gray-dark {
   background-color: $secondary-bg-color;
+}
+
+
+.contact-title {
+
+  font-size: $fs-sm-tiny;
+  color: $details-color-3;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+
+
+}
+
+
+.contact-icons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  @media (min-width: 670px) {
+    flex-direction: row;
+    gap: 5rem;
+    align-items: center;
+  }
+
+
+  img {
+    filter: grayscale(1)
+  }
+
+  a {
+    font-size: $fs-sm-tiny;
+    font-weight: normal;
+    color: $details-color-3;
+  }
+
+  @media (min-width : 768px) {
+
+    // display: none;
+
+  }
+
+
+
 }

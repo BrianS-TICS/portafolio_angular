@@ -28,12 +28,14 @@
 }
 
 .contact-icons-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
+
+  display: none;
 
   @media (min-width : 768px) {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
     flex-direction: column;
   }
 
@@ -146,7 +148,7 @@
 }
 
 
-.experience-timeline-title {
+.timeline-title {
 
   font-size: $fs-sm-regular;
   color: $secondary-text-color;
@@ -154,45 +156,85 @@
   text-align: center;
   text-transform: uppercase;
 
-  margin-top: 10rem;
+  margin-top: 5rem;
 
   @media (min-width : 670px) {
+    margin-top: 10rem;
+
     font-size: $fs-lg-small;
   }
 }
 
+.timeline-subtitle {
+  font-size: $fs-sm-regular;
+  color: $icons-color;
+  font-weight: bold;
+  text-align: center;
 
-.experience-timeline__element__img {
-  width: 100%;
-  max-width: 10rem;
-  max-height: 5rem;
+
+  @media (min-width : 670px) {
+    font-size: $fs-lg-tiny;
+  }
 }
 
-.experience-timeline-container {
-  margin: 4rem 0rem;
+.timeline__element__img-experience {
+
+  &:first-child {
+    max-width: 8rem;
+  }
+
+}
+
+.timeline__element__img {
+
+  filter: grayscale(1);
+  padding-top: 1rem;
+  max-width: 5rem;
+
+
+  img {
+    width: 100%;
+  }
+
+  &:hover {
+    filter: grayscale(0);
+  }
+
+}
+
+.timeline-container {
+  margin: 0rem;
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
 
-  .experience-timeline__element {
+  @media (min-width: 670px) {
+    margin: 4rem 0rem;
+  }
+
+
+  .timeline__element {
+    
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: flex-start;
     padding: .5rem;
     text-align: center;
 
+    @media (min-width : 480px) {
+      padding: 1.7rem;
+    }
 
-
-    
     @media (min-width : 950px) {
-      padding: 2rem;
+      justify-content: center;
+      align-items: center;
       flex-direction: row;
     }
 
 
-    .experience-timeline__element__title {
+    .timeline__element__title {
       font-size: $fs-sm-tiny;
-      font-weight: bold;
+      font-weight: 900;
       color: $contrast-color-4;
       margin-top: 2rem;
 
@@ -201,9 +243,9 @@
       }
     }
 
-    .experience-timeline__element__subtitle {
+    .timeline__element__subtitle {
       font-size: $fs-sm-tiny-exception;
-      font-weight: 300;
+      font-weight: bold;
       color: $contrast-color-2;
 
       @media (min-width : 670px) {
@@ -211,13 +253,13 @@
       }
     }
 
-    .experience-timeline__element__date{
+    .timeline__element__date {
       font-size: $fs-sm-tiny-exception;
       font-weight: 300;
       color: $contrast-color-4;
 
       @media (min-width : 670px) {
-        font-size: $fs-sm-tiny-exception;
+        font-size: $fs-sm-tiny;
       }
     }
 
@@ -225,18 +267,31 @@
     &:nth-child(odd) {
       text-align: left;
 
-      .experience-timeline__element__img {
+      flex-direction: column-reverse;
+      justify-content: flex-start;
+
+
+      @media (min-width : 950px) {
+
+        flex-direction: row;
+      }
+
+
+      .timeline__element__img {
         padding-right: .2rem;
         margin-bottom: 1rem;
+        margin-top: 1rem;
 
         @media (min-width : 480px) {
+
           padding-right: 1rem;
-          
+
         }
-        
-        
+
+
         @media (min-width : 950px) {
           margin-bottom: 0rem;
+          margin-top: 0rem;
           justify-content: flex-start;
         }
 
@@ -245,18 +300,26 @@
 
     &:nth-child(even) {
       text-align: right;
-      .experience-timeline__element__img {
-        margin-top: 1rem;
 
-        padding-right: .2rem;
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      @media (min-width : 950px) {
+        align-items: center;
+      }
+
+      .timeline__element__img {
+        margin-top: 1rem;
+        padding-left: .2rem;
 
         @media (min-width : 480px) {
-          padding-right: 1rem;
+          padding-left: 1rem;
         }
-        
+
         @media (min-width : 950px) {
           margin-top: 0rem;
           justify-content: flex-end;
+          align-items: center;
         }
 
       }
@@ -264,13 +327,18 @@
 
   }
 
-  .experience-timeline__line {
+  .timeline__line {
 
     width: .01rem;
     height: 100%;
     background-color: $secondary-text-color;
 
     margin: 0 auto;
+    margin-top: 1rem;
+
+    @media (min-width : 670px) {
+      margin-top: 3rem;
+    }
 
     position: relative;
 
@@ -282,9 +350,9 @@
 
       content: '';
       display: block;
-      width: 1rem;
-      height: 1rem;
-      background-color: $secondary-text-color ;
+      width: .8rem;
+      height: .8rem;
+      background-color: $icons-color ;
       border-radius: 1rem;
       margin: 0 auto;
       z-index: 1;
@@ -299,9 +367,9 @@
 
       content: '';
       display: block;
-      width: 1rem;
-      height: 1rem;
-      background-color: $secondary-text-color ;
+      width: .8rem;
+      height: .8rem;
+      background-color: $icons-color ;
       border-radius: 1rem;
       margin: 0 auto;
       z-index: 2;
@@ -314,7 +382,7 @@
 
 .about-section {
   margin-bottom: 6rem;
-  overflow: hidden;
+
 }
 
 .presentation-section {
@@ -349,6 +417,7 @@
 }
 
 .contact-title {
+  display: none;
   font-size: $fs-sm-tiny;
   color: $contrast-color-4;
   font-weight: 900;
@@ -525,7 +594,7 @@
 }
 
 
-.section-learning__title {
+.section-courses__title {
   color: $terciry-text-color;
   display: table;
   margin: 0 auto;
@@ -542,26 +611,33 @@
 
 }
 
-.section-learning__subtitle {
-  color: $contrast-color-3;
-  font-weight: normal;
-  text-transform: capitalize;
+.section-courses__subtitle {
+  color: $terciry-text-color;
+  font-weight: 300;
+  text-transform: initial;
   text-align: center;
+  margin-bottom: 1rem;
+  font-size: $fs-sm-tiny;
+  margin-top: 1rem;
 
   @media (min-width : 670px) {
     text-align: left;
+    font-size: $fs-lg-tiny;
   }
 }
 
-.section-learning___element-list {
+.section-courses___element-list {
   color: $terciry-text-color;
   font-weight: 300;
-  font-size: $fs-lg-tiny-exception;
-  text-transform: capitalize;
+  text-transform: initial;
+  font-size: $fs-sm-tiny-exception;
   text-align: center;
+  list-style-type: circle;
+  margin-left: 1.3rem;
 
   @media (min-width : 670px) {
     text-align: left;
+    font-size: $fs-sm-tiny;
   }
 
 }
@@ -793,6 +869,6 @@
 }
 
 
-.learning-section {
+.courses-section {
   background-color: $secondary-bg-color;
 }

@@ -58,13 +58,14 @@
 
   padding: 1rem;
 
+
   .btn-git {
     font-size: $fs-sm-tiny;
     display: inline-flex !important;
   }
 
   @media (min-width : 1280px) {
-    padding: 1rem 5rem;
+    padding: 1rem 5rem 5rem 1rem;
   }
 }
 

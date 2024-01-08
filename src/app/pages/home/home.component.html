@@ -24,7 +24,7 @@
 
 
         <div>
-          <p class="contact-title">{{ this.pageContent.contact_title }}</p>
+
           <div class="contact-icons-container">
 
             <a class="contact-icons__icon" target="_blank" href="mailto:briansanchezaguilar@gmail.com">
@@ -62,15 +62,46 @@
         {{paragraf}}
       </p>
 
-      <h3 class="experience-timeline-title">Experiencia</h3>
-      <div class="experience-timeline-container">
+      <h3 class="timeline-title">{{ pageContent.experience_title }}</h3>
+      <p class="timeline-subtitle">{{ pageContent.experience_subtitle }}</p>
+      <div class="timeline-container">
 
-        <div data-aos="zoom-in-right" class="experience-timeline__element ">
-          <img class="experience-timeline__element__img" src="./assets/experience/duoLogo.png" alt="">
+        <div *ngFor="let element of pageContent.experiences; let i = index" data-aos="zoom-in-right"
+          class="timeline__element ">
+          <div class="timeline__element__img timeline__element__img-experience ">
+            <img [width]=" mobileQuery.matches ? 70 : 100  " height="mobileQuery.matches ? 35 : 50 " [src]="element.img"
+              alt="">
+          </div>
           <div>
-            <h4 class="experience-timeline__element__title">Desarrollador Full-Stack</h4>
-            <p class="experience-timeline__element__subtitle">DuoSeptem</p>
-            <p class="experience-timeline__element__date">
+            <h4 class="timeline__element__title">{{element.title}}</h4>
+            <p class="timeline__element__subtitle">{{element.entity}}</p>
+            <p class="timeline__element__date">
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon"
+                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 12h6v6h-6z"></path>
+                <path
+                  d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm.001 16H5V8h14l.001 12z">
+                </path>
+              </svg>
+              <span>{{ element.period }}</span>
+            </p>
+          </div>
+        </div>
+
+        <div data-aos="fade-up" class="timeline__line"></div>
+
+        <div></div>
+        <div></div>
+
+
+
+        <!-- <div data-aos="fade-up" class="timeline__line"></div> -->
+
+        <!-- <div data-aos="zoom-in-left" class="timeline__element">
+          <div>
+            <h4 class="timeline__element__title">Desarrollador Full-Stack</h4>
+            <p class="timeline__element__subtitle">DuoSeptem</p>
+            <p class="timeline__element__date">
               <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon"
                 height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 12h6v6h-6z"></path>
@@ -81,86 +112,101 @@
               <span>Octubre de 2022</span> - <span>Actualmente</span>
             </p>
           </div>
-        </div>
-
-        <div data-aos="fade-up" class="experience-timeline__line"></div>
-
-        <div></div>
-        <div></div>
-
-        <div data-aos="fade-up" class="experience-timeline__line"></div>
-
-        <div data-aos="zoom-in-left" class="experience-timeline__element">
-          <div>
-            <h4 class="experience-timeline__element__title">Desarrollador Full-Stack</h4>
-            <p class="experience-timeline__element__subtitle">DuoSeptem</p>
-            <p class="experience-timeline__element__date">
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon"
-                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11 12h6v6h-6z"></path>
-                <path
-                  d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm.001 16H5V8h14l.001 12z">
-                </path>
-              </svg>
-              <span>Octubre de 2022</span> - <span>Actualmente</span>
-            </p>
+          <div class="timeline__element__img">
+            <img [width]=" mobileQuery.matches ? 70 : 100  " height="mobileQuery.matches ? 35 : 50 "
+              src="./assets/experience/duoLogo.png" alt="">
           </div>
-          <img class="experience-timeline__element__img" src="./assets/experience/duoLogo.png" alt="">
-        </div>
+        </div> -->
+
 
       </div>
 
 
-      
-      <h3 class="experience-timeline-title ">Educación</h3>
-      <div class="experience-timeline-container">
 
-        <div data-aos="zoom-in-right" class="experience-timeline__element ">
-          <img class="m-3" width="70" height="70" src="./assets/education/tec-cul.png" alt="">
-          <div>
-            <h4 class="experience-timeline__element__title">Ingeniería en tecnologías de información y comunicaciones</h4>
-            <p class="experience-timeline__element__subtitle">Instituto Tecnológico de Culiacán</p>
-            <p class="experience-timeline__element__date">
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon"
-                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11 12h6v6h-6z"></path>
-                <path
-                  d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm.001 16H5V8h14l.001 12z">
-                </path>
-              </svg>
-              <span>Octubre de 2022</span> - <span>Actualmente</span>
-            </p>
-          </div>
-        </div>
+      <h3 class="timeline-title ">{{ pageContent.education_title }}</h3>
+      <p class="timeline-subtitle">{{ pageContent.education_subtitle }}</p>
+      <div class="timeline-container">
+        <ng-container *ngFor="let education of pageContent.education; let i = index">
+          <ng-container *ngIf="shouldShowElement(i); else alternateElement">
+            <!-- timeline__element -->
+            <div data-aos="zoom-in-right" class="timeline__element">
+              <div class="timeline__element__img">
+                <img [width]=" mobileQuery.matches ? 70 : 100  " height="mobileQuery.matches ? 35 : 50 "
+                  [src]="education.img" alt="">
+              </div>
+              <div>
+                <h4 class="timeline__element__title">{{education.title}}</h4>
+                <p class="timeline__element__subtitle">{{education.entity}}</p>
+                <p class="timeline__element__date">
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon"
+                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 12h6v6h-6z"></path>
+                    <path
+                      d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm.001 16H5V8h14l.001 12z">
+                    </path>
+                  </svg>
+                  <span>{{ education.period }}</span>
+                </p>
+              </div>
+            </div>
+          </ng-container>
 
-        <div data-aos="fade-up" class="experience-timeline__line"></div>
+          <!-- Estructura comentada -->
+          <ng-template #alternateElement>
+            <div data-aos="zoom-in-left" class="timeline__element">
+              <div>
+                <h4 class="timeline__element__title">{{education.title}}</h4>
+                <p class="timeline__element__subtitle">{{education.entity}}</p>
+                <p class="timeline__element__date">
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon"
+                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 12h6v6h-6z"></path>
+                    <path
+                      d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm.001 16H5V8h14l.001 12z">
+                    </path>
+                  </svg>
+                  <span>{{ education.period }}</span>
+                </p>
+              </div>
+              <div class="timeline__element__img">
+                <img [width]=" mobileQuery.matches ? 70 : 100  " height="mobileQuery.matches ? 35 : 50 "
+                  [src]="education.img" alt="">
+              </div>
+            </div>
+          </ng-template>
 
-        <div></div>
-        <div></div>
 
-        <div data-aos="fade-up" class="experience-timeline__line"></div>
+          <div *ngIf="shouldShowElement(i)" class="timeline__line"></div>
+          <div *ngIf="shouldShowElement(i)"></div>
+          <div *ngIf="shouldShowElement(i)"></div>
+          <div *ngIf="shouldShowElement(i)" class="timeline__line"></div>
 
-        <div data-aos="zoom-in-left" class="experience-timeline__element">
-          <div>
-            <h4 class="experience-timeline__element__title">Desarrollador Full-Stack</h4>
-            <p class="experience-timeline__element__subtitle">DuoSeptem</p>
-            <p class="experience-timeline__element__date">
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon"
-                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11 12h6v6h-6z"></path>
-                <path
-                  d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm.001 16H5V8h14l.001 12z">
-                </path>
-              </svg>
-              <span>Octubre de 2022</span> - <span>Actualmente</span>
-            </p>
-          </div>
-          <img class="experience-timeline__element__img" src="./assets/experience/duoLogo.png" alt="">
-        </div>
 
+        </ng-container>
       </div>
 
-<!--       
+      <!-- 
+      <div data-aos="zoom-in-left" class="timeline__element">
+        <div>
+          <h4 class="timeline__element__title">{{education.title}}</h4>
+          <p class="timeline__element__subtitle">{{education.entity}}</p>
+          <p class="timeline__element__date">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon"
+              height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 12h6v6h-6z"></path>
+              <path
+                d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm.001 16H5V8h14l.001 12z">
+              </path>
+            </svg>
+            <span>{{ education.period }}</span>
+          </p>
+        </div>
+        <div class="timeline__element__img">
+          <img [width]=" mobileQuery.matches ? 70 : 100  " height="mobileQuery.matches ? 35 : 50 "
+            [src]="education.img" alt="">
+        </div>
+      </div> -->
+      <!--       
       <h2 data-aos="zoom-in-right" class="about-subtitle-section mt-5 p-0">{{ pageContent.how_to_help }}</h2>
       <p data-aos="zoom-in-left" class="about__text-information">{{ pageContent.how_to_help_paragraph }}</p> -->
 
@@ -367,12 +413,12 @@
     </section>
   </div>
 
-  <div class="learning-section">
-    <section class="section-learning container p-4 ">
-      <h2 class="section-learning__title">{{ pageContent.learning }}</h2>
-      <h3 class="section-learning__subtitle mt-0">{{ pageContent.learning_technologies }}</h3>
-      <ul class="section-learning____list">
-        <li class="section-learning___element-list" *ngFor="let paragraf of pageContent.learning_paragraphs"> {{
+  <div class="courses-section">
+    <section class="section-courses container p-4 ">
+      <h2 class="section-courses__title underline-decoration  ">{{ pageContent.courses }}</h2>
+      <h3 class="section-courses__subtitle">{{ pageContent.courses_subtitle }}</h3>
+      <ul class="section-courses____list">
+        <li class="section-courses___element-list" *ngFor="let paragraf of pageContent.courses_paragraphs"> {{
           paragraf }}</li>
       </ul>
     </section>

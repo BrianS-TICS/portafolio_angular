@@ -8,7 +8,7 @@
   "job_description": "Especializado en la creación, mantenimiento y optimización de aplicaciones web.",
   "resume_title": "Descubre mi carrera profesional descargando mi Curriculum Vitae",
   "resume_btn": "Descargar CV",
-  "contact_title" : "CONTÁCTAME",
+  "contact_title": "CONTÁCTAME",
   "resume_path": "/assets/resumes/CV - Brian Sanchez.pdf",
   "knowledge": "Habilidades",
   "knowledge_levels": ["básico", "intermedio", "avanzado"],
@@ -16,7 +16,7 @@
   "proyects": [
     {
       "id": 1,
-      "loading" : "eager",
+      "loading": "eager",
       "title": "Devstagram",
       "description": "Red social para orientada a programadores",
       "long_description": [
@@ -263,10 +263,42 @@
     "He estado trabajando como desarrollador desde hace más de un año.",
     "Dentro de mis intereses está el aprender diferentes idiomas y viajar a diferentes países."
   ],
-  "how_to_help": "¿Cómo podria ayudarte?",
-  "how_to_help_paragraph": "Puedo ayudarte a diseñar los sitios y a desarrollar sus funciones, esto mediante lenguajes de programación y softwares especializados.",
-  "learning": "aprendiendo",
-  "learning_technologies": "tecnologías",
-  "learning_paragraphs": ["React-Native", "Kotlin"],
+  "experience_title": "Experiencia",
+  "experience_subtitle": "Historial laboral adquirido",
+  "experiences": [
+    {
+      "title": "Desarrollador Full-Stack",
+      "entity": "DuoSeptem",
+      "img": "./assets/experience/duoLogo.webp",
+      "period": "Octubre de 2022 - Actualmente"
+    }
+  ],
+  "education_title": "Educación",
+  "education_subtitle": "Formación académica recibida",
+  "education": [
+    {
+      "title": "Bachillerato con orientación en Físico matemático",
+      "entity": "Preparatoria Carlos Marx - Bachillerato",
+      "img": "./assets/education/Logo_Uas.svg",
+      "period": "Agosto de 2016 - Junio de 2019"
+    },
+    {
+      "title": "Ingeniería en tecnologías de información y comunicaciones",
+      "entity": "Instituto Tecnológico de Culiacán - Universidad",
+      "img": "./assets/education/tec-cul.webp",
+      "period": "Agosto de 2019 - Junio de 2024"
+    }
+  ],
+  "courses": "Cursos",
+  "courses_subtitle": "Adicionalmente a mi formación académica, he tomado una serie de cursos.",
+  "courses_paragraphs": [
+    "Principios SOLID y Clean Code | Udemy",
+    "Laravel 9 | Crea Aplicaciones y Sitios Web con PHP 8 y MVC | Udemy",
+    "JavaScript Moderno Guía | Udemy",
+    "Angular 14 | La Guia Completa | Udemy",
+    "GitHub para programadores | LinkedIn Learning",
+    "JavaScript Avanzado 1 | LinkedIn Learning",
+    "JavaScript Avanzado 2 | LinkedIn Learning"
+  ],
   "footer_text": "© 2024 Brian Sanchez"
 }

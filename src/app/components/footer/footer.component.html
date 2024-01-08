@@ -1,5 +1,26 @@
-<footer *ngIf="!loadingContent"  class="bg-gray-dark top-border">
+<footer *ngIf="!loadingContent" class="bg-gray-dark top-border">
   <div class="container padding-footer">
-    <p class="footer__texto-derechos">{{pageContent.footer_text}}</p>
+    <p class="contact-title">{{ this.pageContent.contact_title }}</p>
+
+    <div class="contact-icons-container">
+
+      <a class="contact-icons__icon" target="_blank" href="mailto:briansanchezaguilar@gmail.com">
+        <img width="30" height="30" src="./assets/gmail.svg" alt="gmail icon">
+        Gmail
+      </a>
+      <a class="contact-icons__icon" target="_blank" href="https://www.linkedin.com/in/briansanchezaguilar/">
+        <img width="30" height="30" src="./assets/linkedin.svg" alt="linkedin icon">
+        Linkedin
+      </a>
+
+      <a class="contact-icons__icon" target="_blank" href="https://github.com/BrianS-TICS">
+        <img width="30" height="30" class="contact-icons__img" src="./assets/github.svg" alt="github icon">
+        GitHub
+      </a>
+
+    </div>
   </div>
+
+
+  <p class="footer__texto-derechos pb-5">{{pageContent.footer_text}}</p>
 </footer>

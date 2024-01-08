@@ -1,3 +1,4 @@
+import { MediaMatcher } from '@angular/cdk/layout';
 import { Component, ElementRef, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Subject, Subscription, debounceTime, takeUntil } from 'rxjs';
 import { LanguageService } from 'src/app/services/languages/language.service';
@@ -15,12 +16,18 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private destroy$: Subject<void> = new Subject<void>();
   private startSectionId = '#start';
+  mobileQuery: MediaQueryList;
 
   constructor(
     private languageService: LanguageService,
     private sectionService: SectionServiceService,
-    private elementRef: ElementRef
-  ) { }
+    private elementRef: ElementRef,
+    private mediaMatcher: MediaMatcher,
+
+  ) { 
+    this.mobileQuery = mediaMatcher.matchMedia('(max-width: 670px)');
+
+  }
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event): void {
@@ -63,6 +70,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   }
 
+  shouldShowElement(index: number): boolean {
+    return index % 2 === 0;
+  }
 
   public detectCurrentSection(): any {
     const sections: HTMLElement[] = this.elementRef.nativeElement.querySelectorAll('section');
