@@ -40,11 +40,11 @@
   margin: 0 auto 1rem auto;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: $fs-sm-big;
+  font-size: calc($fs-sm-big - .4rem);
   color: $terciry-text-color;
 
   @media (min-width : 670px) {
-    font-size: calc($fs-lg-big - .8rem);
+    font-size: calc($fs-lg-big - 1rem);
   }
 
 
