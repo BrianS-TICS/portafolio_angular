@@ -100,6 +100,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   public handleMovilMenu(e: any) {
     this.body?.classList.toggle('scroll-stop');
     this.movilMenuOpen = !this.movilMenuOpen;
+
   }
 
 }

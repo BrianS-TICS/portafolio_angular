@@ -7,15 +7,8 @@
       <a class="btn-secondary" routerLink="/" (click)="scrollToSection('#work')">{{ pageContent.proyect_return }}</a>
 
       <div class="proyect-details__header">
-        <h2  data-aos="flip-down" data-aos-delay="300"   class="fw-bold text-white ">{{ selectedProyect.title }}</h2>
-
-        <a target="_blank" [href]="selectedProyect.link_backend_github"
-          class="d-flex d-sm-flex px-4 btn btn-dark gap-2 align-items-center bg-black rounded-4 btn-git ">
-          <p class="p-0 m-0 ">Github</p>
-          <div class="icon-github">
-            <img width="25" height="25" src="./assets/github-white.svg" alt="github repo">
-          </div>
-        </a>
+        <h2 data-aos="flip-down" data-aos-delay="300" class="proyect-details__header__title">{{ selectedProyect.title }}
+        </h2>
       </div>
 
       <img width="500" height="250" loading="lazy" *ngIf="mobileQuery.matches" class="proyect-details__img "
@@ -23,11 +16,19 @@
       <img width="1920" height="500" loading="lazy" *ngIf="!mobileQuery.matches" class="proyect-details__img "
         [src]="selectedProyect.image_lg" alt="proyect image" />
 
-      <div class="row mt-5 ">
+      <a target="_blank" [href]="selectedProyect.link_backend_github" class="btn-git ">
+        <p class="">Github</p>
+        <div class="icon-github">
+          <img width="25" height="25" src="./assets/github-white.svg" alt="github repo">
+        </div>
+      </a>
+
+      <div class="row">
         <div class="col-12 col-sm-7 ">
           <p class="proyect-detail__description"> {{ selectedProyect.description }}</p>
           <ng-container *ngIf="selectedProyect.long_description?.length > 0 ">
-            <p class="proyect-detail__long-description" *ngFor="let tech of selectedProyect.long_description || [] ">{{tech}}
+            <p class="proyect-detail__long-description" *ngFor="let tech of selectedProyect.long_description || [] ">
+              {{tech}}
             </p>
           </ng-container>
         </div>

@@ -36,13 +36,16 @@
 
 
 .contact-title {
-
-  font-size: $fs-sm-tiny;
-  color: $details-color-3;
-  font-weight: bold;
-  text-align: center;
+  display: table;
+  margin: 0 auto 1rem auto;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  font-weight: 900;
+  font-size: $fs-sm-big;
+  color: $terciry-text-color;
+
+  @media (min-width : 670px) {
+    font-size: calc($fs-lg-big - .8rem);
+  }
 
 
 }
@@ -67,9 +70,16 @@
   }
 
   a {
+
+    color: $terciry-text-color;
+    font-weight: 300;
+    text-transform: initial;
     font-size: $fs-sm-tiny;
-    font-weight: normal;
-    color: $details-color-3;
+  
+    @media (min-width : 670px) {
+      text-align: left;
+      font-size: $fs-lg-tiny;
+    }
   }
 
   @media (min-width : 768px) {
